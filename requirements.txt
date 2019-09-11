@@ -1,0 +1,13 @@
+antlr4-python3-runtime
+Sphinx
+python-docs-theme
+Pallets-Sphinx-Themes
+pylint
+pyflakes
+pytest
+pytest-cov
+pylint
+virtualenv
+sphinx-issues
+sphinxcontrib-log-cabinet
+
