@@ -51,4 +51,4 @@ For information on running tests locally, refer to [the contributors guide].
 
 Licensed under the MIT license ([LICENSE-MIT](LICENSE) or http://opensource.org/licenses/MIT).
 
-[the contributors guide]: https://www.github.com/DenisVasilik/Binalyzer/master/CONTRIBUTE.md
+[the contributors guide]: https://www.github.com/denivasilik/binalyzer/master/CONTRIBUTING.md
