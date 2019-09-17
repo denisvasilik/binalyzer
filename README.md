@@ -49,6 +49,7 @@ For information on running tests locally, refer to [the contributors guide].
 
 # License
 
-Licensed under the MIT license ([LICENSE-MIT](LICENSE) or http://opensource.org/licenses/MIT).
+Licensed under the MIT license ([LICENSE-MIT] or http://opensource.org/licenses/MIT).
 
-[the contributors guide]: https://github.com/denisvasilik/binalyzer/blob/master/CONTRIBUTING.md
+[the contributors guide]: CONTRIBUTING.md
+[LICENSE-MIT]: LICENSE.rst
