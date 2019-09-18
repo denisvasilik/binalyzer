@@ -20,15 +20,8 @@ def main():
     score = result.linter.stats["global_note"]
 
     if score < args.fail_under_score:
-        print(
-            f"The expected PyLint score of {args.fail_under_score} has "
-            "not been reached. Current rating is {score}."
-        )
         sys.exit(False)
-    print(
-        f"Exceeded expected PyLint score of {args.fail_under_score}, "
-        "reached {score}."
-    )
+
     sys.exit()
 
 
