@@ -27,9 +27,9 @@ contributors guide].
 
 ## Documentation
 
-Documentation is available from [denisvasilik.com/binalyzer].
+Documentation is available from [binalyzer.readthedocs.io/en/latest].
 
-[denisvasilik.com/binalyzer]: https://docs.denisvasilik.com/binalyzer
+[binalyzer.readthedocs.io/en/latest]: https://binalyzer.readthedocs.io/en/latest/
 
 ## Get in touch
 
