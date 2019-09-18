@@ -1,5 +1,8 @@
 # Binalyzer
 
+[![Build Status](https://travis-ci.com/denisvasilik/binalyzer.svg?branch=master)](https://travis-ci.com/denisvasilik/binalyzer)
+[![Documentation Status](https://readthedocs.org/projects/binalyzer/badge/?version=latest)](https://binalyzer.readthedocs.io/en/latest/?badge=latest)
+
 Binalyzer is a library that eases binary data handling. It uses the approach of
 describing a data format using a template. Binding the template to binary data,
 Binalyzer enables read access, write access or modification of it. No need to
