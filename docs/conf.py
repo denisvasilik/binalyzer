@@ -210,8 +210,10 @@ intersphinx_mapping = {"https://docs.python.org/": None}
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
+
 def builder_inited_handler(app):
-    subprocess.run(['./setup.sh'])
+    subprocess.run(["./setup.sh"])
+
 
 def setup(app):
-    app.connect('builder-inited', builder_inited_handler)
+    app.connect("builder-inited", builder_inited_handler)
