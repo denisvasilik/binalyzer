@@ -40,8 +40,8 @@ package: generate-xml-parser
 upload: package
 	python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
-docs: generate-xml-parser
-	@(cd docs && PYTHONPATH=.. make html)
+docs:
+	(cd docs && make html)
 
 clean:
 	(cd binalyzer/generated && rm -f XMLLexer.py \
