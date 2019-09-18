@@ -6,7 +6,6 @@ pylint
 pyflakes
 pytest
 pytest-cov
-pylint
 virtualenv
 sphinx-issues
 sphinxcontrib-log-cabinet
