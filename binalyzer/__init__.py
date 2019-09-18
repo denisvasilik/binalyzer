@@ -11,15 +11,9 @@
 
 name = "binalyzer"
 
-__major__ = 0
-__minor__ = 0
-__patch__ = 1
-__kind__ = "a"
+__tag__ = ""
 __build__ = 0
-
-__version__ = "{}.{}.{}{}{}".format(
-    __major__, __minor__, __patch__, __kind__, __build__
-)
+__version__ = "{}{}".format(__tag__, __build__)
 __commit__ = "00000000"
 
 from .binalyzer import Binalyzer, BindingContext

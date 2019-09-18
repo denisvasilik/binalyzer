@@ -3,15 +3,9 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-__major__ = 0
-__minor__ = 0
-__patch__ = 3
-__kind__ = "a"
+__tag__ = ""
 __build__ = 0
-
-__version__ = "{}.{}.{}{}{}".format(
-    __major__, __minor__, __patch__, __kind__, __build__
-)
+__version__ = "{}{}".format(__tag__, __build__)
 
 setuptools.setup(
     name="binalyzer",
