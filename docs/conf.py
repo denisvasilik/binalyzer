@@ -15,6 +15,7 @@
 import os
 import sys
 import packaging
+import subprocess
 
 from pallets_sphinx_themes import get_version
 from pallets_sphinx_themes import ProjectLink
@@ -208,3 +209,9 @@ intersphinx_mapping = {"https://docs.python.org/": None}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+def builder_inited_handler(app):
+    subprocess.run(['./setup.sh'])
+
+def setup(app):
+    app.connect('builder-inited', builder_inited_handler)
