@@ -17,13 +17,14 @@ repos:
       name: PyLint
       stages: [push]
       language: system
-      entry: pylint binalyzer --rcfile=pylint.rc
+      entry: ci/pylint_score.py --fail-under 5.0 --rcfile=pylint.rc binalyzer
       types: [python]
       pass_filenames: false
+      log_file: pylint.log
     - id: pytest-cov
       name: Unit Tests
       stages: [push]
       language: system
-      entry: pytest tests --cov=binalyzer --cov-fail-under=20
+      entry: python3 -m pytest tests --cov=binalyzer --cov-fail-under=20
       types: [python]
       pass_filenames: false
