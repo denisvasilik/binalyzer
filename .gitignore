@@ -105,6 +105,8 @@ venv.bak/
 
 .settings
 .vscode
-binalyzer/generated
+binalyzer/generated/XMLLexer.py
+binalyzer/generated/XMLParser.py
+binalyzer/generated/XMLParserListener.py
 docs/_build
 docs/antlr-4.7.2-complete.jar
