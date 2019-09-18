@@ -11,9 +11,7 @@
 import antlr4
 import logging
 
-from .generated.XMLParserListener import XMLParserListener
-from .generated.XMLLexer import XMLLexer
-from .generated.XMLParser import XMLParser
+from .generated import XMLParserListener, XMLLexer, XMLParser
 from .template import (
     ByteOrder,
     AddressingMode,
