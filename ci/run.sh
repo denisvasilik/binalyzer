@@ -4,8 +4,8 @@ set -e
 
 if [ ! -z "$TRAVIS_TAG" ]
 then
-    sed -i 's/__tag__ = 0/__tag__ = '${TRAVIS_TAG}'/g' binalyzer/__init__.py
-    sed -i 's/__tag__ = 0/__tag__ = '${TRAVIS_TAG}'/g' setup.py
+    sed -i 's/__tag__ = ""/__tag__ = "'${TRAVIS_TAG}'"/g' binalyzer/__init__.py
+    sed -i 's/__tag__ = ""/__tag__ = "'${TRAVIS_TAG}'"/g' setup.py
 fi
 
 if [ ! -z "$TRAVIS_BUILD_NUMBER" ]
