@@ -1,8 +1,8 @@
 dist: xenial
 language: python
 python:
-  - "3.6"
-  - "3.7"
+- '3.6'
+- '3.7'
 install:
 - pip install -r requirements.txt
 script:
@@ -12,7 +12,7 @@ deploy:
   server: https://test.pypi.org/legacy/
   user: dvasilik
   password:
-    secure: FmRIpQ5HJK8yCC7d1D0wS5U5RRfBBr6Opd0kkdW0vI7CQlAy4JsEdGkhTDE6jUkIa64LX1/HCl7FcSX7WqQA+HFb79BQjqnkGpqSj30eqWtHWnfldk84V+G0ukZaCUfT5FV0Xe9MWmYzTb9AEhbHpI8bR3B/baEs8JPWE6AsoMqW6pStRnmzYBsO1vKJFVGLYFtwV5Kimxae2dcbhcZkALVOoE/DSId3iFH2/N0SDiz37WKwLdY1irKKZTpyGwZn74JeX8brerW41jZucZuZ9i3iSbaYps+YGpxaAG4PkB67iU30LBi7AQ9sAtB3ba+UrpfhtyIkIuSYS2WRYFgUYFRhkWYe8l/Y3a64atFoSIgsWnKOhqVkQQCrkhbHH2CS3MOO4J3H66QrZHlGYqFPIBanONugUXG1L7HkzPvbwx0PE8Fd0btV5XoHmjenFgZbJDn3S6Ae0B4GsDCuRcUmMj4TLdfqpTjX27WbZwewx6dcQPwCv6IN07KpiVblDrcp8qsIGK0kiV81M73AyvgNgIuet949zfkPBzBpkKvxEnzul4vAjf7ulMbJT2qfq7u01mJpRmTVK6BH+SEGXscx/NX6zrB0RClt5KeqbF02LB6TcLa3P/LNt9YXZOe8q3kApQ4pNSzdZ8ycq6GbfX6G8TxTh2pwYYGycQ80uHIgchc=
+    secure: RTu+mZ57Gf/i70TpZfgvosERfSAbeZSd1jIL1hbx3T3xDWAjnJj8DDq+/eWjeiMtv6JDV6MZmU9VoAGw2MwgVg4noNrPpcNQVPhwnoViLoUnpHXvIDZIbbJI1SSqFB+uSgP7b3kD6+61cR6Nijuz2UXLm8uxs4PJqOmsbIeCQOYkR5QfB5jX7Pa3SGEzo0oSODtCV7jrn/uw9It8QZ5wmkZa3cAhLB2ZJ/jVmbgqcaT8nreyzdbQyDlxpE5yNhErswTwK8gI1roEOUn4tyatqbcRGAx95tuAG/1FjwMfGz7P6oHPD31SXkYFOV2P0i/n8FETwKMAtdZ5V5zMLy0KlBsp+Bthkf16KOYNBOCZ7z9j1KOKSi+stN1bLR/VZ3j6kNrZrG6i1hN2m+mcHZuYh4dBzzI3N/reqnat6+a6JVP4SdTEAj8hys2raNM86Ld/GtLy1LFKJFaKWMwuARmkp90CsK0hB35qKxsVIkrsDMAmYDNnusoFaw/MnaLATqYK9Kgq8okt7Mj0uQKM2d3USMHCvY8RqcFSvLjMiwyiuJu6OxEJdOdu2w6ACob8XmNfZMgZLKQy06p2yZi1oUr9IkSzs6qNTYlIMGH51qIQEHIy1RIKwqmYrZ3Van4RonChbiuDSPLOBBwyWRAlC8mnM0Cqkx+aXw7x3Nd0AqwKcuU=
   on:
     tags: true
   skip_existing: true
