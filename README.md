@@ -1,9 +1,8 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/denisvasilik/binalyzer) 
-
 # Binalyzer
 
 [![Build Status](https://travis-ci.com/denisvasilik/binalyzer.svg?branch=master)](https://travis-ci.com/denisvasilik/binalyzer)
 [![Documentation Status](https://readthedocs.org/projects/binalyzer/badge/?version=latest)](https://binalyzer.readthedocs.io/en/latest/?badge=latest)
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/denisvasilik/binalyzer) 
 
 Binalyzer is a library that eases binary data handling. It uses the approach of
 describing a data format using a template. Binding the template to binary data,
@@ -32,9 +31,9 @@ contributors guide].
 
 ## Documentation
 
-Documentation is available from [binalyzer.readthedocs.io/en/latest].
+Documentation is available from [binalyzer.readthedocs.io].
 
-[binalyzer.readthedocs.io/en/latest]: https://binalyzer.readthedocs.io/en/latest/
+[binalyzer.readthedocs.io]: https://binalyzer.readthedocs.io/en/latest/
 
 ## Get in touch
 
