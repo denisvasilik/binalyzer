@@ -10,7 +10,7 @@ generate-xml-parser:
 					XMLParser.py \
 					XMLParserListener.py
 	mkdir -p binalyzer/generated && \
-	java -jar /usr/local/lib/antlr-4.7.2-complete.jar \
+	java -jar ~/antlr4/antlr-4.8-complete.jar \
 		 -Dlanguage=Python3 \
 		 resources/XMLLexer.g4 \
 		 resources/XMLParser.g4 && \
