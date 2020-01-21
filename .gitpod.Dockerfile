@@ -2,7 +2,18 @@ FROM gitpod/workspace-full
                     
 USER gitpod
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install \
+    antlr4-python3-runtime \
+    Sphinx \
+    python-docs-theme \
+    Pallets-Sphinx-Themes \
+    pylint \
+    pyflakes \
+    pytest \
+    pytest-cov \
+    virtualenv \
+    sphinx-issues \
+    sphinxcontrib-log-cabinet
 
 RUN mkdir -p /workspace/tools/ && \
     wget https://www.antlr.org/download/antlr-4.8-complete.jar && \
