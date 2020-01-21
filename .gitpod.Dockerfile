@@ -1,6 +1,6 @@
 FROM gitpod/workspace-full
 
-USER root
+USER gitpod
 
 RUN pip3 install \
     antlr4-python3-runtime \
@@ -13,13 +13,10 @@ RUN pip3 install \
     pytest-cov \
     virtualenv \
     sphinx-issues \
-    sphinxcontrib-log-cabinet
+    sphinxcontrib-log-cabinet --user
 
-RUN cd /usr/local/lib && \
+RUN mkdir -p ~/antlr4 && cd ~/antlr4 && \
     wget https://www.antlr.org/download/antlr-4.8-complete.jar && \
-    echo "alias antlr4='java -jar /usr/local/lib/antlr-4.8-complete.jar'" >> ~/.bashrc && \
-    echo "alias grun='java org.antlr.v4.gui.TestRig'" >> ~/.bashrc
-
-USER gitpod
+    echo "alias antlr4='java -jar ~/antlr4/antlr-4.8-complete.jar'" >> ~/.bashrc
 
 ENV CLASSPATH=".:/workspace/tools/antlr-4.8-complete.jar:$CLASSPATH"
