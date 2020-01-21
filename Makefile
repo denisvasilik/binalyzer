@@ -3,7 +3,7 @@ TEST_DIR=tests
 
 export PYTHONPATH=.
 
-all: clean generate-xml-parser sloc test flakes lint
+all:
 
 generate-xml-parser:
 	cd binalyzer/generated && rm -f XMLLexer.py \
@@ -62,5 +62,3 @@ clean:
 	 	build \
 	 	dist \
 		cov_html)
-
-.PHONY: all generate-xml-parser sloc test flakes lint clone package docs clean
