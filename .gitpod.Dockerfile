@@ -1,6 +1,6 @@
 FROM gitpod/workspace-full
 
-USER gitpod
+USER root
 
 RUN pip3 install \
     antlr4-python3-runtime \
@@ -13,7 +13,9 @@ RUN pip3 install \
     pytest-cov \
     virtualenv \
     sphinx-issues \
-    sphinxcontrib-log-cabinet --user
+    sphinxcontrib-log-cabinet
+
+USER gitpod
 
 RUN mkdir -p ~/antlr4 && cd ~/antlr4 && \
     wget https://www.antlr.org/download/antlr-4.8-complete.jar && \
