@@ -3,14 +3,14 @@ TEST_DIR=tests
 
 export PYTHONPATH=.
 
-all: clean generate-xml-parser sloc test flakes lint
+all:
 
 generate-xml-parser:
 	cd binalyzer/generated && rm -f XMLLexer.py \
 					XMLParser.py \
 					XMLParserListener.py
 	mkdir -p binalyzer/generated && \
-	java -jar /usr/local/lib/antlr-4.7.2-complete.jar \
+	java -jar ~/antlr4/antlr-4.8-complete.jar \
 		 -Dlanguage=Python3 \
 		 resources/XMLLexer.g4 \
 		 resources/XMLParser.g4 && \
@@ -62,5 +62,3 @@ clean:
 	 	build \
 	 	dist \
 		cov_html)
-
-.PHONY: all generate-xml-parser sloc test flakes lint clone package docs clean
