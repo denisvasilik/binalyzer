@@ -5,6 +5,10 @@ export PYTHONPATH=.
 
 all:
 
+install-antlr4:
+	(mkdir -p ~/antlr4 && \
+	curl https://www.antlr.org/download/antlr-4.8-complete.jar -o ~/antlr4/antlr-4.8-complete.jar)
+
 generate-xml-parser:
 	cd binalyzer/generated && rm -f XMLLexer.py \
 					XMLParser.py \
