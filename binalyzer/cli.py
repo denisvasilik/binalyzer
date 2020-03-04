@@ -1,6 +1,8 @@
 import os
 import click
 
+from hexdump import hexdump
+
 from binalyzer import Binalyzer, XMLTemplateParser
 
 _binalyzer = None
@@ -37,12 +39,36 @@ class BinalyzerAutoCompletion(object):
                     return self._find_template_by_incompletes(child, incompletes[1:])
             return []
 
+def find_template(template, path):
+    if len(path) == 0:
+        return template
+    else:
+        for child in template.children:
+            if path[0] == child.id:
+                return find_template(child, path[1:])
+    raise RuntimeError('Unable to find template')
+
+class TemplateParamType(click.ParamType):
+    name = "template"
+
+    def convert(self, value, param, ctx):
+        with open(os.path.expanduser(ctx.params['template']), "r") as template_file:
+            template = XMLTemplateParser(template_file.read()).parse()
+            path = str.split(value, ".")
+            result = find_template(template, path)
+            return result
+
+TEMPLATE = TemplateParamType()
+
 
 @click.command()
 @click.argument("file", type=click.STRING)
 @click.argument("template", type=click.STRING)
-@click.argument("element", type=click.STRING, autocompletion=autocomplete)
-def main(file, template, element):
-    with open(template, "r") as template_file:
-        with open(file, "rb") as binary_file:
-            _binalyzer = Binalyzer(template_file.read(), binary_file)
+@click.argument("element", type=TEMPLATE, autocompletion=autocomplete)
+@click.argument("output", default='-', type=click.File('wb'))
+def main(file, template, element, output):
+    with open(os.path.expanduser(file), "rb") as binary_file:
+        _binalyzer = Binalyzer()
+        _binalyzer.template = element.root
+        _binalyzer.stream = binary_file
+        hexdump(element.value)
