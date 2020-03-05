@@ -105,7 +105,6 @@ venv.bak/
 .mypy_cache/
 
 .settings
-.vscode
 binalyzer/generated/XMLLexer.py
 binalyzer/generated/XMLParser.py
 binalyzer/generated/XMLParserListener.py
