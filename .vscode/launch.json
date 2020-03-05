@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Binalyzer CLI",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/binalyzer",
+            "args": [ "~/debug.wasm", "~/debug.xml", "data-field-1.depth-field-123", "-" ],
+            "env": {"PYTHONPATH": "binalyzer"},
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        }
+    ]
+}
