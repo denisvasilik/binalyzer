@@ -5,70 +5,77 @@ from hexdump import hexdump
 
 from binalyzer import Binalyzer, XMLTemplateParser
 
-_binalyzer = None
 
+class TemplateAutoCompletion(object):
+    def autocomplete(self, ctx, args, incomplete):
+        with open(os.path.expanduser(args[1]), "r") as template_file:
+            template = XMLTemplateParser(template_file.read()).parse()
+            return self._find_templates_by_incomplete(template, incomplete)
 
-def autocomplete(ctx, args, incomplete):
-    with open(os.path.expanduser(args[1]), "r") as template_file:
-        template = XMLTemplateParser(template_file.read()).parse()
-        binalyzerAutoCompletion = BinalyzerAutoCompletion(template)
-        return binalyzerAutoCompletion.autocomplete(incomplete)
+    def _find_templates_by_incomplete(self, template, incomplete):
+        incompletes = str.split(incomplete, ".")
+        partial_template_tree_path = ".".join(i for i in incompletes[:-1])
+        if partial_template_tree_path:
+            partial_template_tree_path += "."
+        return self._find_templates_by_incompletes(
+            template, partial_template_tree_path, incompletes
+        )
 
-
-class BinalyzerAutoCompletion(object):
-    def __init__(self, template):
-        self.template = template
-        self.incompletes = []
-
-    def autocomplete(self, incomplete):
-        self.incompletes = str.split(incomplete, ".")
-        self.prefix = ".".join(k for k in self.incompletes[:-1])
-        if self.prefix:
-            self.prefix += "."
-        return self._find_template_by_incompletes(self.template, self.incompletes)
-
-    def _find_template_by_incompletes(self, template, incompletes):
+    def _find_templates_by_incompletes(
+        self, template, partial_template_tree_path, incompletes
+    ):
         if len(incompletes) == 1:
             suggestions = [
-                self.prefix + k.id for k in template.children if incompletes[0] in k.id
+                partial_template_tree_path + template_child.id
+                for template_child in template.children
+                if incompletes[0] in template_child.id
             ]
             return suggestions
         else:
-            for child in template.children:
-                if incompletes[0] == child.id:
-                    return self._find_template_by_incompletes(child, incompletes[1:])
+            for template_child in template.children:
+                if incompletes[0] == template_child.id:
+                    return self._find_templates_by_incompletes(
+                        template_child, partial_template_tree_path, incompletes[1:]
+                    )
             return []
 
-def find_template(template, path):
-    if len(path) == 0:
-        return template
-    else:
-        for child in template.children:
-            if path[0] == child.id:
-                return find_template(child, path[1:])
-    raise RuntimeError('Unable to find template')
 
 class TemplateParamType(click.ParamType):
     name = "template"
 
     def convert(self, value, param, ctx):
-        with open(os.path.expanduser(ctx.params['template']), "r") as template_file:
-            template = XMLTemplateParser(template_file.read()).parse()
-            path = str.split(value, ".")
-            result = find_template(template, path)
-            return result
+        template_file = ctx.params["template_file"]
+        template = XMLTemplateParser(template_file.read()).parse()
+        template_path = str.split(value, ".")
+        return self._find_template(template, template_path)
 
-TEMPLATE = TemplateParamType()
+    def _find_template(self, template, template_path):
+        if len(template_path) == 0:
+            return template
+        else:
+            for child in template.children:
+                if template_path[0] == child.id:
+                    return self._find_template(child, template_path[1:])
+        raise RuntimeError("Unable to find template")
+
+
+class ExpandedFile(click.File):
+    def convert(self, value, *args, **kwargs):
+        value = os.path.expanduser(value)
+        return super(ExpandedFile, self).convert(value, *args, **kwargs)
 
 
 @click.command()
-@click.argument("file", type=click.STRING)
-@click.argument("template", type=click.STRING)
-@click.argument("element", type=TEMPLATE, autocompletion=autocomplete)
-@click.argument("output", default='-', type=click.File('wb'))
-def main(file, template, element, output):
-    with open(os.path.expanduser(file), "rb") as binary_file:
-        _binalyzer = Binalyzer()
-        _binalyzer.template = element.root
-        _binalyzer.stream = binary_file
-        hexdump(element.value)
+@click.argument("binary_file", type=ExpandedFile("rb"))
+@click.argument("template_file", type=ExpandedFile("r"))
+@click.argument(
+    "template",
+    type=TemplateParamType(),
+    autocompletion=TemplateAutoCompletion().autocomplete,
+)
+@click.argument("output", default="-", type=ExpandedFile("wb"))
+def main(binary_file, template_file, template, output):
+    _binalyzer = Binalyzer()
+    _binalyzer.template = template.root
+    _binalyzer.stream = binary_file
+    hexdump(template.value)
