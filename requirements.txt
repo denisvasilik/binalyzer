@@ -10,3 +10,4 @@ virtualenv
 sphinx-issues
 sphinxcontrib-log-cabinet
 click
+hexdump
