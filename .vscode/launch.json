@@ -14,6 +14,17 @@
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer Test",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/pytest",
+            "args": [ "tests/test_cli.py" ],
+            "env": {"PYTHONPATH": "binalyzer"},
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
         }
     ]
 }
