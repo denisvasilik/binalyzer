@@ -13,7 +13,9 @@ RUN pip3 install \
     pytest-cov \
     virtualenv \
     sphinx-issues \
-    sphinxcontrib-log-cabinet
+    sphinxcontrib-log-cabinet \
+    click \
+    hexdump
 
 USER gitpod
 
