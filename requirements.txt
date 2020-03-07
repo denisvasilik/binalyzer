@@ -9,3 +9,5 @@ pytest-cov
 virtualenv
 sphinx-issues
 sphinxcontrib-log-cabinet
+click
+hexdump

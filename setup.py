@@ -31,6 +31,6 @@ setuptools.setup(
     package_data={},
     data_files=[("", ["CHANGELOG.md"])],
     setup_requires=[],
-    install_requires=["antlr4-python3-runtime", "click"],
+    install_requires=["antlr4-python3-runtime", "click", "hexdump"],
     entry_points={"console_scripts": ["binalyzer = binalyzer.cli:main",],},
 )
