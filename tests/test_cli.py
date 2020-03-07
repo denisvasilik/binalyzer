@@ -5,6 +5,21 @@ from binalyzer.cli import TemplateAutoCompletion
 from binalyzer.template import Template
 
 
+def test_autocomplete():
+    template = Template(id="template")
+    template.children = [
+        Template(id="data-field-1"),
+        Template(id="data-field-2"),
+        Template(id="data-field-3"),
+        Template(id="data-field-4"),
+    ]
+
+    incomplete = "template.data"
+    auto_completion = TemplateAutoCompletion()
+    result = auto_completion._autocomplete(template, incomplete)
+
+    assert len(result) == 4
+
 def test_find_template():
     template = Template(id="template")
     template.children = [
@@ -14,9 +29,9 @@ def test_find_template():
         Template(id="data-field-4"),
     ]
 
-    incomplete = "data"
+    incomplete = "template.data"
     auto_completion = TemplateAutoCompletion()
-    result = auto_completion._find_templates_by_incomplete(template, incomplete)
+    result = auto_completion._autocomplete(template, incomplete)
 
     assert len(result) == 4
 
@@ -34,9 +49,9 @@ def test_find_nested_template():
         Template(id="data-field-4"),
     ]
 
-    incomplete = "data-field-1.depth"
+    incomplete = "template.data-field-1.depth"
     auto_completion = TemplateAutoCompletion()
-    result = auto_completion._find_templates_by_incomplete(template, incomplete)
+    result = auto_completion._autocomplete(template, incomplete)
 
     assert len(result) == 1
 
@@ -54,8 +69,8 @@ def test_find_nothing():
         Template(id="data-field-4"),
     ]
 
-    incomplete = "data-field-1.abcd"
+    incomplete = "template.data-field-1.abcd"
     auto_completion = TemplateAutoCompletion()
-    result = auto_completion._find_templates_by_incomplete(template, incomplete)
+    result = auto_completion._autocomplete(template, incomplete)
 
     assert len(result) == 0

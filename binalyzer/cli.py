@@ -7,37 +7,40 @@ from binalyzer import Binalyzer, XMLTemplateParser
 
 
 class TemplateAutoCompletion(object):
-    def autocomplete(self, ctx, args, incomplete):
+    def autocompletion(self, ctx, args, incomplete):
         with open(os.path.expanduser(args[1]), "r") as template_file:
             template = XMLTemplateParser(template_file.read()).parse()
-            return self._find_templates_by_incomplete(template, incomplete)
+            return self._autocomplete(template, incomplete)
 
-    def _find_templates_by_incomplete(self, template, incomplete):
-        incompletes = str.split(incomplete, ".")
-        partial_template_tree_path = ".".join(i for i in incompletes[:-1])
-        if partial_template_tree_path:
-            partial_template_tree_path += "."
-        return self._find_templates_by_incompletes(
-            template, partial_template_tree_path, incompletes
-        )
+    def _autocomplete(self, template, incomplete):
+        template_path = str.split(incomplete, ".")
+        prefix = ".".join(i for i in template_path[:-1])
+        if prefix:
+            prefix += "."
+        if template.id == template_path[0]:
+            templates = self._find_templates_by_incomplete(template, template_path[1:])
+            return [prefix + s.id for s in templates]
+        else:
+            return [template.id]
 
-    def _find_templates_by_incompletes(
-        self, template, partial_template_tree_path, incompletes
-    ):
-        if len(incompletes) == 1:
-            suggestions = [
-                partial_template_tree_path + template_child.id
-                for template_child in template.children
-                if incompletes[0] in template_child.id
-            ]
-            return suggestions
+    def _find_templates_by_incomplete(self, template, template_path):
+        if len(template_path) == 1:
+            return self._get_suggestion(template, template_path[0])
         else:
             for template_child in template.children:
-                if incompletes[0] == template_child.id:
-                    return self._find_templates_by_incompletes(
-                        template_child, partial_template_tree_path, incompletes[1:]
+                if template_path[0] == template_child.id:
+                    return self._find_templates_by_incomplete(
+                        template_child, template_path[1:]
                     )
-            return []
+            else:
+                return []
+
+    def _get_suggestion(self, template, incomplete):
+        return [
+            template_child
+            for template_child in template.children
+            if incomplete in template_child.id
+        ]
 
 
 class TemplateParamType(click.ParamType):
@@ -47,7 +50,7 @@ class TemplateParamType(click.ParamType):
         template_file = ctx.params["template_file"]
         template = XMLTemplateParser(template_file.read()).parse()
         template_path = str.split(value, ".")
-        return self._find_template(template, template_path)
+        return self._find_template(template, template_path[1:])
 
     def _find_template(self, template, template_path):
         if len(template_path) == 0:
@@ -71,11 +74,12 @@ class ExpandedFile(click.File):
 @click.argument(
     "template",
     type=TemplateParamType(),
-    autocompletion=TemplateAutoCompletion().autocomplete,
+    autocompletion=TemplateAutoCompletion().autocompletion,
 )
 @click.argument("output", default="-", type=ExpandedFile("wb"))
 def main(binary_file, template_file, template, output):
     _binalyzer = Binalyzer()
     _binalyzer.template = template.root
     _binalyzer.stream = binary_file
+    click.echo(f"Offset: 0x{template.offset.value:08X}")
     hexdump(template.value)
