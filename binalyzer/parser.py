@@ -5,7 +5,7 @@
 
     Template parsers are used to create template objects.
 
-    :copyright: 2019 Denis Vasilík
+    :copyright: 2020 Denis Vasilík
     :license: MIT
 """
 import antlr4

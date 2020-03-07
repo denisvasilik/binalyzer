@@ -5,7 +5,7 @@
 
     This module implements the central Binalyzer object.
 
-    :copyright: 2019 Denis Vasilík
+    :copyright: 2020 Denis Vasilík
     :license: MIT
 """
 import io

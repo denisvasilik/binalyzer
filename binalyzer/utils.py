@@ -5,7 +5,7 @@
 
     This module implements helper and utility functions.
 
-    :copyright: 2019 Denis Vasilík
+    :copyright: 2020 Denis Vasilík
     :license: MIT
 """
 

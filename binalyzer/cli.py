@@ -81,5 +81,9 @@ def main(binary_file, template_file, template, output):
     _binalyzer = Binalyzer()
     _binalyzer.template = template.root
     _binalyzer.stream = binary_file
-    click.echo(f"Offset: 0x{template.offset.value:08X}")
-    hexdump(template.value)
+
+    if output.name == '<stdout>':
+        click.echo(f"Offset: 0x{template.offset.value:08X}")
+        hexdump(template.value)
+    else:
+        output.write(template.value)

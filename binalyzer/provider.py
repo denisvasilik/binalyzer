@@ -5,7 +5,7 @@
 
     Data providers are used by templates for reading, modifying or writing data.
 
-    :copyright: 2019 Denis Vasilík
+    :copyright: 2020 Denis Vasilík
     :license: MIT
 """
 

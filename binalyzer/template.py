@@ -5,7 +5,7 @@
 
     This module implements the concepts of the template mechanism.
 
-    :copyright: 2019 Denis Vasilík
+    :copyright: 2020 Denis Vasilík
     :license: MIT
 """
 from .utils import classproperty_support, classproperty

@@ -5,7 +5,7 @@
 
     A library supporting the analysis of binary data.
 
-    :copyright: 2019 Denis Vasilík
+    :copyright: 2020 Denis Vasilík
     :license: MIT, see LICENSE for details.
 """
 
