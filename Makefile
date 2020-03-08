@@ -66,3 +66,5 @@ clean:
 	 	build \
 	 	dist \
 		cov_html)
+
+.PHONY: docs
