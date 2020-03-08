@@ -139,6 +139,82 @@ class BinalyzerTestCase(unittest.TestCase):
         self.assertEqual(field1.size.value, 0x4)
         self.assertEqual(field2.size.value, 0x4000000)
 
+    def test_binding_at_object_instantiation(self):
+        data_stream = io.BytesIO(bytes([0x04, 0x00, 0x00, 0x00]))
+        template = XMLTemplateParser(
+            """
+            <template id="template0">
+                <layout id="layout0">
+                    <area id="area0">
+                        <field id="field1_size" size="4"></field>
+                        <field id="field1" size="{field1_size, ByteOrder=LittleEndian}"></field>
+                        <field id="field2" size="{field1_size, ByteOrder=BigEndian}"></field>
+                    </area>
+                </layout>
+            </template>"""
+        ).parse()
+        binalyzer = Binalyzer(template, data_stream)
+        field1_size = template.find("field1_size")
+        field1 = template.find("field1")
+        field2 = template.find("field2")
+        self.assertEqual(field1_size.size.value, 4)
+        self.assertEqual(field1_size.value, bytes([0x04, 0x00, 0x00, 0x00]))
+        self.assertEqual(field1.size.value, 0x4)
+        self.assertEqual(field2.size.value, 0x4000000)
+
+    def test_binding_at_stream_assignment(self):
+        template = XMLTemplateParser(
+            """
+            <template id="template0">
+                <layout id="layout0">
+                    <area id="area0">
+                        <field id="field1_size" size="4"></field>
+                        <field id="field1" size="{field1_size, ByteOrder=LittleEndian}"></field>
+                        <field id="field2" size="{field1_size, ByteOrder=BigEndian}"></field>
+                    </area>
+                </layout>
+            </template>"""
+        ).parse()
+        binalyzer = Binalyzer(template, io.BytesIO(bytes(4 * [0x0])))
+        binalyzer.stream = io.BytesIO(bytes([0x04, 0x00, 0x00, 0x00]))
+        field1_size = template.find("field1_size")
+        field1 = template.find("field1")
+        field2 = template.find("field2")
+        self.assertEqual(field1_size.size.value, 4)
+        self.assertEqual(field1_size.value, bytes([0x04, 0x00, 0x00, 0x00]))
+        self.assertEqual(field1.size.value, 0x4)
+        self.assertEqual(field2.size.value, 0x4000000)
+
+    def test_binding_at_template_assignment(self):
+        template0 = XMLTemplateParser(
+            """
+            <template id="template0" size="4">
+            </template>
+            """
+        ).parse()
+        template1 = XMLTemplateParser(
+            """
+            <template id="template0">
+                <layout id="layout0">
+                    <area id="area0">
+                        <field id="field1_size" size="4"></field>
+                        <field id="field1" size="{field1_size, ByteOrder=LittleEndian}"></field>
+                        <field id="field2" size="{field1_size, ByteOrder=BigEndian}"></field>
+                    </area>
+                </layout>
+            </template>"""
+        ).parse()
+        binalyzer = Binalyzer(template0, io.BytesIO(bytes(4 * [0x0])))
+        binalyzer.template = template1
+        binalyzer.stream = io.BytesIO(bytes([0x04, 0x00, 0x00, 0x00]))
+        field1_size = template1.find("field1_size")
+        field1 = template1.find("field1")
+        field2 = template1.find("field2")
+        self.assertEqual(field1_size.size.value, 4)
+        self.assertEqual(field1_size.value, bytes([0x04, 0x00, 0x00, 0x00]))
+        self.assertEqual(field1.size.value, 0x4)
+        self.assertEqual(field2.size.value, 0x4000000)
+
 
 class BoundaryAttributeTestCase(unittest.TestCase):
     """The boundary attribute specifies the boundary relative to the

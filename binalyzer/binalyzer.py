@@ -23,6 +23,12 @@ class Binalyzer(object):
 
     def __init__(self, template=None, stream=None):
         self._binding_context = BindingContext(template, stream)
+        
+        if template:
+            self.template = template
+
+        if stream:
+            self.stream = stream
 
     @property
     def template(self):
@@ -76,7 +82,3 @@ class BindingContext(object):
         #: The data provider to use.
         #: Defaults to :class:`~binalyzer.provider.BufferedIODataProvider`.
         self.provider = BufferedIODataProvider(self)
-
-        if self.template is not None:
-            self.template.binding_context = self
-            self.template.propagate()
