@@ -11,3 +11,4 @@ sphinx-issues
 sphinxcontrib-log-cabinet
 click
 hexdump
+pre-commit

@@ -108,9 +108,9 @@ class Template(object):
     def find(self, ref_id):
         """Find an element using the given ``ref_id``. Returns the element if
         found; otherwise ``None``.
-        
-        .. note:: The :py:method:`~binalyzer.template.find` method just searches 
-                  for the first occurrence of an ``ref_id``. If an identical 
+
+        .. note:: The :py:method:`~binalyzer.template.find` method just searches
+                  for the first occurrence of an ``ref_id``. If an identical
                   ``ref_id`` exists multiple times, the first found will be returned.
         """
         return_value = None

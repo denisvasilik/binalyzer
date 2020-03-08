@@ -20,6 +20,7 @@ def test_autocomplete():
 
     assert len(result) == 4
 
+
 def test_find_template():
     template = Template(id="template")
     template.children = [
@@ -39,9 +40,7 @@ def test_find_template():
 def test_find_nested_template():
     template = Template(id="template")
     data_field_1 = Template(id="data-field-1")
-    data_field_1.children = [
-        Template(id="depth-field-1"),
-    ]
+    data_field_1.children = [Template(id="depth-field-1")]
     template.children = [
         data_field_1,
         Template(id="data-field-2"),
@@ -59,9 +58,7 @@ def test_find_nested_template():
 def test_find_nothing():
     template = Template(id="template")
     data_field_1 = Template(id="data-field-1")
-    data_field_1.children = [
-        Template(id="depth-field-1"),
-    ]
+    data_field_1.children = [Template(id="depth-field-1")]
     template.children = [
         data_field_1,
         Template(id="data-field-2"),

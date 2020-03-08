@@ -23,7 +23,7 @@ class Binalyzer(object):
 
     def __init__(self, template=None, stream=None):
         self._binding_context = BindingContext(template, stream)
-        
+
         if template:
             self.template = template
 
