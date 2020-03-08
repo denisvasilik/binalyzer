@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.abspath(".."))
 # -- Project information -----------------------------------------------------
 
 project = u"Binalyzer"
-copyright = u"2019 Denis Vasilìk"
+copyright = u"2020 Denis Vasilìk"
 author = u"Denis Vasilìk"
 
 # The short X.Y version
