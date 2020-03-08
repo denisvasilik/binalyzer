@@ -76,3 +76,7 @@ class BindingContext(object):
         #: The data provider to use.
         #: Defaults to :class:`~binalyzer.provider.BufferedIODataProvider`.
         self.provider = BufferedIODataProvider(self)
+
+        if self.template is not None:
+            self.template.binding_context = self
+            self.template.propagate()
