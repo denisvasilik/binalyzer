@@ -7,7 +7,7 @@ from binalyzer.template import Template
 from binalyzer.cli import TemplateAutoCompletion, main
 
 
-def test_main_with_template_and_stdout():
+def test_stdout():
     runner = CliRunner()
     result = runner.invoke(
         main,
@@ -17,10 +17,69 @@ def test_main_with_template_and_stdout():
             "binary-data-64.data-field-1.depth-field-124",
         ],
     )
+    assert (
+        result.output
+        == "00000020: 64 54 77 6F 5F 30 00 00  08 61 64 64 54 77 6F 5F  dTwo_0...addTwo_\n"
+        "00000030: 31 00 02 08 01 01 0A 15  03 07 00 20 00 20 01 6A  1.......... . .j\n"
+    )
     assert result.exit_code == 0
 
 
-def test_main_with_incomplete_template_path():
+def test_write_template_to_file():
+    runner = CliRunner()
+    result = runner.invoke(
+        main,
+        [
+            "tests/resources/test.bin",
+            "tests/resources/test.xml",
+            "binary-data-64.data-field-1.depth-field-124",
+            "--output",
+            "/tmp/test.bin",
+        ],
+    )
+    assert result.output == ""
+    assert result.exit_code == 0
+
+
+def test_missing_binary_file():
+    runner = CliRunner()
+    result = runner.invoke(main, [])
+    print(result.output)
+    assert (
+        result.output == "Usage: main [OPTIONS] BINARY_FILE TEMPLATE_FILE TEMPLATE\n"
+        'Try "main --help" for help.\n\n'
+        'Error: Missing argument "BINARY_FILE".\n'
+    )
+    assert result.exit_code == 2
+
+
+def test_missing_template_file():
+    runner = CliRunner()
+    result = runner.invoke(main, ["tests/resources/test.bin"])
+    print(result.output)
+    assert (
+        result.output == "Usage: main [OPTIONS] BINARY_FILE TEMPLATE_FILE TEMPLATE\n"
+        'Try "main --help" for help.\n\n'
+        'Error: Missing argument "TEMPLATE_FILE".\n'
+    )
+    assert result.exit_code == 2
+
+
+def test_missing_template():
+    runner = CliRunner()
+    result = runner.invoke(
+        main, ["tests/resources/test.bin", "tests/resources/test.xml"]
+    )
+    print(result.output)
+    assert (
+        result.output == "Usage: main [OPTIONS] BINARY_FILE TEMPLATE_FILE TEMPLATE\n"
+        'Try "main --help" for help.\n\n'
+        'Error: Missing argument "TEMPLATE".\n'
+    )
+    assert result.exit_code == 2
+
+
+def test_invalid_template():
     runner = CliRunner()
     result = runner.invoke(
         main,
