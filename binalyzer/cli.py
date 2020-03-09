@@ -1,9 +1,9 @@
 import os
 import click
 
-from hexdump import hexdump
+import hexdump
 
-from binalyzer import Binalyzer, XMLTemplateParser
+from binalyzer import Binalyzer, XMLTemplateParser, utils
 
 
 class TemplateAutoCompletion(object):
@@ -59,7 +59,7 @@ class TemplateParamType(click.ParamType):
             for child in template.children:
                 if template_path[0] == child.id:
                     return self._find_template(child, template_path[1:])
-        raise RuntimeError("Unable to find template")
+        return None
 
 
 class ExpandedFile(click.File):
@@ -76,14 +76,15 @@ class ExpandedFile(click.File):
     type=TemplateParamType(),
     autocompletion=TemplateAutoCompletion().autocompletion,
 )
-@click.argument("output", default="-", type=ExpandedFile("wb"))
+@click.option("--output", default=None, type=click.File("wb"))
 def main(binary_file, template_file, template, output):
     _binalyzer = Binalyzer()
     _binalyzer.template = template.root
     _binalyzer.stream = binary_file
 
-    if output.name == "<stdout>":
-        click.echo(f"Offset: 0x{template.offset.value:08X}")
-        hexdump(template.value)
-    else:
+    if output:
         output.write(template.value)
+    else:
+        hexdump.hexdump(template.value, template.offset.value)
+
+    return 0

@@ -9,8 +9,7 @@
             "args": [
                 "${workspaceFolder}/examples/wasm/debug.wasm",
                 "${workspaceFolder}/examples/wasm/debug.xml",
-                "binary-data-64.data-field-1.depth-field-123",
-                "-"
+                "binary-data-64.data-field-1.depth-field-123"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
@@ -43,7 +42,7 @@
             "request": "launch",
             "program": ".venv/bin/pytest",
             "args": [
-                "tests/test_cli.py"
+                "tests/test_cli.py::test_main"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"

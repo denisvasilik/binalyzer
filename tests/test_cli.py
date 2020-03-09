@@ -1,8 +1,38 @@
 import pytest
+import os
 
-from binalyzer.cli import TemplateAutoCompletion
+from click.testing import CliRunner
 
 from binalyzer.template import Template
+from binalyzer.cli import TemplateAutoCompletion, main
+
+
+def test_main_with_template_and_stdout():
+    runner = CliRunner()
+    result = runner.invoke(
+        main,
+        [
+            "tests/resources/test.bin",
+            "tests/resources/test.xml",
+            "binary-data-64.data-field-1.depth-field-124",
+        ],
+    )
+    assert result.exit_code == 0
+
+
+def test_main_with_incomplete_template_path():
+    runner = CliRunner()
+    result = runner.invoke(
+        main,
+        ["tests/resources/test.bin", "tests/resources/test.xml", "binary-data-64."],
+    )
+    print(result.output)
+    assert (
+        result.output == "Usage: main [OPTIONS] BINARY_FILE TEMPLATE_FILE TEMPLATE\n"
+        'Try "main --help" for help.\n\n'
+        'Error: Missing argument "TEMPLATE".\n'
+    )
+    assert result.exit_code == 2
 
 
 def test_autocomplete():
