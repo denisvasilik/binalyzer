@@ -28,6 +28,4 @@ java -jar antlr-4.8-complete.jar \
 mv resources/*.py binalyzer/generated
 rm antlr-4.8-complete.jar
 
-python3 ci/pylint_score.py --fail-under 5.0 --rcfile=pylint.rc binalyzer
-
 python3 -m pytest tests --cov=binalyzer --cov-fail-under=20
