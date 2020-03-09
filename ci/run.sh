@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -x
 set -e
 
 if [ ! -z "$TRAVIS_TAG" ]
@@ -30,9 +31,3 @@ rm antlr-4.8-complete.jar
 python3 ci/pylint_score.py --fail-under 5.0 --rcfile=pylint.rc binalyzer
 
 python3 -m pytest tests --cov=binalyzer --cov-fail-under=20
-
-return_value=$?
-if [ $return_value -ne 0 ]
-then
-    exit $return_value
-fi
