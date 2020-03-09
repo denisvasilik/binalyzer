@@ -6,7 +6,7 @@ python:
 install:
 - pip install -r requirements.txt
 script:
-- "./ci/run.sh"
+- /bin/bash -c ci/run.sh
 deploy:
   provider: pypi
   user: dvasilik
