@@ -68,10 +68,6 @@ class ExpandedFile(click.File):
         return super(ExpandedFile, self).convert(value, *args, **kwargs)
 
 
-def get_version(ctx, param, value):
-    return "v0.0.1"
-
-
 @click.command()
 @click.argument("binary_file", type=ExpandedFile("rb"))
 @click.argument("template_file", type=ExpandedFile("r"))
@@ -79,7 +75,6 @@ def get_version(ctx, param, value):
     "template",
     type=TemplateParamType(),
     autocompletion=TemplateAutoCompletion().autocompletion,
-    required=False,
 )
 @click.option("--output", default=None, type=click.File("wb"))
 @click.version_option(__version__)
