@@ -3,7 +3,7 @@ import click
 
 import hexdump
 
-from binalyzer import Binalyzer, XMLTemplateParser, utils
+from binalyzer import Binalyzer, XMLTemplateParser, utils, __version__
 
 
 class TemplateAutoCompletion(object):
@@ -68,6 +68,10 @@ class ExpandedFile(click.File):
         return super(ExpandedFile, self).convert(value, *args, **kwargs)
 
 
+def get_version(ctx, param, value):
+    return "v0.0.1"
+
+
 @click.command()
 @click.argument("binary_file", type=ExpandedFile("rb"))
 @click.argument("template_file", type=ExpandedFile("r"))
@@ -75,8 +79,10 @@ class ExpandedFile(click.File):
     "template",
     type=TemplateParamType(),
     autocompletion=TemplateAutoCompletion().autocompletion,
+    required=False,
 )
 @click.option("--output", default=None, type=click.File("wb"))
+@click.version_option(__version__)
 def main(binary_file, template_file, template, output):
     _binalyzer = Binalyzer()
     _binalyzer.template = template.root
