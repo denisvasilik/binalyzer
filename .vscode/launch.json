@@ -50,6 +50,22 @@
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer CLI Position",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/binalyzer",
+            "args": [
+                "position",
+                "${workspaceFolder}/examples/wasm/debug.wasm"
+            ],
+            "env": {
+                "PYTHONPATH": "binalyzer"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
         }
     ]
 }
