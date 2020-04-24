@@ -3,7 +3,46 @@ import click
 
 import hexdump
 
-from binalyzer import Binalyzer, XMLTemplateParser, utils, __version__
+from binalyzer import (
+    Binalyzer,
+    Template,
+    ResolvableValue,
+    XMLTemplateParser,
+    utils,
+    __version__,
+)
+
+
+class BasedIntParamType(click.ParamType):
+    """Custom parameter type that accepts hex and octal numbers in addition to
+    normal integers, and converts them into regular integers.
+
+    Taken from:
+
+    https://click.palletsprojects.com/en/7.x/parameters/#implementing-custom-types
+    """
+
+    name = "integer"
+
+    def convert(self, value, param, ctx):
+        try:
+            if value[:2].lower() == "0x":
+                return int(value[2:], 16)
+            elif value[:1] == "0":
+                return int(value, 8)
+            return int(value, 10)
+        except TypeError:
+            self.fail(
+                "expected string for int() conversion, got "
+                f"{value!r} of type {type(value).__name__}",
+                param,
+                ctx,
+            )
+        except ValueError:
+            self.fail(f"{value!r} is not a valid integer", param, ctx)
+
+
+BASED_INT = BasedIntParamType()
 
 
 class TemplateAutoCompletion(object):
@@ -68,24 +107,63 @@ class ExpandedFile(click.File):
         return super(ExpandedFile, self).convert(value, *args, **kwargs)
 
 
-@click.command()
-@click.argument("binary_file", type=ExpandedFile("rb"))
-@click.argument("template_file", type=ExpandedFile("r"))
-@click.argument(
-    "template",
-    type=TemplateParamType(),
-    autocompletion=TemplateAutoCompletion().autocompletion,
-)
-@click.option("--output", default=None, type=click.File("wb"))
+@click.group()
 @click.version_option(__version__)
-def main(binary_file, template_file, template, output):
+def cli():
+    pass
+
+
+@cli.command()
+@click.argument("file", type=ExpandedFile("rb"))
+@click.option("--start-offset", default=0, type=BASED_INT)
+@click.option("--end-offset", default=0, type=BASED_INT)
+@click.option("--output", default=None, type=ExpandedFile("wb"))
+def position(file, start_offset, end_offset, output):
+    """Dump file content using optional start and end positions.
+    """
+    file.seek(0, 2)
+    size = file.tell()
+
+    if end_offset and end_offset < start_offset:
+        raise RuntimeError("The given end offset is smaller than the start offset.")
+
+    if end_offset and end_offset > (start_offset + size):
+        end_offset = start_offset + size
+
+    if end_offset:
+        size = end_offset - start_offset
+
+    template = Template()
+    template.offset = ResolvableValue(start_offset)
+    template.size = ResolvableValue(size)
     _binalyzer = Binalyzer()
-    _binalyzer.template = template.root
-    _binalyzer.stream = binary_file
+    _binalyzer.template = template
+    _binalyzer.stream = file
 
     if output:
         output.write(template.value)
     else:
         hexdump.hexdump(template.value, template.offset.value)
+
+
+@cli.command()
+@click.argument("file", type=ExpandedFile("rb"))
+@click.argument("template_file", type=ExpandedFile("r"))
+@click.argument(
+    "template_path",
+    type=TemplateParamType(),
+    autocompletion=TemplateAutoCompletion().autocompletion,
+)
+@click.option("--output", default=None, type=ExpandedFile("wb"))
+def template(file, template_file, template_path, output):
+    """Dump file content using a template.
+    """
+    _binalyzer.template = template_path.root
+    _binalyzer.stream = file
+
+    if output:
+        output.write(template_path.value)
+    else:
+        hexdump.hexdump(template_path.value, template_path.offset.value)
 
     return 0
