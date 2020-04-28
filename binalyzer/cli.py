@@ -109,16 +109,17 @@ class ExpandedFile(click.File):
 
 @click.group()
 @click.version_option(__version__)
-def cli():
+@click.pass_context
+def cli(ctx):
     pass
 
 
 @cli.command()
 @click.argument("file", type=ExpandedFile("rb"))
-@click.option("--start-offset", default=0, type=BASED_INT)
-@click.option("--end-offset", default=0, type=BASED_INT)
+@click.option("--start-offset", default="0", type=BASED_INT)
+@click.option("--end-offset", default="0", type=BASED_INT)
 @click.option("--output", default=None, type=ExpandedFile("wb"))
-def position(file, start_offset, end_offset, output):
+def dump(file, start_offset, end_offset, output):
     """Dump file content using optional start and end positions.
     """
     file.seek(0, 2)
@@ -167,3 +168,56 @@ def template(file, template_file, template_path, output):
         hexdump.hexdump(template_path.value, template_path.offset.value)
 
     return 0
+
+
+def visitTemplate(template, fn):
+    value = "{"
+    value += fn(template)
+    value = visitTemplates(template.children, fn, value)
+    return value + "}"
+
+
+def visitTemplates(templates, fn, value):
+    if not len(templates):
+        return value
+    value += ', "children": [{'
+    for child in templates:
+        value += fn(child)
+        value = visitTemplates(child.children, fn, value)
+        value += " }, {"
+    value = value[:-3]
+    value += "] "
+    return value
+
+
+def to_json(template):
+    maxLineCharacter = 16
+    startLine = str(template.offset.value)
+    startCharacter = str(template.offset.value)
+    endLine = str(template.offset.value)
+    endCharacter = str(template.offset.value)
+    return (
+        '"id": "'
+        + template.id
+        + '", "start": { "line": '
+        + startLine
+        + ', "character": '
+        + startCharacter
+        + ' }, "end": { "line": '
+        + endLine
+        + ', "character": '
+        + endCharacter
+        + " }"
+    )
+
+
+@cli.command()
+@click.argument("file", type=ExpandedFile("rb"))
+@click.argument("template_file", type=ExpandedFile("r"))
+def json(file, template_file):
+    template = XMLTemplateParser(template_file.read()).parse()
+    binalyzer = Binalyzer()
+    binalyzer.template = template.root
+    binalyzer.stream = file
+
+    print(visitTemplate(binalyzer.template, to_json))
