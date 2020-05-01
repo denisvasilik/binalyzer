@@ -109,16 +109,17 @@ class ExpandedFile(click.File):
 
 @click.group()
 @click.version_option(__version__)
-def cli():
+@click.pass_context
+def cli(ctx):
     pass
 
 
 @cli.command()
 @click.argument("file", type=ExpandedFile("rb"))
-@click.option("--start-offset", default=0, type=BASED_INT)
-@click.option("--end-offset", default=0, type=BASED_INT)
+@click.option("--start-offset", default="0", type=BASED_INT)
+@click.option("--end-offset", default="0", type=BASED_INT)
 @click.option("--output", default=None, type=ExpandedFile("wb"))
-def position(file, start_offset, end_offset, output):
+def dump(file, start_offset, end_offset, output):
     """Dump file content using optional start and end positions.
     """
     file.seek(0, 2)
@@ -167,3 +168,86 @@ def template(file, template_file, template_path, output):
         hexdump.hexdump(template_path.value, template_path.offset.value)
 
     return 0
+
+
+def dump_all(template):
+    stream = template.binding_context.stream
+    stream.seek(0)
+    data = stream.read()
+    content = ""
+    for x in ["{0:02X}".format(x) for x in data]:
+        content += f'"{x}", '
+    return content[:-2]
+
+
+def visitTemplate(template, fn):
+    value = '{ "data": ['
+    value += dump_all(template)
+    value += '], "template": { '
+    value += fn(template)
+    value = visitTemplates(template.children, fn, value)
+    return value + "} }"
+
+
+def visitTemplates(templates, fn, value):
+    if not len(templates):
+        return value
+    value += ', "children": [{'
+    for child in templates:
+        value += fn(child)
+        value = visitTemplates(child.children, fn, value)
+        value += " }, {"
+    value = value[:-3]
+    value += "] "
+    return value
+
+
+def to_json(template):
+    maxLineCharacter = 16
+    startLine = int(template.offset.value / maxLineCharacter)
+    startCharacter = int(template.offset.value % maxLineCharacter) * 3
+    endLine = int((template.offset.value + template.size.value) / maxLineCharacter)
+    endCharacter = (
+        int((template.offset.value + template.size.value) % maxLineCharacter) * 3
+    )
+
+    content = ""
+    for x in ["{0:02X}".format(x) for x in template.value]:
+        content += f'"{x}", '
+    content = content[:-2]
+
+    return (
+        '"id": "'
+        + template.id
+        + '", "offset": '
+        + str(template.offset.value)
+        + ', "size": '
+        + str(template.size.value)
+        + ', "start": { "line": '
+        + str(startLine)
+        + ', "character": '
+        + str(startCharacter)
+        + ' }, "end": { "line": '
+        + str(endLine)
+        + ', "character": '
+        + str(endCharacter)
+        + ' }, "data": ['
+        + content
+        + "]"
+    )
+
+
+@cli.command()
+@click.argument("file", type=ExpandedFile("rb"))
+@click.argument("template_file", type=ExpandedFile("r"), required=False)
+def json(file, template_file):
+    binalyzer = Binalyzer()
+    binalyzer.template = Template(id="root")
+
+    if template_file:
+        template = XMLTemplateParser(template_file.read()).parse()
+        binalyzer.template = template.root
+
+    binalyzer.stream = file
+
+    print(visitTemplate(binalyzer.template, to_json))
