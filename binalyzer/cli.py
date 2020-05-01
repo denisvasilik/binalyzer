@@ -170,11 +170,23 @@ def template(file, template_file, template_path, output):
     return 0
 
 
+def dump_all(template):
+    stream = template.binding_context.stream
+    stream.seek(0)
+    data = stream.read()
+    content = ""
+    for x in ["{0:02X}".format(x) for x in data]:
+        content += f'"{x}", '
+    return content[:-2]
+
+
 def visitTemplate(template, fn):
-    value = "{"
+    value = '{ "data": ['
+    value += dump_all(template)
+    value += '], "template": { '
     value += fn(template)
     value = visitTemplates(template.children, fn, value)
-    return value + "}"
+    return value + "} }"
 
 
 def visitTemplates(templates, fn, value):
@@ -192,32 +204,50 @@ def visitTemplates(templates, fn, value):
 
 def to_json(template):
     maxLineCharacter = 16
-    startLine = str(template.offset.value)
-    startCharacter = str(template.offset.value)
-    endLine = str(template.offset.value)
-    endCharacter = str(template.offset.value)
+    startLine = int(template.offset.value / maxLineCharacter)
+    startCharacter = int(template.offset.value % maxLineCharacter) * 3
+    endLine = int((template.offset.value + template.size.value) / maxLineCharacter)
+    endCharacter = (
+        int((template.offset.value + template.size.value) % maxLineCharacter) * 3
+    )
+
+    content = ""
+    for x in ["{0:02X}".format(x) for x in template.value]:
+        content += f'"{x}", '
+    content = content[:-2]
+
     return (
         '"id": "'
         + template.id
-        + '", "start": { "line": '
-        + startLine
+        + '", "offset": '
+        + str(template.offset.value)
+        + ', "size": '
+        + str(template.size.value)
+        + ', "start": { "line": '
+        + str(startLine)
         + ', "character": '
-        + startCharacter
+        + str(startCharacter)
         + ' }, "end": { "line": '
-        + endLine
+        + str(endLine)
         + ', "character": '
-        + endCharacter
-        + " }"
+        + str(endCharacter)
+        + ' }, "data": ['
+        + content
+        + "]"
     )
 
 
 @cli.command()
 @click.argument("file", type=ExpandedFile("rb"))
-@click.argument("template_file", type=ExpandedFile("r"))
+@click.argument("template_file", type=ExpandedFile("r"), required=False)
 def json(file, template_file):
-    template = XMLTemplateParser(template_file.read()).parse()
     binalyzer = Binalyzer()
-    binalyzer.template = template.root
+    binalyzer.template = Template(id="root")
+
+    if template_file:
+        template = XMLTemplateParser(template_file.read()).parse()
+        binalyzer.template = template.root
+
     binalyzer.stream = file
 
     print(visitTemplate(binalyzer.template, to_json))
