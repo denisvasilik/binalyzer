@@ -37,6 +37,9 @@ class Template(object):
         #: :class:`~binalyzer.template.Size` of the template
         self.size = Size(template=self)
 
+        #: :class:`~binalyzer.template.Sizing` of the template
+        self.sizing = Sizing.Auto
+
         #: :class:`~binalyzer.template.PaddingBefore` of the template
         self.padding_before = PaddingBefore(template=self)
 
@@ -169,6 +172,55 @@ class ByteOrder(object):
     @classproperty
     def BigEndian(cls):
         return cls(cls.BIG_ENDIAN_VALUE)
+
+    def __eq__(self, other):
+        return self.value == other.value
+
+
+@classproperty_support
+class Sizing(object):
+    """Determines whether the sizing of a :class:`Template` should be ``fix`` or
+    dynamically calculated using ``auto`` or ``stretch``.
+    """
+
+    AUTO_VALUE = "auto"
+    FIX_VALUE = "fix"
+    STRETCH_VALUE = "stretch"
+    DEFAULT_VALUE = AUTO_VALUE
+    SIZING = [AUTO_VALUE, FIX_VALUE, STRETCH_VALUE]
+
+    def __init__(self, value=None):
+        self._value = self.DEFAULT_VALUE
+        if value is None:
+            self.value = self.DEFAULT_VALUE
+        else:
+            self.value = value
+
+    @property
+    def value(self):
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        if self._is_valid(value):
+            self._value = value
+        else:
+            raise RuntimeError("Expected 'auto', 'fix' or 'stretch'.")
+
+    def _is_valid(self, value):
+        return value in self.SIZING
+
+    @classproperty
+    def Auto(cls):
+        return cls(cls.AUTO_VALUE)
+
+    @classproperty
+    def Fix(cls):
+        return cls(cls.FIX_VALUE)
+
+    @classproperty
+    def Stretch(cls):
+        return cls(cls.STRETCH_VALUE)
 
     def __eq__(self, other):
         return self.value == other.value

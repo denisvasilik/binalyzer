@@ -52,6 +52,10 @@ Template
 	:members:
 	:inherited-members:
 
+.. autoclass:: Sizing
+	:members:
+	:inherited-members:
+
 .. autoclass:: Boundary
 	:members:
 	:inherited-members:
