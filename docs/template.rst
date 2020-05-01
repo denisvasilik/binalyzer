@@ -141,6 +141,64 @@ children.
 .. note:: The size of a template may be affected by the :ref:`offset`,
           :ref:`padding` or :ref:`boundary` attributes of other templates.
 
+Sizing
+------
+
+The sizing attribute influences the usage of the size attribute. It is mainly
+used for dynamically sizing a template to fill gaps.
+
+======= ========================================================
+Sizing  Description
+======= ========================================================
+auto    Determine the size of a template usig its children
+fix     Use a fixed size specified by the ``size`` attribute
+stretch Fill template until next sibling or parent template size
+======= ========================================================
+
+Sizing influences the size of a template and depends on the its direct sibling
+or parent template.
+
+**fix**
+
+The following example sets the ``size`` of the template to a fixed value.
+
+.. code-block:: xml
+
+    <template size="64" sizing="fix">
+    </template>
+
+.. note:: The ``sizing`` attribute is optional. If a ``size`` is given, it
+          defaults to ``fix``.
+
+**auto**
+
+It is notable that if a parent template uses ``auto`` sizing, the template's
+size is the size of its children.
+
+.. code-block:: xml
+
+    <template sizing="auto">
+        <area size="32"></area>
+    </template>
+
+.. note:: The ``sizing`` attribute is optional. If no ``size`` is specified,
+          it defaults to ``auto``.
+
+**stretch**
+
+Use ``stretch`` to fill an area to the next sibling or space of a parent
+template.
+
+.. code-block:: xml
+
+    <template size="64">
+        <area size="32"></area>
+        <area sizing="stretch" size="16"></area>
+    </template>
+
+.. note:: If a ``size`` is provided with the ``sizing`` attribute set to
+          ``stretch``, it specifies the minimum size to use.
+
 .. _padding:
 
 Padding

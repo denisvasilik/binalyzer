@@ -18,4 +18,4 @@ __commit__ = "00000000"
 
 from .binalyzer import Binalyzer, BindingContext
 from .parser import XMLTemplateParser, XMLTemplateFileParser
-from .template import ByteOrder, AddressingMode, ResolvableValue, Template
+from .template import ByteOrder, AddressingMode, ResolvableValue, Template, Sizing
