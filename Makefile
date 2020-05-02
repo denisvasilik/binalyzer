@@ -41,7 +41,10 @@ clone:
 package: generate-xml-parser
 	python3 setup.py sdist bdist_wheel
 
-upload: package
+install-from-test-pypi:
+	pip3 install --upgrade -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple binalyzer
+
+upload-to-test-pypi: package
 	python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 docs:
