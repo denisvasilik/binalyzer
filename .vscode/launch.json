@@ -57,7 +57,6 @@
             "request": "launch",
             "program": ".venv/bin/binalyzer",
             "args": [
-                "position",
                 "${workspaceFolder}/examples/wasm/debug.wasm"
             ],
             "env": {
@@ -66,6 +65,38 @@
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
-        }
+        },
+        {
+            "name": "Binalyzer CLI JSON",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/binalyzer",
+            "args": [
+                "json",
+                "${workspaceFolder}/examples/wasm/debug.wasm",
+                "${workspaceFolder}/examples/wasm/debug.xml"
+            ],
+            "env": {
+                "PYTHONPATH": "binalyzer"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer Test Sizing",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/pytest",
+            "args": [
+                "tests/test_template_sizing.py::test_sizing_stretch_root_template"
+            ],
+            "env": {
+                "PYTHONPATH": "binalyzer"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
     ]
 }
