@@ -24,9 +24,11 @@
             "request": "launch",
             "program": ".venv/bin/binalyzer",
             "args": [
+                "template",
                 "${workspaceFolder}/examples/wasm/debug.wasm",
                 "${workspaceFolder}/examples/wasm/debug.xml",
                 "binary-data-64.data-field-1.depth-field-123",
+                "--output",
                 "/tmp/output.bin"
             ],
             "env": {
@@ -57,7 +59,6 @@
             "request": "launch",
             "program": ".venv/bin/binalyzer",
             "args": [
-                "position",
                 "${workspaceFolder}/examples/wasm/debug.wasm"
             ],
             "env": {
@@ -66,6 +67,39 @@
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
-        }
+        },
+        {
+            "name": "Binalyzer CLI JSON",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/binalyzer",
+            "args": [
+                "json",
+                "${workspaceFolder}/examples/wasm/debug.wasm",
+                "${workspaceFolder}/examples/wasm/debug.xml"
+            ],
+            "env": {
+                "PYTHONPATH": "binalyzer"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer Unit Test",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/pytest",
+            "args": [
+                "-v",
+                "tests/test_cli.py::test_invalid_template"
+            ],
+            "env": {
+                "PYTHONPATH": "binalyzer"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
     ]
 }

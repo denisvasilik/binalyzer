@@ -133,6 +133,41 @@ class Template(object):
             child.binding_context = self.binding_context
             child.propagate()
 
+    def get_siblings(self):
+        return [sibling for sibling in self.parent.children if sibling != self]
+
+    def get_previous_sibling(self):
+        previous_siblings = self.get_previous_siblings()
+        if previous_siblings:
+            return previous_siblings[-1]
+        else:
+            return None
+
+    def get_previous_siblings(self):
+        if not self.parent:
+            return []
+        return [
+            sibling
+            for sibling in self.parent.children
+            if sibling != self and sibling.offset.value < self.offset.value
+        ]
+
+    def get_next_sibling(self):
+        next_siblings = self.get_next_siblings()
+        if next_siblings:
+            return next_siblings[0]
+        else:
+            return None
+
+    def get_next_siblings(self):
+        if not self.parent:
+            return []
+        return [
+            sibling
+            for sibling in self.parent.children
+            if sibling != self and sibling.offset.value > self.offset.value
+        ]
+
 
 @classproperty_support
 class ByteOrder(object):
@@ -405,7 +440,9 @@ class Size(ResolvableValue):
             return self._value
         elif self.is_reference:
             return self._get_reference_value()
-        elif self.template.children:
+        elif self.template.sizing == Sizing.Stretch:
+            return self._calculate_stretched_size()
+        elif self.template.sizing == Sizing.Auto and self.template.children:
             return self._get_total_size_of_children()
         elif self.template.boundary:
             return self.template.boundary.value
@@ -415,6 +452,17 @@ class Size(ResolvableValue):
     @value.setter
     def value(self, value):
         self._value = value
+
+    def _calculate_stretched_size(self):
+        next_sibling = self.template.get_next_sibling()
+        if next_sibling:
+            return next_sibling.offset.value - self.template.offset.value
+        elif self.template.parent:
+            return self.template.parent.size.value - self.template.offset.value
+        elif self.template.binding_context.stream:
+            return len(self.template.binding_context.stream)
+        else:
+            return 0
 
     def _get_total_size_of_children(self):
         return max(

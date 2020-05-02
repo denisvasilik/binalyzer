@@ -103,7 +103,8 @@ by the size and padding of the template's siblings.
 .. note:: If a node's offset is greater than the total size of its siblings it
           increases its parent node's size.
 
-**Origin and Addressing Mode**
+Origin and Addressing Mode
+""""""""""""""""""""""""""
 
 The origin and addressing mode attributes determine the way the offset is used
 to place a template.
@@ -144,21 +145,19 @@ children.
 Sizing
 ------
 
-The sizing attribute influences the usage of the size attribute. It is mainly
-used for dynamically sizing a template to fill gaps.
+The ``size`` of a template can be fixed or calculated dynamically. The ``sizing``
+attribute determines the usage of the ``size`` attribute.
 
 ======= ========================================================
 Sizing  Description
 ======= ========================================================
-auto    Determine the size of a template usig its children
-fix     Use a fixed size specified by the ``size`` attribute
-stretch Fill template until next sibling or parent template size
+auto    Determine the size of a template by its children
+fix     Use a fixed size determined by the ``size`` attribute
+stretch Stretch a template until next sibling or parent template
 ======= ========================================================
 
-Sizing influences the size of a template and depends on the its direct sibling
-or parent template.
-
-**fix**
+fix
+""""
 
 The following example sets the ``size`` of the template to a fixed value.
 
@@ -170,10 +169,11 @@ The following example sets the ``size`` of the template to a fixed value.
 .. note:: The ``sizing`` attribute is optional. If a ``size`` is given, it
           defaults to ``fix``.
 
-**auto**
+auto
+""""
 
-It is notable that if a parent template uses ``auto`` sizing, the template's
-size is the size of its children.
+If a parent template uses ``auto`` sizing, the template's size conforms to the
+size of its children.
 
 .. code-block:: xml
 
@@ -184,10 +184,12 @@ size is the size of its children.
 .. note:: The ``sizing`` attribute is optional. If no ``size`` is specified,
           it defaults to ``auto``.
 
-**stretch**
+stretch
+"""""""
 
-Use ``stretch`` to fill an area to the next sibling or space of a parent
-template.
+Stretching a template increases its size until its next sibling. In case there
+is no sibling, the size increases until the parent template is filled. This
+behaviour is specified by setting the ``sizing`` attribute to ``stretch``.
 
 .. code-block:: xml
 
