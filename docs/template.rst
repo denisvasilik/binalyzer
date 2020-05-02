@@ -103,7 +103,8 @@ by the size and padding of the template's siblings.
 .. note:: If a node's offset is greater than the total size of its siblings it
           increases its parent node's size.
 
-**Origin and Addressing Mode**
+Origin and Addressing Mode
+""""""""""""""""""""""""""
 
 The origin and addressing mode attributes determine the way the offset is used
 to place a template.
