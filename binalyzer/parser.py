@@ -18,6 +18,7 @@ from .template import (
     ResolvableValue,
     Offset,
     Size,
+    Sizing,
     Boundary,
     PaddingAfter,
     PaddingBefore,
@@ -36,6 +37,7 @@ def create_input_stream(filepath):
 class XMLTemplateParser(XMLParserListener):
 
     DEFAULT_ADDRESSING_MODE = AddressingMode.Relative
+    DEFAULT_SIZING = Sizing.Auto
 
     ATTRIBUTES = {
         "id": lambda self, attribute, template: self._parse_id_of(attribute),
@@ -48,6 +50,7 @@ class XMLTemplateParser(XMLParserListener):
         "size": lambda self, attribute, template: self._parse_attribute_value(
             attribute, template, Size
         ),
+        "sizing": lambda self, attribute, template: self._parse_sizing(attribute),
         "boundary": lambda self, attribute, template: self._parse_attribute_value(
             attribute, template, Boundary
         ),
@@ -96,12 +99,16 @@ class XMLTemplateParser(XMLParserListener):
     def _parse_addressing_mode(self, attribute):
         return AddressingMode(attribute.value().getText()[1:-1])
 
+    def _parse_sizing(self, attribute):
+        return Sizing(attribute.value().getText()[1:-1])
+
     def _parse_id_of(self, attribute):
         return attribute.value().getText()[1:-1]
 
     def _parse_attributes_of(self, template, parent, ctx):
         template.parent = parent
         template.addressing_mode = self.DEFAULT_ADDRESSING_MODE
+
         for attribute_name, attribute_factory in self.ATTRIBUTES.items():
             for attribute in ctx.attribute():
                 if attribute_name == attribute.Name().getText():

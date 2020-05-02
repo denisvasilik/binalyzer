@@ -405,7 +405,9 @@ class Size(ResolvableValue):
             return self._value
         elif self.is_reference:
             return self._get_reference_value()
-        elif self.template.children:
+        elif self.template.sizing == Sizing.Stretch:
+            pass
+        elif self.template.sizing == Sizing.Auto and self.template.children:
             return self._get_total_size_of_children()
         elif self.template.boundary:
             return self.template.boundary.value
