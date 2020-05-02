@@ -4,14 +4,15 @@ import os
 from click.testing import CliRunner
 
 from binalyzer.template import Template
-from binalyzer.cli import TemplateAutoCompletion, main
+from binalyzer.cli import TemplateAutoCompletion, cli
 
 
 def test_stdout():
     runner = CliRunner()
     result = runner.invoke(
-        main,
+        cli,
         [
+            "template",
             "tests/resources/test.bin",
             "tests/resources/test.xml",
             "binary-data-64.data-field-1.depth-field-124",
@@ -28,8 +29,9 @@ def test_stdout():
 def test_write_template_to_file():
     runner = CliRunner()
     result = runner.invoke(
-        main,
+        cli,
         [
+            "template",
             "tests/resources/test.bin",
             "tests/resources/test.xml",
             "binary-data-64.data-field-1.depth-field-124",
@@ -43,24 +45,22 @@ def test_write_template_to_file():
 
 def test_missing_binary_file():
     runner = CliRunner()
-    result = runner.invoke(main, [])
+    result = runner.invoke(cli, [])
     print(result.output)
     assert (
-        result.output == "Usage: main [OPTIONS] BINARY_FILE TEMPLATE_FILE TEMPLATE\n"
-        'Try "main --help" for help.\n\n'
-        'Error: Missing argument "BINARY_FILE".\n'
+        result.output
+        == "Usage: cli [OPTIONS] COMMAND [ARGS]...\n\nOptions:\n  --version  Show the version and exit.\n  --help     Show this message and exit.\n\nCommands:\n  dump      Dump file content using optional start and end positions.\n  json\n  template  Dump file content using a template.\n"
     )
-    assert result.exit_code == 2
+    assert result.exit_code == 0
 
 
 def test_missing_template_file():
     runner = CliRunner()
-    result = runner.invoke(main, ["tests/resources/test.bin"])
+    result = runner.invoke(cli, ["template", "tests/resources/test.bin"])
     print(result.output)
     assert (
-        result.output == "Usage: main [OPTIONS] BINARY_FILE TEMPLATE_FILE TEMPLATE\n"
-        'Try "main --help" for help.\n\n'
-        'Error: Missing argument "TEMPLATE_FILE".\n'
+        result.output
+        == 'Usage: cli template [OPTIONS] FILE TEMPLATE_FILE TEMPLATE_PATH\nTry "cli template --help" for help.\n\nError: Missing argument "TEMPLATE_FILE".\n'
     )
     assert result.exit_code == 2
 
@@ -68,13 +68,12 @@ def test_missing_template_file():
 def test_missing_template():
     runner = CliRunner()
     result = runner.invoke(
-        main, ["tests/resources/test.bin", "tests/resources/test.xml"]
+        cli, ["template", "tests/resources/test.bin", "tests/resources/test.xml"]
     )
     print(result.output)
     assert (
-        result.output == "Usage: main [OPTIONS] BINARY_FILE TEMPLATE_FILE TEMPLATE\n"
-        'Try "main --help" for help.\n\n'
-        'Error: Missing argument "TEMPLATE".\n'
+        result.output
+        == 'Usage: cli template [OPTIONS] FILE TEMPLATE_FILE TEMPLATE_PATH\nTry "cli template --help" for help.\n\nError: Missing argument "TEMPLATE_PATH".\n'
     )
     assert result.exit_code == 2
 
@@ -82,14 +81,18 @@ def test_missing_template():
 def test_invalid_template():
     runner = CliRunner()
     result = runner.invoke(
-        main,
-        ["tests/resources/test.bin", "tests/resources/test.xml", "binary-data-64."],
+        cli,
+        [
+            "template",
+            "tests/resources/test.bin",
+            "tests/resources/test.xml",
+            "binary-data-64.",
+        ],
     )
     print(result.output)
     assert (
-        result.output == "Usage: main [OPTIONS] BINARY_FILE TEMPLATE_FILE TEMPLATE\n"
-        'Try "main --help" for help.\n\n'
-        'Error: Missing argument "TEMPLATE".\n'
+        result.output
+        == 'Usage: cli template [OPTIONS] FILE TEMPLATE_FILE TEMPLATE_PATH\nTry "cli template --help" for help.\n\nError: Missing argument "TEMPLATE_PATH".\n'
     )
     assert result.exit_code == 2
 

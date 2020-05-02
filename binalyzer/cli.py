@@ -159,6 +159,7 @@ def dump(file, start_offset, end_offset, output):
 def template(file, template_file, template_path, output):
     """Dump file content using a template.
     """
+    _binalyzer = Binalyzer()
     _binalyzer.template = template_path.root
     _binalyzer.stream = file
 

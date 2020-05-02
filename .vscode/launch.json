@@ -24,9 +24,11 @@
             "request": "launch",
             "program": ".venv/bin/binalyzer",
             "args": [
+                "template",
                 "${workspaceFolder}/examples/wasm/debug.wasm",
                 "${workspaceFolder}/examples/wasm/debug.xml",
                 "binary-data-64.data-field-1.depth-field-123",
+                "--output",
                 "/tmp/output.bin"
             ],
             "env": {
@@ -84,12 +86,13 @@
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
         },
         {
-            "name": "Binalyzer Test Sizing",
+            "name": "Binalyzer Unit Test",
             "type": "python",
             "request": "launch",
             "program": ".venv/bin/pytest",
             "args": [
-                "tests/test_template_sizing.py::test_sizing_stretch_root_template"
+                "-v",
+                "tests/test_cli.py::test_invalid_template"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
