@@ -1,6 +1,6 @@
 # Binalyzer
 
-[![Build Status](https://travis-ci.com/denisvasilik/binalyzer.svg?branch=master)](https://travis-ci.com/denisvasilik/binalyzer)
+[![Build Status](https://travis-ci.org/denisvasilik/binalyzer.svg?branch=master)](https://travis-ci.org/denisvasilik/binalyzer)
 [![Documentation Status](https://readthedocs.org/projects/binalyzer/badge/?version=latest)](https://binalyzer.readthedocs.io/en/latest/?badge=latest)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/denisvasilik/binalyzer)
 
