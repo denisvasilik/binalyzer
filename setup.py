@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 __tag__ = ""
 __build__ = 0
-__version__ = "{}{}".format(__tag__, __build__)
+__version__ = "{}".format(__tag__)
 
 setuptools.setup(
     name="binalyzer",
@@ -14,9 +14,9 @@ setuptools.setup(
     author_email="contact@denisvasilik.com",
     url="https://www.denisvasilik.com/binalyzer",
     project_urls={
-        "Bug Tracker": "https://bugs.denisvasilik.com/binalyzer/",
-        "Documentation": "https://docs.denisvasilik.com/binalyzer/",
-        "Source Code": "https://code.denisvasilik.com/binalyzer/",
+        "Bug Tracker": "https://github.com/denisvasilik/binalyzer/issues/",
+        "Documentation": "https://binalyzer.readthedocs.io/en/latest/",
+        "Source Code": "https://github.com/denisvasilik/binalyzer/",
     },
     description="Binary Data Analyzer",
     long_description=long_description,
@@ -31,6 +31,11 @@ setuptools.setup(
     package_data={},
     data_files=[("", ["CHANGELOG.md"])],
     setup_requires=[],
-    install_requires=["antlr4-python3-runtime", "click", "hexdump"],
-    entry_points={"console_scripts": ["binalyzer = binalyzer.cli:cli"]},
+    install_requires=[
+        "binalyzer_core",
+        "binalyzer_cli",
+        "binalyzer_data_provider",
+        "binalyzer_template_provider",
+    ],
+    entry_points={"console_scripts": ["binalyzer = binalyzer:cli"]},
 )

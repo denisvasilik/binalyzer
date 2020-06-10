@@ -1,4 +1,7 @@
 {
     "python.formatting.provider": "black",
     "python.pythonPath": ".venv/bin/python3",
+    "files.exclude": {
+        "**/.pyc": true
+    }
 }
