@@ -51,9 +51,6 @@ docs:
 	(cd docs && make html)
 
 clean:
-	(cd binalyzer/generated && rm -f XMLLexer.py \
-		XMLParser.py \
-		XMLParserListener.py)
 	(rm -rf resources/*.interp \
 		resources/*.tokens \
 		pyflakes.log \
