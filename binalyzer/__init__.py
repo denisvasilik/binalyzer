@@ -13,9 +13,18 @@ name = "binalyzer"
 
 __tag__ = ""
 __build__ = 0
-__version__ = "{}{}".format(__tag__, __build__)
+__version__ = "{}".format(__tag__)
 __commit__ = "00000000"
 
-from .binalyzer import Binalyzer, BindingContext
-from .parser import XMLTemplateParser, XMLTemplateFileParser
-from .template import ByteOrder, AddressingMode, ResolvableValue, Template, Sizing
+from binalyzer_core import (
+    Binalyzer,
+    BindingContext,
+    ByteOrder,
+    AddressingMode,
+    ResolvableValue,
+    Template,
+    Sizing,
+)
+from binalyzer_template_provider import XMLTemplateParser, XMLTemplateFileParser
+from binalyzer_data_provider import BufferedIODataProvider
+from binalyzer_cli import cli
