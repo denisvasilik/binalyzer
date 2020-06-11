@@ -8,7 +8,6 @@ tasks:
     cd /workspace/binalyzer-template-provider && pip3 install -e . &&
     cd /workspace/binalyzer-data-provider && pip3 install -e . &&
     cd /workspace/binalyzer-core && pip3 install -e . &&
-    cd /workspace/binalyzer-binalyzer && pip3 install -e . &&
     cd /workspace/binalyzer-cli && pip3 install -e .
 image:
   file: .gitpod.Dockerfile
