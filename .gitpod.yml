@@ -4,6 +4,11 @@ tasks:
     git clone https://github.com/denisvasilik/binalyzer-template-provider.git /workspace/binalyzer-template-provider &&
     git clone https://github.com/denisvasilik/binalyzer-data-provider.git /workspace/binalyzer-data-provider &&
     git clone https://github.com/denisvasilik/binalyzer-cli.git /workspace/binalyzer-cli &&
-    git clone https://github.com/denisvasilik/binalyzer-rest.git /workspace/binalyzer-rest
+    git clone https://github.com/denisvasilik/binalyzer-rest.git /workspace/binalyzer-rest &&
+    cd /workspace/binalyzer-template-provider && pip3 install -e . &&
+    cd /workspace/binalyzer-data-provider && pip3 install -e . &&
+    cd /workspace/binalyzer-core && pip3 install -e . &&
+    cd /workspace/binalyzer-binalyzer && pip3 install -e . &&
+    cd /workspace/binalyzer-cli && pip3 install -e . &&
 image:
   file: .gitpod.Dockerfile
