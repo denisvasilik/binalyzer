@@ -5,6 +5,18 @@
       },
       {
          "path": "file:///workspace/binalyzer-core"
+      },
+      {
+         "path": "file:///workspace/binalyzer-data-provider"
+      },
+      {
+         "path": "file:///workspace/binalyzer-template-provider"
+      },
+      {
+         "path": "file:///workspace/binalyzer-cli"
+      },
+      {
+         "path": "file:///workspace/binalyzer-rest"
       }
    ],
    "settings": {}
