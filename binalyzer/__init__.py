@@ -18,8 +18,12 @@ __commit__ = "00000000"
 
 from binalyzer_core import (
     Binalyzer,
-    TemplateProvider,
-    DataProvider,
+    TemplateProviderBase,
+    DataProviderBase,
+    SimpleTemplateProvider,
+    SimpleDataProvider,
+    EmptyTemplateProvider,
+    ZeroDataProvider,
     BindingContext,
     ByteOrder,
     AddressingMode,
