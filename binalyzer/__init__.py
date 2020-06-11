@@ -18,6 +18,8 @@ __commit__ = "00000000"
 
 from binalyzer_core import (
     Binalyzer,
+    TemplateProvider,
+    DataProvider,
     BindingContext,
     ByteOrder,
     AddressingMode,
@@ -27,4 +29,4 @@ from binalyzer_core import (
 )
 from binalyzer_template_provider import XMLTemplateParser, XMLTemplateFileParser
 from binalyzer_data_provider import BufferedIODataProvider
-from binalyzer_cli import cli
+from binalyzer_cli import binalyzer, TemplateAutoCompletion
