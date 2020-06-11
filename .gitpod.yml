@@ -1,4 +1,9 @@
 tasks:
-  - init: make
+- init: >
+    git clone https://github.com/denisvasilik/binalyzer-core.git /workspace/binalyzer-core &&
+    git clone https://github.com/denisvasilik/binalyzer-template-provider.git /workspace/binalyzer-template-provider &&
+    git clone https://github.com/denisvasilik/binalyzer-data-provider.git /workspace/binalyzer-data-provider &&
+    git clone https://github.com/denisvasilik/binalyzer-cli.git /workspace/binalyzer-cli &&
+    git clone https://github.com/denisvasilik/binalyzer-rest.git /workspace/binalyzer-rest
 image:
   file: .gitpod.Dockerfile
