@@ -8,7 +8,8 @@ tasks:
     cd /workspace/binalyzer-template-provider && make generate-xml-parser && pip3 install -e . &&
     cd /workspace/binalyzer-data-provider && pip3 install -e . &&
     cd /workspace/binalyzer-core && pip3 install -e . &&
-    cd /workspace/binalyzer-cli && pip3 install -e .
+    cd /workspace/binalyzer-cli && pip3 install -e . &&
+    cp .theia/recentworkspace.json /home/gitpod/.theia/recentworkspace.json
 image:
   file: .gitpod.Dockerfile
 workspaceLocation: "/workspace"
