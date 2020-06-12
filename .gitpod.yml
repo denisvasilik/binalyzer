@@ -11,3 +11,4 @@ tasks:
     cd /workspace/binalyzer-cli && pip3 install -e .
 image:
   file: .gitpod.Dockerfile
+workspaceLocation: "/workspace"
