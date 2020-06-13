@@ -4,6 +4,7 @@ import platform
 import click
 import logging
 import importlib
+import pkg_resources
 
 import binalyzer_cli
 
@@ -24,6 +25,16 @@ def print_version(ctx, _param, value):
 
     for package_name in _BINALYZER_PACKAGES:
         try_print_version_info(package_name, ctx)
+
+    extension_packages = []
+    for ep in pkg_resources.iter_entry_points("binalyzer.commands"):
+        if not package_name in _BINALYZER_PACKAGES:
+            package_name = ep.module_name.split(".")[0]
+            extension_packages.append(package_name)
+
+    for package_name in extension_packages:
+        try_print_version_info(package_name, ctx)
+
     ctx.exit()
 
 
