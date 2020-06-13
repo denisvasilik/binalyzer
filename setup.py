@@ -31,6 +31,11 @@ setuptools.setup(
     package_data={},
     data_files=[("", ["CHANGELOG.md"])],
     setup_requires=[],
-    install_requires=[],
+    install_requires=[
+        "binalyzer_core",
+        "binalyzer_cli",
+        "binalyzer_data_provider",
+        "binalyzer_template_provider",
+    ],
     entry_points={"console_scripts": ["binalyzer = binalyzer.cli:main"]},
 )
