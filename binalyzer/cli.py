@@ -63,32 +63,9 @@ version_option = click.Option(
 )
 
 
-cli = BinalyzerGroup(help="", version_option=version_option)
-
-
 def main(as_module=False):
-    args = sys.argv[1:]
-
-    if as_module:
-        this_module = "binalyzer"
-
-        if sys.version_info < (2, 7):
-            this_module += ".cli"
-
-        name = "python -m " + this_module
-
-        # Python rewrites "python -m binalyzer" to the path to the file in argv.
-        # Restore the original command so that the reloader works.
-        sys.argv = ["-m", this_module] + args
-    else:
-        name = None
-
-    try:
-        import binalyzer_rest.cli as rest_cli
-    except ImportError:
-        pass
-
-    cli.main(args=args, prog_name=name)
+    cli = BinalyzerGroup(help="", version_option=version_option)
+    cli.main(args=sys.argv[1:])
 
 
 if __name__ == "__main__":
