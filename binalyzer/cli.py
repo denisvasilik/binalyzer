@@ -62,9 +62,11 @@ version_option = click.Option(
     is_eager=True,
 )
 
+cli = BinalyzerGroup(help="", version_option=version_option)
+cli.name = "binalyzer"
+
 
 def main(as_module=False):
-    cli = BinalyzerGroup(help="", version_option=version_option)
     cli.main(args=sys.argv[1:])
 
 

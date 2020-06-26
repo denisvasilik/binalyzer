@@ -34,3 +34,5 @@ from binalyzer_core import (
 from binalyzer_template_provider import XMLTemplateParser, XMLTemplateFileParser
 from binalyzer_data_provider import BufferedIODataProvider
 from binalyzer_cli import TemplateAutoCompletion
+
+from .cli import cli
