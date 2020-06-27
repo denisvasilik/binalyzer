@@ -16,11 +16,11 @@ creates a :class:`~template.Template` object model.
 
     >>> from binalyzer import XMLTemplateParser
     >>> template = XMLTemplateParser("""
-    ...     <template id="binary-data-64">
-    ...         <field id="data-field-1" size="32"></field>
-    ...         <field id="data-field-2" size="16"></field>
-    ...         <field id="data-field-3" size="8"></field>
-    ...         <field id="data-field-4" size="8"></field>
+    ...     <template name="binary-data-64">
+    ...         <field name="data-field-1" size="32"></field>
+    ...         <field name="data-field-2" size="16"></field>
+    ...         <field name="data-field-3" size="8"></field>
+    ...         <field name="data-field-4" size="8"></field>
     ...     </template>
     ... """).parse()
     >>>

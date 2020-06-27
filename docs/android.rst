@@ -11,30 +11,30 @@ The following template describes the data layout of an Android image.
 
 .. code-block:: xml
 
-    <template id="android_boot_image_v1">
-        <header id="boot_img_hdr">
-            <field id="magic" size="8"/>
-            <field id="kernel_size" size="4" />
-            <field id="kernel_addr" size="4" />
-            <field id="ramdisk_size" size="4" />
-            <field id="ramdisk_addr" size="4" />
-            <field id="second_size" size="4" />
-            <field id="second_addr" size="4" />
-            <field id="tags_addr" size="4" />
-            <field id="page_size" size="4" />
-            <field id="header_version" size="4" />
-            <field id="os_version" size="4" />
-            <field id="name" size="16"/>
-            <field id="cmdline" size="512"/>
-            <field id="id" size="32" />
-            <field id="extra_cmdline" size="1024" />
-            <field id="recovery_dtbo_size" size="4" />
-            <field id="recovery_dtbo_offset" size="8" />
-            <field id="header_size" size="4" />
+    <template name="android_boot_image_v1">
+        <header name="boot_img_hdr">
+            <field name="magic" size="8"/>
+            <field name="kernel_size" size="4" />
+            <field name="kernel_addr" size="4" />
+            <field name="ramdisk_size" size="4" />
+            <field name="ramdisk_addr" size="4" />
+            <field name="second_size" size="4" />
+            <field name="second_addr" size="4" />
+            <field name="tags_addr" size="4" />
+            <field name="page_size" size="4" />
+            <field name="header_version" size="4" />
+            <field name="os_version" size="4" />
+            <field name="name" size="16"/>
+            <field name="cmdline" size="512"/>
+            <field name="id" size="32" />
+            <field name="extra_cmdline" size="1024" />
+            <field name="recovery_dtbo_size" size="4" />
+            <field name="recovery_dtbo_offset" size="8" />
+            <field name="header_size" size="4" />
         </header>
-        <section id="kernel" size="{kernel_size}" boundary="{page_size}"></section>
-        <section id="ramdisk" size="{ramdisk_size}" boundary="{page_size}"></section>
-        <section id="second" size="{second_size}" boundary="{page_size}"></section>
+        <section name="kernel" size="{kernel_size}" boundary="{page_size}"></section>
+        <section name="ramdisk" size="{ramdisk_size}" boundary="{page_size}"></section>
+        <section name="second" size="{second_size}" boundary="{page_size}"></section>
     </template>
 
 In order to work with the template and the data interactively the following preparation work

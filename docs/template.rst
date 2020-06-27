@@ -29,13 +29,13 @@ Binalyzer. It is bound to some data starting from offset 0x0000 to 0x7FFF.
 **Unique Identifier**
 
 Templates are identified by a unique identifier. The
-:class:`~binalyzer.template.Template.id` attribute is used to uniquely identify
+:class:`~binalyzer.template.Template.name` attribute is used to uniquely identify
 a template. This identifier is used by the template object model to access the
 particular part of the binary data.
 
 .. code-block:: xml
 
-    <template id="root" size="0x8000">
+    <template name="root" size="0x8000">
     </template>
 
 .. note:: It is notable that the XML element name can be freely chosen and has no
@@ -51,14 +51,14 @@ nested:
 
 .. code-block:: xml
 
-    <template id="root">
-        <area id="area-1">
-            <field id="field-1" size="0x4000"></field>
-            <field id="field-2" size="0x4000"></field>
+    <template name="root">
+        <area name="area-1">
+            <field name="field-1" size="0x4000"></field>
+            <field name="field-2" size="0x4000"></field>
         </area>
-        <area id="area-2">
-            <field id="field-3" size="0x4000"></field>
-            <field id="field-4" size="0x4000"></field>
+        <area name="area-2">
+            <field name="field-3" size="0x4000"></field>
+            <field name="field-4" size="0x4000"></field>
         </area>
     </template>
 
@@ -91,9 +91,9 @@ by the size and padding of the template's siblings.
 
 .. code-block:: xml
 
-    <template id="root">
-        <area id="area-1" offset="0x4000" size="0x4000"></area>
-        <area id="area-2" offset="0xC000" size="0x4000"></area>
+    <template name="root">
+        <area name="area-1" offset="0x4000" size="0x4000"></area>
+        <area name="area-2" offset="0xC000" size="0x4000"></area>
     </template>
 
 .. image:: content/template_offset.svg
@@ -212,14 +212,14 @@ templates either before or after a them.
 
 .. code-block:: xml
 
-    <template id="root">
-        <area id="area-1" offset="0x4000" size="0x4000"></area>
-        <area id="area-2"
+    <template name="root">
+        <area name="area-1" offset="0x4000" size="0x4000"></area>
+        <area name="area-2"
               size="0x2000"
               padding-before="0x1000"
               padding-after="0x1000">
         </area>
-        <area id="area-3" size="0x4000"></area>
+        <area name="area-3" size="0x4000"></area>
     </template>
 
 .. image:: content/template_padding.svg
@@ -246,8 +246,8 @@ boundary of 0x20. The ``header`` has a relative offset of 0x10, therefore
 
     <template>
         <layout>
-            <area id="header" offset="0x10"></area>
-            <area id="payload" boundary="0x20"></area>
+            <area name="header" offset="0x10"></area>
+            <area name="payload" boundary="0x20"></area>
         </layout>
     </template>
 
@@ -296,13 +296,13 @@ resolved from data other templates are bound to. Here's an example.
 
 .. code-block:: xml
 
-    <template id="root">
-        <header id="header-0">
-            <field id="boundary" size="4"></field>
+    <template name="root">
+        <header name="header-0">
+            <field name="boundary" size="4"></field>
         </header>
-        <section id="section-0" boundary="{boundary}"></section>
-        <section id="section-1" boundary="{boundary}"></section>
-        <section id="section-2" boundary="{boundary}"></section>
+        <section name="section-0" boundary="{boundary}"></section>
+        <section name="section-1" boundary="{boundary}"></section>
+        <section name="section-2" boundary="{boundary}"></section>
     </template>
 
 **Byte Order**
@@ -312,6 +312,6 @@ specified, the byte order defaults to ``LittleEndian``.
 
 .. code-block:: xml
 
-    <section id="section-0" boundary="{boundary}"></section>
-    <section id="section-1" boundary="{boundary, ByteOrder=LittleEndian}"></section>
-    <section id="section-2" boundary="{boundary, ByteOrder=BigEndian}"></section>
+    <section name="section-0" boundary="{boundary}"></section>
+    <section name="section-1" boundary="{boundary, ByteOrder=LittleEndian}"></section>
+    <section name="section-2" boundary="{boundary, ByteOrder=BigEndian}"></section>
