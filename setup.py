@@ -36,6 +36,7 @@ setuptools.setup(
         "binalyzer-cli",
         "binalyzer-data_provider",
         "binalyzer-template-provider",
+        "binalyzer-rest",
     ],
     entry_points={"console_scripts": ["binalyzer = binalyzer.cli:main"]},
 )
