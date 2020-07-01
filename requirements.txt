@@ -17,3 +17,7 @@ pre-commit==2.1.1
 wheel==0.34.2
 twine==3.1.1
 binalyzer_core
+binalyzer_template_provider
+binalyzer_data_provider
+binalyzer_cli
+binalyzer_rest
