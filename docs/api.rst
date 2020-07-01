@@ -5,7 +5,7 @@ API
 
 .. module:: binalyzer
 
-This part of the documentation covers all interfaces of Binalyzer.
+This part of the documentation covers Binalyzer's API.
 
 Binalyzer Object
 ----------------
@@ -21,7 +21,7 @@ Binalyzer Object
 Template Parser
 ---------------
 
-.. currentmodule:: binalyzer.parser
+.. currentmodule:: binalyzer
 
 .. autoclass:: XMLTemplateParser
 	:members:
@@ -34,11 +34,10 @@ Template Parser
 Template
 --------
 
-.. currentmodule:: binalyzer.template
+.. currentmodule:: binalyzer
 
 .. autoclass:: Template
 	:members:
-	:inherited-members:
 
 .. autoclass:: ResolvableValue
 	:members:
@@ -79,7 +78,7 @@ Template
 Data Provider
 -------------
 
-.. currentmodule:: binalyzer.provider
+.. currentmodule:: binalyzer
 
 .. autoclass:: DataProvider
 	:members:
