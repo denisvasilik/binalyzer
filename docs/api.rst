@@ -7,8 +7,8 @@ API
 
 This part of the documentation covers Binalyzer's API.
 
-Binalyzer Object
-----------------
+Binalyzer
+---------
 
 .. autoclass:: Binalyzer
 	:members:
@@ -18,18 +18,8 @@ Binalyzer Object
 	:members:
 	:inherited-members:
 
-Template Parser
----------------
-
-.. currentmodule:: binalyzer
-
-.. autoclass:: XMLTemplateParser
-	:members:
-	:inherited-members:
-
-.. autoclass:: XMLTemplateFileParser
-	:members:
-	:inherited-members:
+.. autoclass:: BackedBindingContext
+    :members:
 
 Template
 --------
@@ -51,9 +41,10 @@ Template
 	:members:
 	:inherited-members:
 
-.. autoclass:: Sizing
-	:members:
-	:inherited-members:
+.. class:: Sizing
+
+    Determines whether the sizing of a :class:`Template` should be ``fix`` or
+    dynamically calculated using ``auto`` or ``stretch``.
 
 .. autoclass:: Boundary
 	:members:
@@ -67,23 +58,56 @@ Template
 	:members:
 	:inherited-members:
 
-.. autoclass:: ByteOrder
-	:members:
-	:inherited-members:
+.. class:: ByteOrder
 
-.. autoclass:: AddressingMode
-	:members:
-	:inherited-members:
+    Determines the endianess of the byte-sequence the :class:`Template` is
+    bound to. Valid values are ``LittleEndian`` or ``BigEndian``.
+
+.. class:: AddressingMode
+
+    Determines whether the addressing of the :class:`Template` is ``absolute``
+    or ``relative``.
 
 Data Provider
 -------------
 
 .. currentmodule:: binalyzer
 
+.. autoclass:: DataProviderBase
+	:members:
+
 .. autoclass:: DataProvider
+	:members:
+
+.. autoclass:: BufferedIODataProvider
+	:members:
+
+.. autoclass:: ZeroedDataProvider
+	:members:
+
+Template Provider
+-----------------
+
+.. currentmodule:: binalyzer
+
+.. autoclass:: TemplateProviderBase
+	:members:
+
+.. autoclass:: TemplateProvider
+	:members:
+
+.. autoclass:: PlainTemplateProvider
+	:members:
+
+Template Parser
+---------------
+
+.. currentmodule:: binalyzer
+
+.. autoclass:: XMLTemplateParser
 	:members:
 	:inherited-members:
 
-.. autoclass:: BufferedIODataProvider
+.. autoclass:: XMLTemplateFileParser
 	:members:
 	:inherited-members:

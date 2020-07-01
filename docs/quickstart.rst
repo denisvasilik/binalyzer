@@ -8,10 +8,10 @@ Quick Start
 This part of the documentation shows how to use the most important parts of
 Binalyzer.
 
-Usually, everything starts out with a template that describes a binary data
-format. Templates use XML, but other description languages could be used as
+Usually, everything starts out with a template that describes the layout of some
+binary data. Templates use XML, but other description languages could be used as
 well. Let's look at an example. The following XML describes a 64 Byte piece of
-binary data. It is parsed by a :class:`~parser.XMLTemplateParser`, which in turn
+binary data. It is parsed by a :class:`~binalyzer.XMLTemplateParser`, which in turn
 creates a :class:`~template.Template` object model.
 
     >>> from binalyzer import XMLTemplateParser
