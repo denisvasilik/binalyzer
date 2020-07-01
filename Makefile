@@ -5,27 +5,8 @@ export PYTHONPATH=.
 
 all:
 
-install-antlr4:
-	(mkdir -p ~/antlr4 && \
-	curl https://www.antlr.org/download/antlr-4.8-complete.jar -o ~/antlr4/antlr-4.8-complete.jar)
-
-generate-xml-parser:
-	cd binalyzer/generated && rm -f XMLLexer.py \
-					XMLParser.py \
-					XMLParserListener.py
-	mkdir -p binalyzer/generated && \
-	java -jar ~/antlr4/antlr-4.8-complete.jar \
-		 -Dlanguage=Python3 \
-		 resources/XMLLexer.g4 \
-		 resources/XMLParser.g4 && \
-	mv resources/*.py binalyzer/generated && \
-	rm resources/*.interp resources/*.tokens
-
 sloc:
 	sloccount --duplicates --wide --details $(SRC_DIR) | fgrep -v .git > sloccount.sc || :
-
-test: generate-xml-parser
-	python3 -m pytest -v tests --cov=binalyzer --cov-report html:cov_html
 
 flakes:
 	pyflakes $(SRC_DIR) > pyflakes.log || :
@@ -38,7 +19,7 @@ lint:
 clone:
 	clonedigger --cpd-output $(SRC_DIR) || :
 
-package: generate-xml-parser
+package:
 	python3 setup.py sdist bdist_wheel
 
 install-from-test-pypi:
@@ -51,8 +32,7 @@ docs:
 	(cd docs && make html)
 
 clean:
-	(rm -rf resources/*.interp \
-		resources/*.tokens \
+	(rm -rf \
 		pyflakes.log \
 		pylint.log \
 		test.log \
