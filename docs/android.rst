@@ -40,7 +40,7 @@ The following template describes the data layout of an Android image.
 In order to work with the template and the data interactively the following preparation work
 must be done.
 
-.. code-block::
+.. code-block:: python
 
     >>> import os
     >>> from binalyzer import Binalyzer
@@ -49,10 +49,11 @@ must be done.
     >>> template_file = open('android_boot_image_v1.xml')
     >>> template = XMLTemplateParser(template_file.read()).parser()
     >>> binalyzer.template = template
-    >>> binalyzer.stream =
+    >>> data_file = open('android_boot_image_v1.bin')
+    >>> binalyzer.stream = data_file
 
 Read Header Information
------------------------------
+-----------------------
 
 .. code-block:: python
 
