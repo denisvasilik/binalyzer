@@ -31,6 +31,11 @@ from binalyzer_core import (
     ResolvableValue,
     Template,
     Sizing,
+    Offset,
+    Size,
+    PaddingAfter,
+    PaddingBefore,
+    Boundary,
 )
 from binalyzer_template_provider import XMLTemplateParser, XMLTemplateFileParser
 from binalyzer_cli import TemplateAutoCompletion
