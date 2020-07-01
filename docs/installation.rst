@@ -7,7 +7,7 @@ Python Version
 --------------
 
 It is recommended to use the latest version of Python 3. Binalyzer supports
-Python 3.5 and newer.
+Python 3.6 and newer.
 
 Supported Platforms
 -------------------
@@ -30,10 +30,12 @@ Binalyzer.
 Dependencies
 ------------
 
-Binalyzer depends on `ANTLR 4 runtime for Python 3`_. It is used for parsing
-templates.
+Binalyzer depends on `ANTLR 4 runtime for Python 3`_. It is used for parsing text
+based template descriptions. For its template tree mechanism, Binalyzer uses the
+`Any Python Tree Data`_ library.
 
 .. _ANTLR 4 runtime for Python 3: https://pypi.org/project/antlr4-python3-runtime/
+.. _Any Python Tree Data: https://pypi.org/project/anytree/
 
 Install using PIP
 -----------------
