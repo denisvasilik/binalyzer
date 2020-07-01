@@ -16,3 +16,4 @@ hexdump==3.3
 pre-commit==2.1.1
 wheel==0.34.2
 twine==3.1.1
+binalyzer_core
