@@ -15,4 +15,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [Unreleased]: https://github.com/denisvasilik/binalyzer
 [0.0.1]: https://github.com/denisvasilik/binalyzer/tags/v0.0.1
-[0.0.2]: https://github.com/denisvasilik/binalyzer/tags/v0.0.1
+[0.0.2]: https://github.com/denisvasilik/binalyzer/tags/v0.0.2
