@@ -26,6 +26,7 @@ from binalyzer_core import (
     PlainTemplateProvider,
     ZeroedDataProvider,
     BindingContext,
+    BackedBindingContext,
     ByteOrder,
     AddressingMode,
     ResolvableValue,
