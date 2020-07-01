@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 0.0.4
+-------------
+
+Released 2020-07-01
+
+    Fixed dependencies
+    Fixed documentation
+
 Version 0.0.3
 -------------
 
