@@ -12,12 +12,14 @@ Get started with :ref:`installation` and then get an overview with the
 :ref:`quickstart`. Templates are described in the :ref:`template` section. A
 full reference is described in the :ref:`api` section.
 
-Binalyzer depends on the `Antlr`_ runtime. The documentation for this library
-can be found at:
+Binalyzer's template parsers depend on the `Antlr`_ runtime and its template objects
+on the `anytree`_ library. The documentation for these libraries are available at:
 
-- `Antlr documentation <https://github.com/antlr/antlr4/blob/master/doc/index.md>`_
+- `Antlr Documentation <https://github.com/antlr/antlr4/blob/master/doc/index.md>`_
+- `Any Python Tree Data Documentation <https://anytree.readthedocs.io/en/latest/>`_
 
 .. _Antlr: https://www.antlr.org/
+.. _anytree: https://github.com/c0fec0de/anytree
 
 Introduction
 ------------
