@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 0.0.3
+-------------
+
+Released 2020-07-01
+
+    Fixed deployment errors.
+
+
 Version 0.0.2
 -------------
 
