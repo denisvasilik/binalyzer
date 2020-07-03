@@ -36,6 +36,8 @@ from binalyzer_core import (
     ReferenceValueProvider,
     RelativeOffsetValueProvider,
     RelativeOffsetReferenceProvider,
+    AutoSizeValueProvider,
+    StretchSizeValueProvider,
 )
 from binalyzer_template_provider import XMLTemplateParser, XMLTemplateFileParser
 from binalyzer_cli import TemplateAutoCompletion
