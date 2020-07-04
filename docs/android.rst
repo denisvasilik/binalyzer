@@ -59,9 +59,9 @@ Read Header Information
 
     >>> template.boot_img_hdr.magic.value.decode('ascii')
     'ANDROID!'
-    >>> int.from_bytes(template.boot_img_hdr.page_size.value, 'LittleEndian')
+    >>> int.from_bytes(template.boot_img_hdr.page_size.value, 'little')
     2048
-    >>> int.from_bytes(template.boot_img_hdr.kernel_size.value, 'LittleEndian')
+    >>> int.from_bytes(template.boot_img_hdr.kernel_size.value, 'little')
     27929224
 
 Extract the Device Tree

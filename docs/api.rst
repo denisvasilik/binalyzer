@@ -29,10 +29,6 @@ Template
 .. autoclass:: Template
 	:members:
 
-.. autoclass:: ResolvableValue
-	:members:
-	:inherited-members:
-
 .. autoclass:: Offset
 	:members:
 	:inherited-members:
@@ -61,7 +57,7 @@ Template
 .. class:: ByteOrder
 
     Determines the endianess of the byte-sequence the :class:`Template` is
-    bound to. Valid values are ``LittleEndian`` or ``BigEndian``.
+    bound to. Valid values are ``little`` or ``big``.
 
 .. class:: AddressingMode
 
