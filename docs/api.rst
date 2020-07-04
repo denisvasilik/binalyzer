@@ -29,41 +29,6 @@ Template
 .. autoclass:: Template
 	:members:
 
-.. autoclass:: Offset
-	:members:
-	:inherited-members:
-
-.. autoclass:: Size
-	:members:
-	:inherited-members:
-
-.. class:: Sizing
-
-    Determines whether the sizing of a :class:`Template` should be ``fix`` or
-    dynamically calculated using ``auto`` or ``stretch``.
-
-.. autoclass:: Boundary
-	:members:
-	:inherited-members:
-
-.. autoclass:: PaddingBefore
-	:members:
-	:inherited-members:
-
-.. autoclass:: PaddingAfter
-	:members:
-	:inherited-members:
-
-.. class:: ByteOrder
-
-    Determines the endianess of the byte-sequence the :class:`Template` is
-    bound to. Valid values are ``little`` or ``big``.
-
-.. class:: AddressingMode
-
-    Determines whether the addressing of the :class:`Template` is ``absolute``
-    or ``relative``.
-
 Data Provider
 -------------
 

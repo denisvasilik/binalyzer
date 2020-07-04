@@ -3,6 +3,64 @@
 Changelog
 =========
 
+Version 0.0.6
+-------------
+
+Released 2020-07-04
+
+- Added types to API:
+    - Template
+    - PropertyBase
+    - ValueProperty
+    - FunctionProperty
+    - ReferenceProperty
+    - AutoSizeValueProperty
+    - AutoSizeReferenceProperty
+    - StretchSizeProperty
+    - RelativeOffsetValueProperty
+    - RelativeOffsetReferenceProperty
+    - BindingContext
+    - BackedBindingContext
+    - PlainTemplateProvider
+    - DataProviderBase
+    - ValueProviderBase
+    - RelativeOffsetReferenceValueProvider
+    - IdentityValueConverter
+    - IntegerValueConverter
+- Added utility functions:
+    - siblings
+    - rightsiblings
+    - leftsiblings
+- Renamed byte-order values:
+    - `BigEndian` to `big`
+    - `LittleEndian` to `little`
+
+Version 0.0.3
+-------------
+
+Released 2020-07-03
+
+- Changed API:
+    - Removed types:
+        - ByteOrder
+        - AddressingMode
+        - Sizing
+        - Offset
+        - Size
+        - PaddingBefore
+        - PaddingAfter
+        - Boundary
+    - Added types:
+        - ValueProperty
+        - ReferenceProperty
+        - ValueProvider
+        - FunctionValueProvider
+        - ReferenceValueProvider
+        - RelativeOffsetValueProvider
+        - RelativeOffsetReferenceProvider
+        - AutoSizeValueProvider
+        - StretchSizeValueProvider
+
 Version 0.0.4
 -------------
 

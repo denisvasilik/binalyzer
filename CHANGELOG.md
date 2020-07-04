@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.6] - 04.07.2020
+
+- Added types to API:
+    - Template
+    - PropertyBase
+    - ValueProperty
+    - FunctionProperty
+    - ReferenceProperty
+    - AutoSizeValueProperty
+    - AutoSizeReferenceProperty
+    - StretchSizeProperty
+    - RelativeOffsetValueProperty
+    - RelativeOffsetReferenceProperty
+    - BindingContext
+    - BackedBindingContext
+    - PlainTemplateProvider
+    - DataProviderBase
+    - ValueProviderBase
+    - RelativeOffsetReferenceValueProvider
+    - IdentityValueConverter
+    - IntegerValueConverter
+- Added utility functions:
+    - siblings
+    - rightsiblings
+    - leftsiblings
+- Renamed byte-order values:
+    - `BigEndian` to `big`
+    - `LittleEndian` to `little`
+
 ## [0.0.5] - 03.07.2020
 
 - Changed API:
