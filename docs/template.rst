@@ -307,11 +307,11 @@ resolved from data other templates are bound to. Here's an example.
 
 **Byte Order**
 
-The byte order can be specified using the ``ByteOrder`` parameter. If nothing is
+The byte order can be specified using the ``byteorder`` parameter. If nothing is
 specified, the byte order defaults to ``little``.
 
 .. code-block:: xml
 
     <section name="section-0" boundary="{boundary}"></section>
-    <section name="section-1" boundary="{boundary, ByteOrder=little}"></section>
-    <section name="section-2" boundary="{boundary, ByteOrder=big}"></section>
+    <section name="section-1" boundary="{boundary, byteorder=little}"></section>
+    <section name="section-2" boundary="{boundary, byteorder=big}"></section>

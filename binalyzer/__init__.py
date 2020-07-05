@@ -51,6 +51,9 @@ from binalyzer_core import (
     StretchSizeValueProvider,
     IdentityValueConverter,
     IntegerValueConverter,
+    LEB128UnsignedBindingProperty,
+    LEB128UnsignedValueConverter,
+    LEB128UnsignedBindingValueProvider,
 )
 from binalyzer_template_provider import XMLTemplateParser, XMLTemplateFileParser
 from binalyzer_cli import TemplateAutoCompletion
