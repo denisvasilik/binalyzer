@@ -2,18 +2,43 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Binalyzer CLI <stdout>",
+            "name": "Binalyzer WASM Example",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/../binalyzer/examples/wasm/debug.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer CLI Version",
             "type": "python",
             "request": "launch",
             "program": ".venv/bin/binalyzer",
             "args": [
-                "${workspaceFolder}/examples/wasm/debug.wasm",
-                "${workspaceFolder}/examples/wasm/debug.xml",
-                "binary-data-64.data-field-1.depth-field-123"
+                "--version",
             ],
             "env": {
-                "PYTHONPATH": "binalyzer"
+                "PYTHONPATH": "${workspaceFolder}/../binalyzer_core"
             },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer Flow Extension",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/../binalyzer-rest/binalyzer_rest/flow.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer Blob Extension",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/../binalyzer-rest/binalyzer_rest/blob.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
@@ -39,12 +64,28 @@
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
         },
         {
-            "name": "Binalyzer Test",
+            "name": "Binalyzer Core Test",
             "type": "python",
             "request": "launch",
             "program": ".venv/bin/pytest",
             "args": [
-                "tests/test_cli.py::test_main"
+                "../binalyzer-core/tests/test_template.py::test_read_value"
+            ],
+            "env": {
+                "PYTHONPATH": "binalyzer"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer Template Test",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/pytest",
+            "args": [
+                "-vv",
+                "../binalyzer-cli/tests/test_cli.py::test_invalid_template"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
@@ -86,13 +127,29 @@
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
         },
         {
-            "name": "Binalyzer Unit Test",
+            "name": "Binalyzer REST Unit Test",
             "type": "python",
             "request": "launch",
             "program": ".venv/bin/pytest",
             "args": [
                 "-v",
-                "tests/test_cli.py::test_invalid_template"
+                "../binalyzer-rest/tests/test_server.py::test_transform_identity"
+            ],
+            "env": {
+                "PYTHONPATH": "binalyzer"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer Template Provider Unit Test",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/pytest",
+            "args": [
+                "-v",
+                "../binalyzer-template-provider/tests/test_binalyzer.py::test_template_with_converter"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"

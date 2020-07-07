@@ -1,7 +1,8 @@
 {
     "python.formatting.provider": "black",
-    "python.pythonPath": ".venv/bin/python3",
+    "python.venvPath": ".venv",
     "files.exclude": {
         "**/.pyc": true
-    }
+    },
+    "restructuredtext.confPath": "${workspaceFolder}/docs"
 }
