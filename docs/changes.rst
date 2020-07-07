@@ -3,6 +3,16 @@
 Changelog
 =========
 
+Version 0.0.8
+-------------
+
+Released 2020-07-07
+
+- Added WebAssembly module example
+- Added count attribute
+- Added signature attribute
+- Added hint attribute
+
 Version 0.0.7
 -------------
 
