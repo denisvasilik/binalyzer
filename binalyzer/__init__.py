@@ -19,6 +19,7 @@ __commit__ = "0000000"
 
 from binalyzer_core import (
     Binalyzer,
+    BinalyzerExtension,
     Template,
     PropertyBase,
     ValueProperty,
@@ -56,7 +57,18 @@ from binalyzer_core import (
     LEB128UnsignedBindingValueProvider,
     LEB128SizeBindingValueProvider,
 )
-from binalyzer_template_provider import XMLTemplateParser, XMLTemplateFileParser
+from binalyzer_template_provider import (
+    XMLTemplateProviderExtension,
+    XMLTemplateParser,
+    XMLTemplateFileParser,
+)
 from binalyzer_cli import TemplateAutoCompletion
 
 from .cli import cli
+
+
+def _register_extensions(binalyzer):
+    XMLTemplateProviderExtension(binalyzer)
+
+
+Binalyzer._register_extensions = _register_extensions
