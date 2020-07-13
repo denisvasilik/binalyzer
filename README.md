@@ -20,7 +20,7 @@ Binalyzer supports the following use cases:
 Binalyzer is published on [PyPI] and can be installed from there:
 
 ```sh
-pip install --upgrade binalyzer
+~$ pip3 install --upgrade binalyzer
 ```
 
 If you wish to install [Binalyzer] for development purposes, refer to [the
