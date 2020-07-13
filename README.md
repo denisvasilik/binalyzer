@@ -4,10 +4,10 @@
 [![Documentation Status](https://readthedocs.org/projects/binalyzer/badge/?version=latest)](https://binalyzer.readthedocs.io/en/latest/?badge=latest)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/denisvasilik/binalyzer)
 
-Binalyzer is a library that eases binary data handling. It uses the approach of
-describing a data format using a template. Binding the template to binary data,
-Binalyzer enables read access, write access or modification of it. No need to
-manually write a parser or seek through byte streams anymore.
+Binalyzer's goal is to ease binary data handling. It uses templates to describe
+binary data making it possible to access and modify individual data regions.
+There's no need to write binary data parsers or manually seek through binary
+streams anymore.
 
 Binalyzer supports the following use cases:
 
