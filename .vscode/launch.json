@@ -133,7 +133,7 @@
             "program": ".venv/bin/pytest",
             "args": [
                 "-v",
-                "../binalyzer-rest/tests/test_server.py::test_transform_identity"
+                "../binalyzer-rest/tests/test_server.py::test_route_transform"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
@@ -149,7 +149,7 @@
             "program": ".venv/bin/pytest",
             "args": [
                 "-v",
-                "../binalyzer-template-provider/tests/test_binalyzer.py::test_template_with_converter"
+                "../binalyzer-template-provider/tests/test_extension.py::test_from_url"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
