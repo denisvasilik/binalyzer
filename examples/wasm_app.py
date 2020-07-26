@@ -2,7 +2,7 @@ import io
 import os
 
 from anytree import find_by_attr, RenderTree
-from binalyzer import Binalyzer, Template, XMLTemplateProviderExtension
+from binalyzer import Binalyzer
 
 if __name__ == "__main__":
     cwd_path = os.path.dirname(os.path.abspath(__file__))
