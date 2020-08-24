@@ -5,18 +5,18 @@
             "name": "Binalyzer WASM Example",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/../binalyzer/examples/wasm/debug.py",
+            "program": "${workspaceFolder}/../binalyzer/examples/analysis_app.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
         },
         {
-            "name": "Binalyzer CLI Version",
+            "name": "Binalyzer Server",
             "type": "python",
             "request": "launch",
             "program": ".venv/bin/binalyzer",
             "args": [
-                "--version",
+                "rest",
             ],
             "env": {
                 "PYTHONPATH": "${workspaceFolder}/../binalyzer_core"
@@ -69,7 +69,8 @@
             "request": "launch",
             "program": ".venv/bin/pytest",
             "args": [
-                "../binalyzer-core/tests/test_template.py::test_auto_size_on_value_assignment"
+                "../binalyzer-core/tests/test_factory.py::test_template_factory",
+                "-v",
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
@@ -133,7 +134,7 @@
             "program": ".venv/bin/pytest",
             "args": [
                 "-v",
-                "../binalyzer-rest/tests/test_server.py::test_route_transform"
+                "../binalyzer-rest/tests/test_server.py::test_123"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
@@ -149,7 +150,7 @@
             "program": ".venv/bin/pytest",
             "args": [
                 "-v",
-                "../binalyzer-template-provider/tests/test_extension.py::test_from_url"
+                "../binalyzer-template-provider/tests/test_binalyzer.py::test_analysis_of_dynamic_template"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
