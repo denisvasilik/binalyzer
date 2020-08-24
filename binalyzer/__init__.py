@@ -57,11 +57,7 @@ from binalyzer_core import (
     LEB128UnsignedBindingValueProvider,
     LEB128SizeBindingValueProvider,
 )
-from binalyzer_template_provider import (
-    XMLTemplateProviderExtension,
-    XMLTemplateParser,
-    XMLTemplateFileParser,
-)
+from binalyzer_template_provider import XMLTemplateProviderExtension, XMLTemplateParser
 from binalyzer_cli import TemplateAutoCompletion
 
 from .cli import cli
