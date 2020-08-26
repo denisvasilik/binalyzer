@@ -73,14 +73,14 @@
             <field name="num_functions" size="{converter=leb128size}"></field>
             <field name="function" count="{num_functions, converter=leb128u}">
                 <field name="func_body_size" size="{converter=leb128size}"></field>
-                <field name="num_locals" size="{converter=leb128size}"></field>
-                <vector name="locals">
-                    <field name="valtype"
-                        size="{converter=leb128size}"
-                        count="{num_locals, converter=leb128u}">
-                    </field>
-                </vector>
-                <field name="instructions" size="{length, converter=leb128u}"></field>
+                <field name="func_body" size="{func_body_size, converter=leb128u}">
+                    <field name="num_locals" size="{converter=leb128size}"></field>
+                    <vector name="locals" count="{num_locals, converter=leb128u}">
+                        <field name="local_type_count" size="{converter=leb128size}"></field>
+                        <field name="local_type" size="1"></field>
+                    </vector>
+                    <field name="instructions" sizing="stretch"></field>
+                </field>
             </field>
         </blob>
     </section>
