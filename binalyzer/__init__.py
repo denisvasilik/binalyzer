@@ -52,19 +52,17 @@ from binalyzer_core import (
     StretchSizeValueProvider,
     IdentityValueConverter,
     IntegerValueConverter,
-    LEB128UnsignedBindingProperty,
-    LEB128UnsignedValueConverter,
-    LEB128UnsignedBindingValueProvider,
-    LEB128SizeBindingValueProvider,
 )
 from binalyzer_template_provider import XMLTemplateProviderExtension, XMLTemplateParser
 from binalyzer_cli import TemplateAutoCompletion
+from binalyzer_wasm import WebAssemblyExtension
 
 from .cli import cli
 
 
 def _register_extensions(binalyzer):
     XMLTemplateProviderExtension(binalyzer)
+    WebAssemblyExtension(binalyzer)
 
 
 Binalyzer._register_extensions = _register_extensions
