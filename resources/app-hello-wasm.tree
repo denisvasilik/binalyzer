@@ -1,0 +1,1443 @@
+wasm-module-format 00000000
+├── magic 00000000
+├── version 00000004
+├── type-section 00000008
+│   ├── id 00000008
+│   ├── length 00000009
+│   └── data 0000000A
+│       ├── num_types 0000000A
+│       ├── type-0 0000000B
+│       │   ├── func_type 0000000B
+│       │   ├── num_params 0000000C
+│       │   ├── params 0000000D
+│       │   │   ├── param-0 0000000D
+│       │   │   └── param-1 0000000E
+│       │   ├── num_results 0000000F
+│       │   └── results 00000010
+│       │       └── result 00000010
+│       ├── type-1 00000011
+│       │   ├── func_type 00000011
+│       │   ├── num_params 00000012
+│       │   ├── params 00000013
+│       │   │   ├── param-0 00000013
+│       │   │   ├── param-1 00000014
+│       │   │   └── param-2 00000015
+│       │   ├── num_results 00000016
+│       │   └── results 00000017
+│       │       └── result 00000017
+│       ├── type-2 00000018
+│       │   ├── func_type 00000018
+│       │   ├── num_params 00000019
+│       │   ├── params 0000001A
+│       │   │   └── param 0000001A
+│       │   ├── num_results 0000001B
+│       │   └── results 0000001C
+│       ├── type-3 0000001C
+│       │   ├── func_type 0000001C
+│       │   ├── num_params 0000001D
+│       │   ├── params 0000001E
+│       │   │   ├── param-0 0000001E
+│       │   │   └── param-1 0000001F
+│       │   ├── num_results 00000020
+│       │   └── results 00000021
+│       ├── type-4 00000021
+│       │   ├── func_type 00000021
+│       │   ├── num_params 00000022
+│       │   ├── params 00000023
+│       │   │   ├── param-0 00000023
+│       │   │   ├── param-1 00000024
+│       │   │   ├── param-2 00000025
+│       │   │   └── param-3 00000026
+│       │   ├── num_results 00000027
+│       │   └── results 00000028
+│       ├── type-5 00000028
+│       │   ├── func_type 00000028
+│       │   ├── num_params 00000029
+│       │   ├── params 0000002A
+│       │   │   ├── param-0 0000002A
+│       │   │   ├── param-1 0000002B
+│       │   │   └── param-2 0000002C
+│       │   ├── num_results 0000002D
+│       │   └── results 0000002E
+│       ├── type-6 0000002E
+│       │   ├── func_type 0000002E
+│       │   ├── num_params 0000002F
+│       │   ├── params 00000030
+│       │   │   └── param 00000030
+│       │   ├── num_results 00000031
+│       │   └── results 00000032
+│       │       └── result 00000032
+│       ├── type-7 00000033
+│       │   ├── func_type 00000033
+│       │   ├── num_params 00000034
+│       │   ├── params 00000035
+│       │   ├── num_results 00000035
+│       │   └── results 00000036
+│       ├── type-8 00000036
+│       │   ├── func_type 00000036
+│       │   ├── num_params 00000037
+│       │   ├── params 00000038
+│       │   │   └── param 00000038
+│       │   ├── num_results 00000039
+│       │   └── results 0000003A
+│       │       └── result 0000003A
+│       ├── type-9 0000003B
+│       │   ├── func_type 0000003B
+│       │   ├── num_params 0000003C
+│       │   ├── params 0000003D
+│       │   │   ├── param-0 0000003D
+│       │   │   ├── param-1 0000003E
+│       │   │   ├── param-2 0000003F
+│       │   │   ├── param-3 00000040
+│       │   │   └── param-4 00000041
+│       │   ├── num_results 00000042
+│       │   └── results 00000043
+│       ├── type-10 00000043
+│       │   ├── func_type 00000043
+│       │   ├── num_params 00000044
+│       │   ├── params 00000045
+│       │   ├── num_results 00000045
+│       │   └── results 00000046
+│       │       └── result 00000046
+│       ├── type-11 00000047
+│       │   ├── func_type 00000047
+│       │   ├── num_params 00000048
+│       │   ├── params 00000049
+│       │   │   ├── param-0 00000049
+│       │   │   ├── param-1 0000004A
+│       │   │   ├── param-2 0000004B
+│       │   │   └── param-3 0000004C
+│       │   ├── num_results 0000004D
+│       │   └── results 0000004E
+│       │       └── result 0000004E
+│       ├── type-12 0000004F
+│       │   ├── func_type 0000004F
+│       │   ├── num_params 00000050
+│       │   ├── params 00000051
+│       │   │   ├── param-0 00000051
+│       │   │   ├── param-1 00000052
+│       │   │   ├── param-2 00000053
+│       │   │   ├── param-3 00000054
+│       │   │   └── param-4 00000055
+│       │   ├── num_results 00000056
+│       │   └── results 00000057
+│       │       └── result 00000057
+│       ├── type-13 00000058
+│       │   ├── func_type 00000058
+│       │   ├── num_params 00000059
+│       │   ├── params 0000005A
+│       │   │   ├── param-0 0000005A
+│       │   │   ├── param-1 0000005B
+│       │   │   ├── param-2 0000005C
+│       │   │   ├── param-3 0000005D
+│       │   │   ├── param-4 0000005E
+│       │   │   └── param-5 0000005F
+│       │   ├── num_results 00000060
+│       │   └── results 00000061
+│       │       └── result 00000061
+│       ├── type-14 00000062
+│       │   ├── func_type 00000062
+│       │   ├── num_params 00000063
+│       │   ├── params 00000064
+│       │   │   ├── param-0 00000064
+│       │   │   ├── param-1 00000065
+│       │   │   ├── param-2 00000066
+│       │   │   ├── param-3 00000067
+│       │   │   ├── param-4 00000068
+│       │   │   ├── param-5 00000069
+│       │   │   └── param-6 0000006A
+│       │   ├── num_results 0000006B
+│       │   └── results 0000006C
+│       │       └── result 0000006C
+│       └── type-15 0000006D
+│           ├── func_type 0000006D
+│           ├── num_params 0000006E
+│           ├── params 0000006F
+│           │   ├── param-0 0000006F
+│           │   ├── param-1 00000070
+│           │   └── param-2 00000071
+│           ├── num_results 00000072
+│           └── results 00000073
+│               └── result 00000073
+├── import-section 00000074
+│   ├── id 00000074
+│   ├── length 00000075
+│   └── data 00000077
+│       ├── num 00000077
+│       ├── import_header-0 00000078
+│       │   ├── module_string_length 00000078
+│       │   ├── module_string_data 00000079
+│       │   ├── method_string_length 0000008F
+│       │   ├── method_string_data 00000090
+│       │   ├── import_kind 00000099
+│       │   └── import_signature_index 0000009A
+│       ├── import_header-1 0000009B
+│       │   ├── module_string_length 0000009B
+│       │   ├── module_string_data 0000009C
+│       │   ├── method_string_length 000000B2
+│       │   ├── method_string_data 000000B3
+│       │   ├── import_kind 000000BB
+│       │   └── import_signature_index 000000BC
+│       ├── import_header-2 000000BD
+│       │   ├── module_string_length 000000BD
+│       │   ├── module_string_data 000000BE
+│       │   ├── method_string_length 000000D4
+│       │   ├── method_string_data 000000D5
+│       │   ├── import_kind 000000E6
+│       │   └── import_signature_index 000000E7
+│       └── import_header-3 000000E8
+│           ├── module_string_length 000000E8
+│           ├── module_string_data 000000E9
+│           ├── method_string_length 000000FF
+│           ├── method_string_data 00000100
+│           ├── import_kind 0000010B
+│           └── import_signature_index 0000010C
+├── function-section 0000010D
+│   ├── id 0000010D
+│   ├── length 0000010E
+│   └── data 00000110
+│       ├── num 00000110
+│       ├── function-typeidx-0 00000112
+│       ├── function-typeidx-1 00000113
+│       ├── function-typeidx-2 00000114
+│       ├── function-typeidx-3 00000115
+│       ├── function-typeidx-4 00000116
+│       ├── function-typeidx-5 00000117
+│       ├── function-typeidx-6 00000118
+│       ├── function-typeidx-7 00000119
+│       ├── function-typeidx-8 0000011A
+│       ├── function-typeidx-9 0000011B
+│       ├── function-typeidx-10 0000011C
+│       ├── function-typeidx-11 0000011D
+│       ├── function-typeidx-12 0000011E
+│       ├── function-typeidx-13 0000011F
+│       ├── function-typeidx-14 00000120
+│       ├── function-typeidx-15 00000121
+│       ├── function-typeidx-16 00000122
+│       ├── function-typeidx-17 00000123
+│       ├── function-typeidx-18 00000124
+│       ├── function-typeidx-19 00000125
+│       ├── function-typeidx-20 00000126
+│       ├── function-typeidx-21 00000127
+│       ├── function-typeidx-22 00000128
+│       ├── function-typeidx-23 00000129
+│       ├── function-typeidx-24 0000012A
+│       ├── function-typeidx-25 0000012B
+│       ├── function-typeidx-26 0000012C
+│       ├── function-typeidx-27 0000012D
+│       ├── function-typeidx-28 0000012E
+│       ├── function-typeidx-29 0000012F
+│       ├── function-typeidx-30 00000130
+│       ├── function-typeidx-31 00000131
+│       ├── function-typeidx-32 00000132
+│       ├── function-typeidx-33 00000133
+│       ├── function-typeidx-34 00000134
+│       ├── function-typeidx-35 00000135
+│       ├── function-typeidx-36 00000136
+│       ├── function-typeidx-37 00000137
+│       ├── function-typeidx-38 00000138
+│       ├── function-typeidx-39 00000139
+│       ├── function-typeidx-40 0000013A
+│       ├── function-typeidx-41 0000013B
+│       ├── function-typeidx-42 0000013C
+│       ├── function-typeidx-43 0000013D
+│       ├── function-typeidx-44 0000013E
+│       ├── function-typeidx-45 0000013F
+│       ├── function-typeidx-46 00000140
+│       ├── function-typeidx-47 00000141
+│       ├── function-typeidx-48 00000142
+│       ├── function-typeidx-49 00000143
+│       ├── function-typeidx-50 00000144
+│       ├── function-typeidx-51 00000145
+│       ├── function-typeidx-52 00000146
+│       ├── function-typeidx-53 00000147
+│       ├── function-typeidx-54 00000148
+│       ├── function-typeidx-55 00000149
+│       ├── function-typeidx-56 0000014A
+│       ├── function-typeidx-57 0000014B
+│       ├── function-typeidx-58 0000014C
+│       ├── function-typeidx-59 0000014D
+│       ├── function-typeidx-60 0000014E
+│       ├── function-typeidx-61 0000014F
+│       ├── function-typeidx-62 00000150
+│       ├── function-typeidx-63 00000151
+│       ├── function-typeidx-64 00000152
+│       ├── function-typeidx-65 00000153
+│       ├── function-typeidx-66 00000154
+│       ├── function-typeidx-67 00000155
+│       ├── function-typeidx-68 00000156
+│       ├── function-typeidx-69 00000157
+│       ├── function-typeidx-70 00000158
+│       ├── function-typeidx-71 00000159
+│       ├── function-typeidx-72 0000015A
+│       ├── function-typeidx-73 0000015B
+│       ├── function-typeidx-74 0000015C
+│       ├── function-typeidx-75 0000015D
+│       ├── function-typeidx-76 0000015E
+│       ├── function-typeidx-77 0000015F
+│       ├── function-typeidx-78 00000160
+│       ├── function-typeidx-79 00000161
+│       ├── function-typeidx-80 00000162
+│       ├── function-typeidx-81 00000163
+│       ├── function-typeidx-82 00000164
+│       ├── function-typeidx-83 00000165
+│       ├── function-typeidx-84 00000166
+│       ├── function-typeidx-85 00000167
+│       ├── function-typeidx-86 00000168
+│       ├── function-typeidx-87 00000169
+│       ├── function-typeidx-88 0000016A
+│       ├── function-typeidx-89 0000016B
+│       ├── function-typeidx-90 0000016C
+│       ├── function-typeidx-91 0000016D
+│       ├── function-typeidx-92 0000016E
+│       ├── function-typeidx-93 0000016F
+│       ├── function-typeidx-94 00000170
+│       ├── function-typeidx-95 00000171
+│       ├── function-typeidx-96 00000172
+│       ├── function-typeidx-97 00000173
+│       ├── function-typeidx-98 00000174
+│       ├── function-typeidx-99 00000175
+│       ├── function-typeidx-100 00000176
+│       ├── function-typeidx-101 00000177
+│       ├── function-typeidx-102 00000178
+│       ├── function-typeidx-103 00000179
+│       ├── function-typeidx-104 0000017A
+│       ├── function-typeidx-105 0000017B
+│       ├── function-typeidx-106 0000017C
+│       ├── function-typeidx-107 0000017D
+│       ├── function-typeidx-108 0000017E
+│       ├── function-typeidx-109 0000017F
+│       ├── function-typeidx-110 00000180
+│       ├── function-typeidx-111 00000181
+│       ├── function-typeidx-112 00000182
+│       ├── function-typeidx-113 00000183
+│       ├── function-typeidx-114 00000184
+│       ├── function-typeidx-115 00000185
+│       ├── function-typeidx-116 00000186
+│       ├── function-typeidx-117 00000187
+│       ├── function-typeidx-118 00000188
+│       ├── function-typeidx-119 00000189
+│       ├── function-typeidx-120 0000018A
+│       ├── function-typeidx-121 0000018B
+│       ├── function-typeidx-122 0000018C
+│       ├── function-typeidx-123 0000018D
+│       ├── function-typeidx-124 0000018E
+│       ├── function-typeidx-125 0000018F
+│       ├── function-typeidx-126 00000190
+│       ├── function-typeidx-127 00000191
+│       ├── function-typeidx-128 00000192
+│       ├── function-typeidx-129 00000193
+│       ├── function-typeidx-130 00000194
+│       ├── function-typeidx-131 00000195
+│       ├── function-typeidx-132 00000196
+│       ├── function-typeidx-133 00000197
+│       ├── function-typeidx-134 00000198
+│       ├── function-typeidx-135 00000199
+│       ├── function-typeidx-136 0000019A
+│       ├── function-typeidx-137 0000019B
+│       ├── function-typeidx-138 0000019C
+│       ├── function-typeidx-139 0000019D
+│       ├── function-typeidx-140 0000019E
+│       ├── function-typeidx-141 0000019F
+│       ├── function-typeidx-142 000001A0
+│       ├── function-typeidx-143 000001A1
+│       ├── function-typeidx-144 000001A2
+│       └── function-typeidx-145 000001A3
+├── table-section 000001A4
+│   ├── id 000001A4
+│   ├── length 000001A5
+│   └── data 000001A6
+├── memory-section 000001AB
+│   ├── id 000001AB
+│   ├── length 000001AC
+│   └── data 000001AD
+├── global-section 000001B0
+│   ├── id 000001B0
+│   ├── length 000001B1
+│   └── data 000001B2
+├── export-section 000001CB
+│   ├── id 000001CB
+│   ├── length 000001CC
+│   └── data 000001CD
+├── element-section 00000215
+│   ├── id 00000215
+│   ├── length 00000216
+│   └── data 00000217
+├── code-section 0000027C
+│   ├── id 0000027C
+│   ├── length 0000027D
+│   └── code 00000280
+│       ├── num_functions 00000280
+│       ├── function-0 00000282
+│       │   ├── func_body_size 00000282
+│       │   └── func_body 00000284
+│       │       ├── num_locals 00000284
+│       │       ├── locals 00000285
+│       │       │   ├── local_type_count 00000285
+│       │       │   └── local_type 00000286
+│       │       └── instructions 00000287
+│       ├── function-1 00001AC4
+│       │   ├── func_body_size 00001AC4
+│       │   └── func_body 00001AC6
+│       │       ├── num_locals 00001AC6
+│       │       ├── locals 00001AC7
+│       │       │   ├── local_type_count 00001AC7
+│       │       │   └── local_type 00001AC8
+│       │       └── instructions 00001AC9
+│       ├── function-2 000021B6
+│       │   ├── func_body_size 000021B6
+│       │   └── func_body 000021B8
+│       │       ├── num_locals 000021B8
+│       │       ├── locals 000021B9
+│       │       │   ├── local_type_count 000021B9
+│       │       │   └── local_type 000021BA
+│       │       └── instructions 000021BB
+│       ├── function-3 00002821
+│       │   ├── func_body_size 00002821
+│       │   └── func_body 00002823
+│       │       ├── num_locals 00002823
+│       │       ├── locals-0 00002824
+│       │       │   ├── local_type_count 00002824
+│       │       │   └── local_type 00002825
+│       │       ├── locals-1 00002826
+│       │       │   ├── local_type_count 00002826
+│       │       │   └── local_type 00002827
+│       │       └── instructions 00002828
+│       ├── function-4 00002EE2
+│       │   ├── func_body_size 00002EE2
+│       │   └── func_body 00002EE4
+│       │       ├── num_locals 00002EE4
+│       │       ├── locals 00002EE5
+│       │       │   ├── local_type_count 00002EE5
+│       │       │   └── local_type 00002EE6
+│       │       └── instructions 00002EE7
+│       ├── function-5 00003474
+│       │   ├── func_body_size 00003474
+│       │   └── func_body 00003476
+│       │       ├── num_locals 00003476
+│       │       ├── locals 00003477
+│       │       │   ├── local_type_count 00003477
+│       │       │   └── local_type 00003478
+│       │       └── instructions 00003479
+│       ├── function-6 0000395B
+│       │   ├── func_body_size 0000395B
+│       │   └── func_body 0000395D
+│       │       ├── num_locals 0000395D
+│       │       ├── locals 0000395E
+│       │       │   ├── local_type_count 0000395E
+│       │       │   └── local_type 0000395F
+│       │       └── instructions 00003960
+│       ├── function-7 00003F25
+│       │   ├── func_body_size 00003F25
+│       │   └── func_body 00003F27
+│       │       ├── num_locals 00003F27
+│       │       ├── locals-0 00003F28
+│       │       │   ├── local_type_count 00003F28
+│       │       │   └── local_type 00003F29
+│       │       ├── locals-1 00003F2A
+│       │       │   ├── local_type_count 00003F2A
+│       │       │   └── local_type 00003F2B
+│       │       └── instructions 00003F2C
+│       ├── function-8 00004435
+│       │   ├── func_body_size 00004435
+│       │   └── func_body 00004437
+│       │       ├── num_locals 00004437
+│       │       ├── locals 00004438
+│       │       │   ├── local_type_count 00004438
+│       │       │   └── local_type 00004439
+│       │       └── instructions 0000443A
+│       ├── function-9 0000486A
+│       │   ├── func_body_size 0000486A
+│       │   └── func_body 0000486C
+│       │       ├── num_locals 0000486C
+│       │       ├── locals 0000486D
+│       │       │   ├── local_type_count 0000486D
+│       │       │   └── local_type 0000486E
+│       │       └── instructions 0000486F
+│       ├── function-10 00004C7F
+│       │   ├── func_body_size 00004C7F
+│       │   └── func_body 00004C81
+│       │       ├── num_locals 00004C81
+│       │       ├── locals-0 00004C82
+│       │       │   ├── local_type_count 00004C82
+│       │       │   └── local_type 00004C83
+│       │       ├── locals-1 00004C84
+│       │       │   ├── local_type_count 00004C84
+│       │       │   └── local_type 00004C85
+│       │       └── instructions 00004C86
+│       ├── function-11 000050AE
+│       │   ├── func_body_size 000050AE
+│       │   └── func_body 000050B0
+│       │       ├── num_locals 000050B0
+│       │       ├── locals-0 000050B1
+│       │       │   ├── local_type_count 000050B1
+│       │       │   └── local_type 000050B2
+│       │       ├── locals-1 000050B3
+│       │       │   ├── local_type_count 000050B3
+│       │       │   └── local_type 000050B4
+│       │       └── instructions 000050B5
+│       ├── function-12 00005479
+│       │   ├── func_body_size 00005479
+│       │   └── func_body 0000547B
+│       │       ├── num_locals 0000547B
+│       │       ├── locals 0000547C
+│       │       │   ├── local_type_count 0000547C
+│       │       │   └── local_type 0000547D
+│       │       └── instructions 0000547E
+│       ├── function-13 000057BD
+│       │   ├── func_body_size 000057BD
+│       │   └── func_body 000057BF
+│       │       ├── num_locals 000057BF
+│       │       ├── locals 000057C0
+│       │       │   ├── local_type_count 000057C0
+│       │       │   └── local_type 000057C1
+│       │       └── instructions 000057C2
+│       ├── function-14 00005B71
+│       │   ├── func_body_size 00005B71
+│       │   └── func_body 00005B73
+│       │       ├── num_locals 00005B73
+│       │       ├── locals 00005B74
+│       │       │   ├── local_type_count 00005B74
+│       │       │   └── local_type 00005B75
+│       │       └── instructions 00005B76
+│       ├── function-15 00005E78
+│       │   ├── func_body_size 00005E78
+│       │   └── func_body 00005E7A
+│       │       ├── num_locals 00005E7A
+│       │       ├── locals 00005E7B
+│       │       │   ├── local_type_count 00005E7B
+│       │       │   └── local_type 00005E7C
+│       │       └── instructions 00005E7D
+│       ├── function-16 00006160
+│       │   ├── func_body_size 00006160
+│       │   └── func_body 00006162
+│       │       ├── num_locals 00006162
+│       │       ├── locals-0 00006163
+│       │       │   ├── local_type_count 00006163
+│       │       │   └── local_type 00006164
+│       │       ├── locals-1 00006165
+│       │       │   ├── local_type_count 00006165
+│       │       │   └── local_type 00006166
+│       │       └── instructions 00006167
+│       ├── function-17 0000641B
+│       │   ├── func_body_size 0000641B
+│       │   └── func_body 0000641D
+│       │       ├── num_locals 0000641D
+│       │       ├── locals 0000641E
+│       │       │   ├── local_type_count 0000641E
+│       │       │   └── local_type 0000641F
+│       │       └── instructions 00006420
+│       ├── function-18 0000662F
+│       │   ├── func_body_size 0000662F
+│       │   └── func_body 00006631
+│       │       ├── num_locals 00006631
+│       │       ├── locals 00006632
+│       │       │   ├── local_type_count 00006632
+│       │       │   └── local_type 00006633
+│       │       └── instructions 00006634
+│       ├── function-19 0000684B
+│       │   ├── func_body_size 0000684B
+│       │   └── func_body 0000684D
+│       │       ├── num_locals 0000684D
+│       │       ├── locals 0000684E
+│       │       │   ├── local_type_count 0000684E
+│       │       │   └── local_type 0000684F
+│       │       └── instructions 00006850
+│       ├── function-20 00006A1B
+│       │   ├── func_body_size 00006A1B
+│       │   └── func_body 00006A1D
+│       │       ├── num_locals 00006A1D
+│       │       ├── locals 00006A1E
+│       │       │   ├── local_type_count 00006A1E
+│       │       │   └── local_type 00006A1F
+│       │       └── instructions 00006A20
+│       ├── function-21 00006BB2
+│       │   ├── func_body_size 00006BB2
+│       │   └── func_body 00006BB4
+│       │       ├── num_locals 00006BB4
+│       │       ├── locals 00006BB5
+│       │       │   ├── local_type_count 00006BB5
+│       │       │   └── local_type 00006BB6
+│       │       └── instructions 00006BB7
+│       ├── function-22 00006D50
+│       │   ├── func_body_size 00006D50
+│       │   └── func_body 00006D52
+│       │       ├── num_locals 00006D52
+│       │       ├── locals 00006D53
+│       │       │   ├── local_type_count 00006D53
+│       │       │   └── local_type 00006D54
+│       │       └── instructions 00006D55
+│       ├── function-23 00006EE5
+│       │   ├── func_body_size 00006EE5
+│       │   └── func_body 00006EE7
+│       │       ├── num_locals 00006EE7
+│       │       ├── locals 00006EE8
+│       │       │   ├── local_type_count 00006EE8
+│       │       │   └── local_type 00006EE9
+│       │       └── instructions 00006EEA
+│       ├── function-24 00007046
+│       │   ├── func_body_size 00007046
+│       │   └── func_body 00007048
+│       │       ├── num_locals 00007048
+│       │       ├── locals-0 00007049
+│       │       │   ├── local_type_count 00007049
+│       │       │   └── local_type 0000704A
+│       │       ├── locals-1 0000704B
+│       │       │   ├── local_type_count 0000704B
+│       │       │   └── local_type 0000704C
+│       │       └── instructions 0000704D
+│       ├── function-25 000071E1
+│       │   ├── func_body_size 000071E1
+│       │   └── func_body 000071E3
+│       │       ├── num_locals 000071E3
+│       │       ├── locals 000071E4
+│       │       │   ├── local_type_count 000071E4
+│       │       │   └── local_type 000071E5
+│       │       └── instructions 000071E6
+│       ├── function-26 0000737A
+│       │   ├── func_body_size 0000737A
+│       │   └── func_body 0000737C
+│       │       ├── num_locals 0000737C
+│       │       ├── locals 0000737D
+│       │       │   ├── local_type_count 0000737D
+│       │       │   └── local_type 0000737E
+│       │       └── instructions 0000737F
+│       ├── function-27 000074D0
+│       │   ├── func_body_size 000074D0
+│       │   └── func_body 000074D2
+│       │       ├── num_locals 000074D2
+│       │       ├── locals 000074D3
+│       │       │   ├── local_type_count 000074D3
+│       │       │   └── local_type 000074D4
+│       │       └── instructions 000074D5
+│       ├── function-28 0000761D
+│       │   ├── func_body_size 0000761D
+│       │   └── func_body 0000761F
+│       │       ├── num_locals 0000761F
+│       │       ├── locals-0 00007620
+│       │       │   ├── local_type_count 00007620
+│       │       │   └── local_type 00007621
+│       │       ├── locals-1 00007622
+│       │       │   ├── local_type_count 00007622
+│       │       │   └── local_type 00007623
+│       │       └── instructions 00007624
+│       ├── function-29 00007781
+│       │   ├── func_body_size 00007781
+│       │   └── func_body 00007783
+│       │       ├── num_locals 00007783
+│       │       ├── locals 00007784
+│       │       │   ├── local_type_count 00007784
+│       │       │   └── local_type 00007785
+│       │       └── instructions 00007786
+│       ├── function-30 000078CC
+│       │   ├── func_body_size 000078CC
+│       │   └── func_body 000078CE
+│       │       ├── num_locals 000078CE
+│       │       ├── locals-0 000078CF
+│       │       │   ├── local_type_count 000078CF
+│       │       │   └── local_type 000078D0
+│       │       ├── locals-1 000078D1
+│       │       │   ├── local_type_count 000078D1
+│       │       │   └── local_type 000078D2
+│       │       └── instructions 000078D3
+│       ├── function-31 00007A54
+│       │   ├── func_body_size 00007A54
+│       │   └── func_body 00007A56
+│       │       ├── num_locals 00007A56
+│       │       ├── locals-0 00007A57
+│       │       │   ├── local_type_count 00007A57
+│       │       │   └── local_type 00007A58
+│       │       ├── locals-1 00007A59
+│       │       │   ├── local_type_count 00007A59
+│       │       │   └── local_type 00007A5A
+│       │       └── instructions 00007A5B
+│       ├── function-32 00007B96
+│       │   ├── func_body_size 00007B96
+│       │   └── func_body 00007B98
+│       │       ├── num_locals 00007B98
+│       │       ├── locals 00007B99
+│       │       │   ├── local_type_count 00007B99
+│       │       │   └── local_type 00007B9A
+│       │       └── instructions 00007B9B
+│       ├── function-33 00007CD3
+│       │   ├── func_body_size 00007CD3
+│       │   └── func_body 00007CD5
+│       │       ├── num_locals 00007CD5
+│       │       ├── locals-0 00007CD6
+│       │       │   ├── local_type_count 00007CD6
+│       │       │   └── local_type 00007CD7
+│       │       ├── locals-1 00007CD8
+│       │       │   ├── local_type_count 00007CD8
+│       │       │   └── local_type 00007CD9
+│       │       └── instructions 00007CDA
+│       ├── function-34 00007E2B
+│       │   ├── func_body_size 00007E2B
+│       │   └── func_body 00007E2D
+│       │       ├── num_locals 00007E2D
+│       │       ├── locals 00007E2E
+│       │       │   ├── local_type_count 00007E2E
+│       │       │   └── local_type 00007E2F
+│       │       └── instructions 00007E30
+│       ├── function-35 00007F6D
+│       │   ├── func_body_size 00007F6D
+│       │   └── func_body 00007F6F
+│       │       ├── num_locals 00007F6F
+│       │       ├── locals 00007F70
+│       │       │   ├── local_type_count 00007F70
+│       │       │   └── local_type 00007F71
+│       │       └── instructions 00007F72
+│       ├── function-36 000080A6
+│       │   ├── func_body_size 000080A6
+│       │   └── func_body 000080A8
+│       │       ├── num_locals 000080A8
+│       │       ├── locals 000080A9
+│       │       │   ├── local_type_count 000080A9
+│       │       │   └── local_type 000080AA
+│       │       └── instructions 000080AB
+│       ├── function-37 000081D8
+│       │   ├── func_body_size 000081D8
+│       │   └── func_body 000081DA
+│       │       ├── num_locals 000081DA
+│       │       ├── locals 000081DB
+│       │       │   ├── local_type_count 000081DB
+│       │       │   └── local_type 000081DC
+│       │       └── instructions 000081DD
+│       ├── function-38 00008303
+│       │   ├── func_body_size 00008303
+│       │   └── func_body 00008305
+│       │       ├── num_locals 00008305
+│       │       ├── locals 00008306
+│       │       │   ├── local_type_count 00008306
+│       │       │   └── local_type 00008307
+│       │       └── instructions 00008308
+│       ├── function-39 00008438
+│       │   ├── func_body_size 00008438
+│       │   └── func_body 0000843A
+│       │       ├── num_locals 0000843A
+│       │       ├── locals-0 0000843B
+│       │       │   ├── local_type_count 0000843B
+│       │       │   └── local_type 0000843C
+│       │       ├── locals-1 0000843D
+│       │       │   ├── local_type_count 0000843D
+│       │       │   └── local_type 0000843E
+│       │       └── instructions 0000843F
+│       ├── function-40 0000857F
+│       │   ├── func_body_size 0000857F
+│       │   └── func_body 00008581
+│       │       ├── num_locals 00008581
+│       │       ├── locals 00008582
+│       │       │   ├── local_type_count 00008582
+│       │       │   └── local_type 00008583
+│       │       └── instructions 00008584
+│       ├── function-41 000086D6
+│       │   ├── func_body_size 000086D6
+│       │   └── func_body 000086D8
+│       │       ├── num_locals 000086D8
+│       │       ├── locals 000086D9
+│       │       │   ├── local_type_count 000086D9
+│       │       │   └── local_type 000086DA
+│       │       └── instructions 000086DB
+│       ├── function-42 000087FA
+│       │   ├── func_body_size 000087FA
+│       │   └── func_body 000087FC
+│       │       ├── num_locals 000087FC
+│       │       ├── locals 000087FD
+│       │       │   ├── local_type_count 000087FD
+│       │       │   └── local_type 000087FE
+│       │       └── instructions 000087FF
+│       ├── function-43 000088F8
+│       │   ├── func_body_size 000088F8
+│       │   └── func_body 000088FA
+│       │       ├── num_locals 000088FA
+│       │       ├── locals 000088FB
+│       │       │   ├── local_type_count 000088FB
+│       │       │   └── local_type 000088FC
+│       │       └── instructions 000088FD
+│       ├── function-44 000089F3
+│       │   ├── func_body_size 000089F3
+│       │   └── func_body 000089F5
+│       │       ├── num_locals 000089F5
+│       │       ├── locals 000089F6
+│       │       │   ├── local_type_count 000089F6
+│       │       │   └── local_type 000089F7
+│       │       └── instructions 000089F8
+│       ├── function-45 00008AFB
+│       │   ├── func_body_size 00008AFB
+│       │   └── func_body 00008AFD
+│       │       ├── num_locals 00008AFD
+│       │       ├── locals 00008AFE
+│       │       │   ├── local_type_count 00008AFE
+│       │       │   └── local_type 00008AFF
+│       │       └── instructions 00008B00
+│       ├── function-46 00008C15
+│       │   ├── func_body_size 00008C15
+│       │   └── func_body 00008C17
+│       │       ├── num_locals 00008C17
+│       │       ├── locals 00008C18
+│       │       │   ├── local_type_count 00008C18
+│       │       │   └── local_type 00008C19
+│       │       └── instructions 00008C1A
+│       ├── function-47 00008D0A
+│       │   ├── func_body_size 00008D0A
+│       │   └── func_body 00008D0C
+│       │       ├── num_locals 00008D0C
+│       │       ├── locals 00008D0D
+│       │       │   ├── local_type_count 00008D0D
+│       │       │   └── local_type 00008D0E
+│       │       └── instructions 00008D0F
+│       ├── function-48 00008DFF
+│       │   ├── func_body_size 00008DFF
+│       │   └── func_body 00008E01
+│       │       ├── num_locals 00008E01
+│       │       ├── locals 00008E02
+│       │       │   ├── local_type_count 00008E02
+│       │       │   └── local_type 00008E03
+│       │       └── instructions 00008E04
+│       ├── function-49 00008EDC
+│       │   ├── func_body_size 00008EDC
+│       │   └── func_body 00008EDE
+│       │       ├── num_locals 00008EDE
+│       │       ├── locals 00008EDF
+│       │       │   ├── local_type_count 00008EDF
+│       │       │   └── local_type 00008EE0
+│       │       └── instructions 00008EE1
+│       ├── function-50 00008FBA
+│       │   ├── func_body_size 00008FBA
+│       │   └── func_body 00008FBC
+│       │       ├── num_locals 00008FBC
+│       │       ├── locals 00008FBD
+│       │       │   ├── local_type_count 00008FBD
+│       │       │   └── local_type 00008FBE
+│       │       └── instructions 00008FBF
+│       ├── function-51 0000908C
+│       │   ├── func_body_size 0000908C
+│       │   └── func_body 0000908E
+│       │       ├── num_locals 0000908E
+│       │       ├── locals 0000908F
+│       │       │   ├── local_type_count 0000908F
+│       │       │   └── local_type 00009090
+│       │       └── instructions 00009091
+│       ├── function-52 00009146
+│       │   ├── func_body_size 00009146
+│       │   └── func_body 00009148
+│       │       ├── num_locals 00009148
+│       │       ├── locals 00009149
+│       │       │   ├── local_type_count 00009149
+│       │       │   └── local_type 0000914A
+│       │       └── instructions 0000914B
+│       ├── function-53 00009233
+│       │   ├── func_body_size 00009233
+│       │   └── func_body 00009235
+│       │       ├── num_locals 00009235
+│       │       ├── locals 00009236
+│       │       │   ├── local_type_count 00009236
+│       │       │   └── local_type 00009237
+│       │       └── instructions 00009238
+│       ├── function-54 0000930B
+│       │   ├── func_body_size 0000930B
+│       │   └── func_body 0000930D
+│       │       ├── num_locals 0000930D
+│       │       ├── locals 0000930E
+│       │       │   ├── local_type_count 0000930E
+│       │       │   └── local_type 0000930F
+│       │       └── instructions 00009310
+│       ├── function-55 000093BB
+│       │   ├── func_body_size 000093BB
+│       │   └── func_body 000093BD
+│       │       ├── num_locals 000093BD
+│       │       ├── locals 000093BE
+│       │       │   ├── local_type_count 000093BE
+│       │       │   └── local_type 000093BF
+│       │       └── instructions 000093C0
+│       ├── function-56 00009461
+│       │   ├── func_body_size 00009461
+│       │   └── func_body 00009463
+│       │       ├── num_locals 00009463
+│       │       ├── locals 00009464
+│       │       │   ├── local_type_count 00009464
+│       │       │   └── local_type 00009465
+│       │       └── instructions 00009466
+│       ├── function-57 0000950E
+│       │   ├── func_body_size 0000950E
+│       │   └── func_body 00009510
+│       │       ├── num_locals 00009510
+│       │       ├── locals 00009511
+│       │       │   ├── local_type_count 00009511
+│       │       │   └── local_type 00009512
+│       │       └── instructions 00009513
+│       ├── function-58 000095C8
+│       │   ├── func_body_size 000095C8
+│       │   └── func_body 000095CA
+│       │       ├── num_locals 000095CA
+│       │       └── instructions 000095CB
+│       ├── function-59 00009660
+│       │   ├── func_body_size 00009660
+│       │   └── func_body 00009662
+│       │       ├── num_locals 00009662
+│       │       ├── locals 00009663
+│       │       │   ├── local_type_count 00009663
+│       │       │   └── local_type 00009664
+│       │       └── instructions 00009665
+│       ├── function-60 000096E7
+│       │   ├── func_body_size 000096E7
+│       │   └── func_body 000096E9
+│       │       ├── num_locals 000096E9
+│       │       ├── locals 000096EA
+│       │       │   ├── local_type_count 000096EA
+│       │       │   └── local_type 000096EB
+│       │       └── instructions 000096EC
+│       ├── function-61 0000976D
+│       │   ├── func_body_size 0000976D
+│       │   └── func_body 0000976F
+│       │       ├── num_locals 0000976F
+│       │       ├── locals 00009770
+│       │       │   ├── local_type_count 00009770
+│       │       │   └── local_type 00009771
+│       │       └── instructions 00009772
+│       ├── function-62 000097FA
+│       │   ├── func_body_size 000097FA
+│       │   └── func_body 000097FC
+│       │       ├── num_locals 000097FC
+│       │       ├── locals 000097FD
+│       │       │   ├── local_type_count 000097FD
+│       │       │   └── local_type 000097FE
+│       │       └── instructions 000097FF
+│       ├── function-63 00009893
+│       │   ├── func_body_size 00009893
+│       │   └── func_body 00009895
+│       │       ├── num_locals 00009895
+│       │       ├── locals 00009896
+│       │       │   ├── local_type_count 00009896
+│       │       │   └── local_type 00009897
+│       │       └── instructions 00009898
+│       ├── function-64 00009917
+│       │   ├── func_body_size 00009917
+│       │   └── func_body 00009919
+│       │       ├── num_locals 00009919
+│       │       ├── locals-0 0000991A
+│       │       │   ├── local_type_count 0000991A
+│       │       │   └── local_type 0000991B
+│       │       ├── locals-1 0000991C
+│       │       │   ├── local_type_count 0000991C
+│       │       │   └── local_type 0000991D
+│       │       └── instructions 0000991E
+│       ├── function-65 000099A3
+│       │   ├── func_body_size 000099A3
+│       │   └── func_body 000099A5
+│       │       ├── num_locals 000099A5
+│       │       ├── locals-0 000099A6
+│       │       │   ├── local_type_count 000099A6
+│       │       │   └── local_type 000099A7
+│       │       ├── locals-1 000099A8
+│       │       │   ├── local_type_count 000099A8
+│       │       │   └── local_type 000099A9
+│       │       └── instructions 000099AA
+│       ├── function-66 00009A2A
+│       │   ├── func_body_size 00009A2A
+│       │   └── func_body 00009A2C
+│       │       ├── num_locals 00009A2C
+│       │       ├── locals 00009A2D
+│       │       │   ├── local_type_count 00009A2D
+│       │       │   └── local_type 00009A2E
+│       │       └── instructions 00009A2F
+│       ├── function-67 00009AC0
+│       │   ├── func_body_size 00009AC0
+│       │   └── func_body 00009AC2
+│       │       ├── num_locals 00009AC2
+│       │       ├── locals 00009AC3
+│       │       │   ├── local_type_count 00009AC3
+│       │       │   └── local_type 00009AC4
+│       │       └── instructions 00009AC5
+│       ├── function-68 00009B8E
+│       │   ├── func_body_size 00009B8E
+│       │   └── func_body 00009B90
+│       │       ├── num_locals 00009B90
+│       │       ├── locals 00009B91
+│       │       │   ├── local_type_count 00009B91
+│       │       │   └── local_type 00009B92
+│       │       └── instructions 00009B93
+│       ├── function-69 00009C18
+│       │   ├── func_body_size 00009C18
+│       │   └── func_body 00009C19
+│       │       ├── num_locals 00009C19
+│       │       ├── locals 00009C1A
+│       │       │   ├── local_type_count 00009C1A
+│       │       │   └── local_type 00009C1B
+│       │       └── instructions 00009C1C
+│       ├── function-70 00009C8D
+│       │   ├── func_body_size 00009C8D
+│       │   └── func_body 00009C8E
+│       │       ├── num_locals 00009C8E
+│       │       ├── locals 00009C8F
+│       │       │   ├── local_type_count 00009C8F
+│       │       │   └── local_type 00009C90
+│       │       └── instructions 00009C91
+│       ├── function-71 00009D0B
+│       │   ├── func_body_size 00009D0B
+│       │   └── func_body 00009D0C
+│       │       ├── num_locals 00009D0C
+│       │       ├── locals 00009D0D
+│       │       │   ├── local_type_count 00009D0D
+│       │       │   └── local_type 00009D0E
+│       │       └── instructions 00009D0F
+│       ├── function-72 00009D78
+│       │   ├── func_body_size 00009D78
+│       │   └── func_body 00009D79
+│       │       ├── num_locals 00009D79
+│       │       ├── locals 00009D7A
+│       │       │   ├── local_type_count 00009D7A
+│       │       │   └── local_type 00009D7B
+│       │       └── instructions 00009D7C
+│       ├── function-73 00009DE5
+│       │   ├── func_body_size 00009DE5
+│       │   └── func_body 00009DE6
+│       │       ├── num_locals 00009DE6
+│       │       ├── locals 00009DE7
+│       │       │   ├── local_type_count 00009DE7
+│       │       │   └── local_type 00009DE8
+│       │       └── instructions 00009DE9
+│       ├── function-74 00009E52
+│       │   ├── func_body_size 00009E52
+│       │   └── func_body 00009E53
+│       │       ├── num_locals 00009E53
+│       │       ├── locals 00009E54
+│       │       │   ├── local_type_count 00009E54
+│       │       │   └── local_type 00009E55
+│       │       └── instructions 00009E56
+│       ├── function-75 00009EA9
+│       │   ├── func_body_size 00009EA9
+│       │   └── func_body 00009EAA
+│       │       ├── num_locals 00009EAA
+│       │       ├── locals 00009EAB
+│       │       │   ├── local_type_count 00009EAB
+│       │       │   └── local_type 00009EAC
+│       │       └── instructions 00009EAD
+│       ├── function-76 00009F03
+│       │   ├── func_body_size 00009F03
+│       │   └── func_body 00009F04
+│       │       ├── num_locals 00009F04
+│       │       ├── locals 00009F05
+│       │       │   ├── local_type_count 00009F05
+│       │       │   └── local_type 00009F06
+│       │       └── instructions 00009F07
+│       ├── function-77 00009F5D
+│       │   ├── func_body_size 00009F5D
+│       │   └── func_body 00009F5E
+│       │       ├── num_locals 00009F5E
+│       │       ├── locals 00009F5F
+│       │       │   ├── local_type_count 00009F5F
+│       │       │   └── local_type 00009F60
+│       │       └── instructions 00009F61
+│       ├── function-78 00009FBB
+│       │   ├── func_body_size 00009FBB
+│       │   └── func_body 00009FBC
+│       │       ├── num_locals 00009FBC
+│       │       ├── locals 00009FBD
+│       │       │   ├── local_type_count 00009FBD
+│       │       │   └── local_type 00009FBE
+│       │       └── instructions 00009FBF
+│       ├── function-79 0000A015
+│       │   ├── func_body_size 0000A015
+│       │   └── func_body 0000A016
+│       │       ├── num_locals 0000A016
+│       │       ├── locals 0000A017
+│       │       │   ├── local_type_count 0000A017
+│       │       │   └── local_type 0000A018
+│       │       └── instructions 0000A019
+│       ├── function-80 0000A06C
+│       │   ├── func_body_size 0000A06C
+│       │   └── func_body 0000A06D
+│       │       ├── num_locals 0000A06D
+│       │       ├── locals 0000A06E
+│       │       │   ├── local_type_count 0000A06E
+│       │       │   └── local_type 0000A06F
+│       │       └── instructions 0000A070
+│       ├── function-81 0000A0C3
+│       │   ├── func_body_size 0000A0C3
+│       │   └── func_body 0000A0C4
+│       │       ├── num_locals 0000A0C4
+│       │       ├── locals 0000A0C5
+│       │       │   ├── local_type_count 0000A0C5
+│       │       │   └── local_type 0000A0C6
+│       │       └── instructions 0000A0C7
+│       ├── function-82 0000A116
+│       │   ├── func_body_size 0000A116
+│       │   └── func_body 0000A117
+│       │       ├── num_locals 0000A117
+│       │       └── instructions 0000A118
+│       ├── function-83 0000A172
+│       │   ├── func_body_size 0000A172
+│       │   └── func_body 0000A173
+│       │       ├── num_locals 0000A173
+│       │       ├── locals 0000A174
+│       │       │   ├── local_type_count 0000A174
+│       │       │   └── local_type 0000A175
+│       │       └── instructions 0000A176
+│       ├── function-84 0000A1CF
+│       │   ├── func_body_size 0000A1CF
+│       │   └── func_body 0000A1D0
+│       │       ├── num_locals 0000A1D0
+│       │       ├── locals 0000A1D1
+│       │       │   ├── local_type_count 0000A1D1
+│       │       │   └── local_type 0000A1D2
+│       │       └── instructions 0000A1D3
+│       ├── function-85 0000A226
+│       │   ├── func_body_size 0000A226
+│       │   └── func_body 0000A227
+│       │       ├── num_locals 0000A227
+│       │       ├── locals 0000A228
+│       │       │   ├── local_type_count 0000A228
+│       │       │   └── local_type 0000A229
+│       │       └── instructions 0000A22A
+│       ├── function-86 0000A260
+│       │   ├── func_body_size 0000A260
+│       │   └── func_body 0000A261
+│       │       ├── num_locals 0000A261
+│       │       └── instructions 0000A262
+│       ├── function-87 0000A2A3
+│       │   ├── func_body_size 0000A2A3
+│       │   └── func_body 0000A2A4
+│       │       ├── num_locals 0000A2A4
+│       │       └── instructions 0000A2A5
+│       ├── function-88 0000A2EE
+│       │   ├── func_body_size 0000A2EE
+│       │   └── func_body 0000A2EF
+│       │       ├── num_locals 0000A2EF
+│       │       ├── locals 0000A2F0
+│       │       │   ├── local_type_count 0000A2F0
+│       │       │   └── local_type 0000A2F1
+│       │       └── instructions 0000A2F2
+│       ├── function-89 0000A332
+│       │   ├── func_body_size 0000A332
+│       │   └── func_body 0000A333
+│       │       ├── num_locals 0000A333
+│       │       ├── locals 0000A334
+│       │       │   ├── local_type_count 0000A334
+│       │       │   └── local_type 0000A335
+│       │       └── instructions 0000A336
+│       ├── function-90 0000A37A
+│       │   ├── func_body_size 0000A37A
+│       │   └── func_body 0000A37B
+│       │       ├── num_locals 0000A37B
+│       │       ├── locals 0000A37C
+│       │       │   ├── local_type_count 0000A37C
+│       │       │   └── local_type 0000A37D
+│       │       └── instructions 0000A37E
+│       ├── function-91 0000A3C0
+│       │   ├── func_body_size 0000A3C0
+│       │   └── func_body 0000A3C1
+│       │       ├── num_locals 0000A3C1
+│       │       ├── locals 0000A3C2
+│       │       │   ├── local_type_count 0000A3C2
+│       │       │   └── local_type 0000A3C3
+│       │       └── instructions 0000A3C4
+│       ├── function-92 0000A401
+│       │   ├── func_body_size 0000A401
+│       │   └── func_body 0000A402
+│       │       ├── num_locals 0000A402
+│       │       ├── locals 0000A403
+│       │       │   ├── local_type_count 0000A403
+│       │       │   └── local_type 0000A404
+│       │       └── instructions 0000A405
+│       ├── function-93 0000A454
+│       │   ├── func_body_size 0000A454
+│       │   └── func_body 0000A455
+│       │       ├── num_locals 0000A455
+│       │       ├── locals 0000A456
+│       │       │   ├── local_type_count 0000A456
+│       │       │   └── local_type 0000A457
+│       │       └── instructions 0000A458
+│       ├── function-94 0000A4A1
+│       │   ├── func_body_size 0000A4A1
+│       │   └── func_body 0000A4A2
+│       │       ├── num_locals 0000A4A2
+│       │       ├── locals 0000A4A3
+│       │       │   ├── local_type_count 0000A4A3
+│       │       │   └── local_type 0000A4A4
+│       │       └── instructions 0000A4A5
+│       ├── function-95 0000A4D6
+│       │   ├── func_body_size 0000A4D6
+│       │   └── func_body 0000A4D7
+│       │       ├── num_locals 0000A4D7
+│       │       ├── locals 0000A4D8
+│       │       │   ├── local_type_count 0000A4D8
+│       │       │   └── local_type 0000A4D9
+│       │       └── instructions 0000A4DA
+│       ├── function-96 0000A504
+│       │   ├── func_body_size 0000A504
+│       │   └── func_body 0000A505
+│       │       ├── num_locals 0000A505
+│       │       └── instructions 0000A506
+│       ├── function-97 0000A534
+│       │   ├── func_body_size 0000A534
+│       │   └── func_body 0000A535
+│       │       ├── num_locals 0000A535
+│       │       ├── locals 0000A536
+│       │       │   ├── local_type_count 0000A536
+│       │       │   └── local_type 0000A537
+│       │       └── instructions 0000A538
+│       ├── function-98 0000A569
+│       │   ├── func_body_size 0000A569
+│       │   └── func_body 0000A56A
+│       │       ├── num_locals 0000A56A
+│       │       ├── locals 0000A56B
+│       │       │   ├── local_type_count 0000A56B
+│       │       │   └── local_type 0000A56C
+│       │       └── instructions 0000A56D
+│       ├── function-99 0000A59E
+│       │   ├── func_body_size 0000A59E
+│       │   └── func_body 0000A59F
+│       │       ├── num_locals 0000A59F
+│       │       ├── locals 0000A5A0
+│       │       │   ├── local_type_count 0000A5A0
+│       │       │   └── local_type 0000A5A1
+│       │       └── instructions 0000A5A2
+│       ├── function-100 0000A5CB
+│       │   ├── func_body_size 0000A5CB
+│       │   └── func_body 0000A5CC
+│       │       ├── num_locals 0000A5CC
+│       │       ├── locals 0000A5CD
+│       │       │   ├── local_type_count 0000A5CD
+│       │       │   └── local_type 0000A5CE
+│       │       └── instructions 0000A5CF
+│       ├── function-101 0000A5F1
+│       │   ├── func_body_size 0000A5F1
+│       │   └── func_body 0000A5F2
+│       │       ├── num_locals 0000A5F2
+│       │       └── instructions 0000A5F3
+│       ├── function-102 0000A610
+│       │   ├── func_body_size 0000A610
+│       │   └── func_body 0000A611
+│       │       ├── num_locals 0000A611
+│       │       ├── locals 0000A612
+│       │       │   ├── local_type_count 0000A612
+│       │       │   └── local_type 0000A613
+│       │       └── instructions 0000A614
+│       ├── function-103 0000A63C
+│       │   ├── func_body_size 0000A63C
+│       │   └── func_body 0000A63D
+│       │       ├── num_locals 0000A63D
+│       │       └── instructions 0000A63E
+│       ├── function-104 0000A661
+│       │   ├── func_body_size 0000A661
+│       │   └── func_body 0000A662
+│       │       ├── num_locals 0000A662
+│       │       ├── locals 0000A663
+│       │       │   ├── local_type_count 0000A663
+│       │       │   └── local_type 0000A664
+│       │       └── instructions 0000A665
+│       ├── function-105 0000A682
+│       │   ├── func_body_size 0000A682
+│       │   └── func_body 0000A683
+│       │       ├── num_locals 0000A683
+│       │       ├── locals 0000A684
+│       │       │   ├── local_type_count 0000A684
+│       │       │   └── local_type 0000A685
+│       │       └── instructions 0000A686
+│       ├── function-106 0000A6A3
+│       │   ├── func_body_size 0000A6A3
+│       │   └── func_body 0000A6A4
+│       │       ├── num_locals 0000A6A4
+│       │       └── instructions 0000A6A5
+│       ├── function-107 0000A6C1
+│       │   ├── func_body_size 0000A6C1
+│       │   └── func_body 0000A6C2
+│       │       ├── num_locals 0000A6C2
+│       │       ├── locals 0000A6C3
+│       │       │   ├── local_type_count 0000A6C3
+│       │       │   └── local_type 0000A6C4
+│       │       └── instructions 0000A6C5
+│       ├── function-108 0000A6D2
+│       │   ├── func_body_size 0000A6D2
+│       │   └── func_body 0000A6D3
+│       │       ├── num_locals 0000A6D3
+│       │       └── instructions 0000A6D4
+│       ├── function-109 0000A6E8
+│       │   ├── func_body_size 0000A6E8
+│       │   └── func_body 0000A6E9
+│       │       ├── num_locals 0000A6E9
+│       │       └── instructions 0000A6EA
+│       ├── function-110 0000A705
+│       │   ├── func_body_size 0000A705
+│       │   └── func_body 0000A706
+│       │       ├── num_locals 0000A706
+│       │       └── instructions 0000A707
+│       ├── function-111 0000A722
+│       │   ├── func_body_size 0000A722
+│       │   └── func_body 0000A723
+│       │       ├── num_locals 0000A723
+│       │       └── instructions 0000A724
+│       ├── function-112 0000A73B
+│       │   ├── func_body_size 0000A73B
+│       │   └── func_body 0000A73C
+│       │       ├── num_locals 0000A73C
+│       │       └── instructions 0000A73D
+│       ├── function-113 0000A754
+│       │   ├── func_body_size 0000A754
+│       │   └── func_body 0000A755
+│       │       ├── num_locals 0000A755
+│       │       └── instructions 0000A756
+│       ├── function-114 0000A76D
+│       │   ├── func_body_size 0000A76D
+│       │   └── func_body 0000A76E
+│       │       ├── num_locals 0000A76E
+│       │       └── instructions 0000A76F
+│       ├── function-115 0000A784
+│       │   ├── func_body_size 0000A784
+│       │   └── func_body 0000A785
+│       │       ├── num_locals 0000A785
+│       │       └── instructions 0000A786
+│       ├── function-116 0000A799
+│       │   ├── func_body_size 0000A799
+│       │   └── func_body 0000A79A
+│       │       ├── num_locals 0000A79A
+│       │       └── instructions 0000A79B
+│       ├── function-117 0000A7AE
+│       │   ├── func_body_size 0000A7AE
+│       │   └── func_body 0000A7AF
+│       │       ├── num_locals 0000A7AF
+│       │       └── instructions 0000A7B0
+│       ├── function-118 0000A7BF
+│       │   ├── func_body_size 0000A7BF
+│       │   └── func_body 0000A7C0
+│       │       ├── num_locals 0000A7C0
+│       │       └── instructions 0000A7C1
+│       ├── function-119 0000A7D0
+│       │   ├── func_body_size 0000A7D0
+│       │   └── func_body 0000A7D1
+│       │       ├── num_locals 0000A7D1
+│       │       └── instructions 0000A7D2
+│       ├── function-120 0000A7E1
+│       │   ├── func_body_size 0000A7E1
+│       │   └── func_body 0000A7E2
+│       │       ├── num_locals 0000A7E2
+│       │       └── instructions 0000A7E3
+│       ├── function-121 0000A7F4
+│       │   ├── func_body_size 0000A7F4
+│       │   └── func_body 0000A7F5
+│       │       ├── num_locals 0000A7F5
+│       │       └── instructions 0000A7F6
+│       ├── function-122 0000A806
+│       │   ├── func_body_size 0000A806
+│       │   └── func_body 0000A807
+│       │       ├── num_locals 0000A807
+│       │       └── instructions 0000A808
+│       ├── function-123 0000A815
+│       │   ├── func_body_size 0000A815
+│       │   └── func_body 0000A816
+│       │       ├── num_locals 0000A816
+│       │       └── instructions 0000A817
+│       ├── function-124 0000A823
+│       │   ├── func_body_size 0000A823
+│       │   └── func_body 0000A824
+│       │       ├── num_locals 0000A824
+│       │       └── instructions 0000A825
+│       ├── function-125 0000A831
+│       │   ├── func_body_size 0000A831
+│       │   └── func_body 0000A832
+│       │       ├── num_locals 0000A832
+│       │       └── instructions 0000A833
+│       ├── function-126 0000A840
+│       │   ├── func_body_size 0000A840
+│       │   └── func_body 0000A841
+│       │       ├── num_locals 0000A841
+│       │       └── instructions 0000A842
+│       ├── function-127 0000A85A
+│       │   ├── func_body_size 0000A85A
+│       │   └── func_body 0000A85B
+│       │       ├── num_locals 0000A85B
+│       │       └── instructions 0000A85C
+│       ├── function-128 0000A865
+│       │   ├── func_body_size 0000A865
+│       │   └── func_body 0000A866
+│       │       ├── num_locals 0000A866
+│       │       └── instructions 0000A867
+│       ├── function-129 0000A872
+│       │   ├── func_body_size 0000A872
+│       │   └── func_body 0000A873
+│       │       ├── num_locals 0000A873
+│       │       └── instructions 0000A874
+│       ├── function-130 0000A87E
+│       │   ├── func_body_size 0000A87E
+│       │   └── func_body 0000A87F
+│       │       ├── num_locals 0000A87F
+│       │       └── instructions 0000A880
+│       ├── function-131 0000A887
+│       │   ├── func_body_size 0000A887
+│       │   └── func_body 0000A888
+│       │       ├── num_locals 0000A888
+│       │       └── instructions 0000A889
+│       ├── function-132 0000A893
+│       │   ├── func_body_size 0000A893
+│       │   └── func_body 0000A894
+│       │       ├── num_locals 0000A894
+│       │       └── instructions 0000A895
+│       ├── function-133 0000A8A1
+│       │   ├── func_body_size 0000A8A1
+│       │   └── func_body 0000A8A2
+│       │       ├── num_locals 0000A8A2
+│       │       └── instructions 0000A8A3
+│       ├── function-134 0000A8AA
+│       │   ├── func_body_size 0000A8AA
+│       │   └── func_body 0000A8AB
+│       │       ├── num_locals 0000A8AB
+│       │       └── instructions 0000A8AC
+│       ├── function-135 0000A8B4
+│       │   ├── func_body_size 0000A8B4
+│       │   └── func_body 0000A8B5
+│       │       ├── num_locals 0000A8B5
+│       │       └── instructions 0000A8B6
+│       ├── function-136 0000A8BE
+│       │   ├── func_body_size 0000A8BE
+│       │   └── func_body 0000A8BF
+│       │       ├── num_locals 0000A8BF
+│       │       └── instructions 0000A8C0
+│       ├── function-137 0000A8C6
+│       │   ├── func_body_size 0000A8C6
+│       │   └── func_body 0000A8C7
+│       │       ├── num_locals 0000A8C7
+│       │       └── instructions 0000A8C8
+│       ├── function-138 0000A8CF
+│       │   ├── func_body_size 0000A8CF
+│       │   └── func_body 0000A8D0
+│       │       ├── num_locals 0000A8D0
+│       │       └── instructions 0000A8D1
+│       ├── function-139 0000A8D5
+│       │   ├── func_body_size 0000A8D5
+│       │   └── func_body 0000A8D6
+│       │       ├── num_locals 0000A8D6
+│       │       └── instructions 0000A8D7
+│       ├── function-140 0000A8E2
+│       │   ├── func_body_size 0000A8E2
+│       │   └── func_body 0000A8E3
+│       │       ├── num_locals 0000A8E3
+│       │       └── instructions 0000A8E4
+│       ├── function-141 0000A8E7
+│       │   ├── func_body_size 0000A8E7
+│       │   └── func_body 0000A8E8
+│       │       ├── num_locals 0000A8E8
+│       │       └── instructions 0000A8E9
+│       ├── function-142 0000A8F4
+│       │   ├── func_body_size 0000A8F4
+│       │   └── func_body 0000A8F5
+│       │       ├── num_locals 0000A8F5
+│       │       └── instructions 0000A8F6
+│       ├── function-143 0000A902
+│       │   ├── func_body_size 0000A902
+│       │   └── func_body 0000A903
+│       │       ├── num_locals 0000A903
+│       │       └── instructions 0000A904
+│       ├── function-144 0000A910
+│       │   ├── func_body_size 0000A910
+│       │   └── func_body 0000A911
+│       │       ├── num_locals 0000A911
+│       │       └── instructions 0000A912
+│       └── function-145 0000A915
+│           ├── func_body_size 0000A915
+│           └── func_body 0000A916
+│               ├── num_locals 0000A916
+│               └── instructions 0000A917
+└── data-section 0000A919
+    ├── id 0000A919
+    ├── length 0000A91A
+    └── data 0000A91C
