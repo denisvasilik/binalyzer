@@ -9,8 +9,8 @@ if __name__ == "__main__":
 
     binalyzer = Binalyzer()
     binalyzer.xml.from_file(
-        os.path.join(cwd_path, "resources/wasm_module.xml"),
-        os.path.join(cwd_path, "resources/wasm_module.wasm"),
+        os.path.join(cwd_path, "../resources/wasm_module.xml"),
+        os.path.join(cwd_path, "../resources/wasm_module.wasm"),
     )
 
     wasm_module = binalyzer.template
