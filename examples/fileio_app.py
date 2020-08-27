@@ -5,13 +5,13 @@ from binalyzer import Binalyzer
 
 if __name__ == "__main__":
     cwd_path = os.path.dirname(os.path.abspath(__file__))
-    template_path = os.path.join(cwd_path, "resources/uber_blob.xml")
+    template_path = os.path.join(cwd_path, "../resources/uber_blob.xml")
     blob_paths = [
-        os.path.join(cwd_path, "resources/blob0.bin"),
-        os.path.join(cwd_path, "resources/blob1.bin"),
-        os.path.join(cwd_path, "resources/blob2.bin"),
+        os.path.join(cwd_path, "../resources/blob0.bin"),
+        os.path.join(cwd_path, "../resources/blob1.bin"),
+        os.path.join(cwd_path, "../resources/blob2.bin"),
     ]
-    uber_blob_path = os.path.join(cwd_path, "resources/uber_blob.bin")
+    uber_blob_path = os.path.join(cwd_path, "../resources/uber_blob.bin")
 
     blobs = []
     for blob_path in blob_paths:
