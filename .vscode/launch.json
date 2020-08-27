@@ -2,10 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Binalyzer WASM Example",
+            "name": "Binalyzer App Example",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/../binalyzer/examples/analysis_app.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+        },
+        {
+            "name": "Binalyzer Unit Test",
+            "type": "python",
+            "request": "launch",
+            "program": ".venv/bin/pytest",
+            "args": [
+                "-v",
+                "../binalyzer/tests/test_wasm.py::test_wasm_hello_app_tree"
+            ],
+            "env": {
+                "PYTHONPATH": "binalyzer"
+            },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "pythonPath": "${workspaceFolder}/.venv/bin/python3"
@@ -69,7 +85,7 @@
             "request": "launch",
             "program": ".venv/bin/pytest",
             "args": [
-                "../binalyzer-core/tests/test_factory.py::test_template_factory",
+                "../binalyzer-core/tests/test_context.py::test_dom_expansion",
                 "-v",
             ],
             "env": {
@@ -150,7 +166,7 @@
             "program": ".venv/bin/pytest",
             "args": [
                 "-v",
-                "../binalyzer-template-provider/tests/test_binalyzer.py::test_analysis_of_dynamic_template"
+                "../binalyzer-template-provider/tests/test_boundary.py::test_boundary_and_sizing_stretch_with_offset"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
