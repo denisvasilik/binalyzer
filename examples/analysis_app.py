@@ -2,21 +2,15 @@
     data_analysis_app
     ~~~~~~~~~~~~~~~~~
 
+    A simple app showing how to analyze binary data.
 """
 
 import io
 import os
 
-import leb128
+from anytree import RenderTree, findall, find
 
-from anytree import find_by_attr, RenderTree
 from binalyzer import Binalyzer
-from binalyzer_template_provider import XMLTemplateProviderExtension
-
-
-def print_tree(template):
-    for pre, fill, node in RenderTree(binalyzer.template):
-        print("%s%s %08X" % (pre, node.name, node.absolute_address))
 
 
 def print_sections(template):
@@ -99,18 +93,44 @@ def print_sections(template):
     )
 
 
-def print_import_header(import_header):
-    print(import_header.module_string_data.value)
-    print(import_header.method_string_data.value)
+def print_tree(template):
+    for pre, fill, node in RenderTree(binalyzer.template):
+        print("%s%s %08X" % (pre, node.name, node.absolute_address))
+
+
+def dump(byte_values):
+    for byte_value in byte_values:
+        print("{:02X} ".format(byte_value), end="")
+
+
+def uses_64bit_instruction(wasm_module):
+    for instructions in findall(wasm_module, lambda t: t.name == "instructions"):
+        for instruction in instructions.value:
+            if instruction == 0x42:
+                return True
+    return False
+
+
+def print_imports(import_section):
+    for import_header in import_section.data.children[1:]:
+        print(import_header.module_string_data.value)
+        print(import_header.method_string_data.value)
 
 
 if __name__ == "__main__":
     binalyzer = Binalyzer()
     cwd_path = os.path.dirname(os.path.abspath(__file__))
+
     binalyzer.xml.from_file(
-        os.path.join(cwd_path, "resources/app-hello-wasm.xml"),
-        os.path.join(cwd_path, "resources/app-hello-wasm.wasm"),
+        os.path.join(cwd_path, "../resources/app-hello-wasm.xml"),
+        os.path.join(cwd_path, "../resources/app-hello-wasm.wasm"),
     )
 
-    print_tree(binalyzer.template)
     print_sections(binalyzer.template)
+
+    import_section = find(binalyzer.template, lambda t: t.name == "import-section")
+
+    print_imports(import_section)
+
+    if uses_64bit_instruction(binalyzer.template):
+        print("Uses 64 Bit instructions")
