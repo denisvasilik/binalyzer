@@ -9,8 +9,7 @@ if __name__ == "__main__":
 
     binalyzer = Binalyzer()
     binalyzer.xml.from_url(
-        base_url + "examples/resources/wasm_module.xml",
-        base_url + "examples/resources/wasm_module.wasm",
+        base_url + "resources/wasm_module.xml", base_url + "resources/wasm_module.wasm"
     )
 
     wasm_module = binalyzer.template
