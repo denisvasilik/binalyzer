@@ -196,7 +196,7 @@ wasm-module-format 00000000
 │   ├── id 0000010D
 │   ├── length 0000010E
 │   └── data 00000110
-│       ├── num 00000110
+│       ├── num_functions 00000110
 │       ├── function-typeidx-0 00000112
 │       ├── function-typeidx-1 00000113
 │       ├── function-typeidx-2 00000114
@@ -347,6 +347,12 @@ wasm-module-format 00000000
 │   ├── id 000001A4
 │   ├── length 000001A5
 │   └── data 000001A6
+│       ├── num_tables 000001A6
+│       ├── func_ref 000001A7
+│       └── limits 000001A8
+│           ├── flag 000001A8
+│           ├── min 000001A9
+│           └── max 000001AA
 ├── memory-section 000001AB
 │   ├── id 000001AB
 │   ├── length 000001AC

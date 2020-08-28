@@ -72,10 +72,11 @@
         <blob name="data" size="{length, converter=wasm.leb128u}">
             <field name="num_tables" size="{converter=wasm.leb128size}"></field>
             <field name="func_ref" size="1" signature="0x70"></field>
-            <!-- <field name="limits" size="{converter=wasm.limits}">
-                <field name="min" size="{converter=wasm.leb128size}">
-                <field name="max" sizing="stretch">
-            </field> -->
+            <field name="limits" size="{converter=wasm.limits}">
+                <field name="flag" size="1"></field>
+                <field name="min" size="{converter=wasm.leb128size}"></field>
+                <field name="max" sizing="stretch"></field>
+            </field>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
