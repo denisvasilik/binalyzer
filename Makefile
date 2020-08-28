@@ -19,6 +19,9 @@ lint:
 clone:
 	clonedigger --cpd-output $(SRC_DIR) || :
 
+test:
+	python3 -m pytest -v tests/test_wasm.py
+
 package:
 	python3 setup.py sdist bdist_wheel
 
