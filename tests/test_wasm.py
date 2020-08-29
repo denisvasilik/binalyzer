@@ -25,7 +25,7 @@ def resources_filepath():
 
 def test_wasm_hello_app_tree(binalyzer, resources_filepath):
     binalyzer.xml.from_file(
-        os.path.join(resources_filepath, "app-hello-wasm.xml"),
+        os.path.join(resources_filepath, "wasm_module_format.xml"),
         os.path.join(resources_filepath, "app-hello-wasm.wasm"),
     )
 
