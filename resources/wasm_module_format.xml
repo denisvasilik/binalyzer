@@ -7,7 +7,7 @@
         <field name="length" size="{converter=wasm.leb128size}"></field>
         <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
     </section>
-    <section name="type-section" signature="0x01">
+    <section name="type-section" signature="0x01" hint="optional">
         <field name="id" size="1"></field>
         <field name="length" size="{converter=wasm.leb128size}"></field>
         <blob name="data" size="{length, converter=wasm.leb128u}">
