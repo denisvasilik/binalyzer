@@ -153,7 +153,18 @@
     <section name="element-section" signature="0x09" hint="optional">
         <field name="id" size="1"></field>
         <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <blob name="data" size="{length, converter=wasm.leb128u}">
+            <field name="num_elements" size="{converter=wasm.leb128size}"></field>
+            <vector name="elements" count="{num_elements, converter=wasm.leb128u}">
+                <field name="tableidx" size="{converter=wasm.leb128size}"></field>
+                <field name="expr" size="{converter=wasm.expr_size}"></field>
+                <field name="num_funcidx" size="{converter=wasm.leb128size}"></field>
+                <field name="funcidx"
+                       count="{num_funcidx, converter=wasm.leb128u}"
+                       size="{converter=wasm.leb128size}">
+                </field>
+            </vector>
+        </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
