@@ -122,15 +122,22 @@ if __name__ == "__main__":
     cwd_path = os.path.dirname(os.path.abspath(__file__))
 
     binalyzer.xml.from_file(
-        os.path.join(cwd_path, "../resources/app-hello-wasm.xml"),
+        os.path.join(cwd_path, "../resources/wasm_module_format.xml"),
         os.path.join(cwd_path, "../resources/app-hello-wasm.wasm"),
     )
 
-    print_sections(binalyzer.template)
+    # print_sections(binalyzer.template)
 
-    import_section = find(binalyzer.template, lambda t: t.name == "import-section")
+    # import_section = find(binalyzer.template, lambda t: t.name == "import-section")
 
-    print_imports(import_section)
+    # print_imports(import_section)
 
-    if uses_64bit_instruction(binalyzer.template):
-        print("Uses 64 Bit instructions")
+    # if uses_64bit_instruction(binalyzer.template):
+    #     print("Uses 64 Bit instructions")
+
+    # export_section = find(binalyzer.template, lambda t: t.name == "export-section")
+
+    # for export_header in export_section.data.children[1:]:
+    #     print(export_header.export_name.value)
+
+    print_tree(binalyzer.template)
