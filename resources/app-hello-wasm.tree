@@ -357,6 +357,11 @@ wasm-module-format 00000000
 │   ├── id 000001AB
 │   ├── length 000001AC
 │   └── data 000001AD
+│       ├── num_memories 000001AD
+│       └── limits 000001AE
+│           ├── flag 000001AE
+│           ├── min 000001AF
+│           └── max 000001B0
 ├── global-section 000001B0
 │   ├── id 000001B0
 │   ├── length 000001B1
@@ -365,6 +370,37 @@ wasm-module-format 00000000
 │   ├── id 000001CB
 │   ├── length 000001CC
 │   └── data 000001CD
+│       ├── num_exports 000001CD
+│       ├── export_header-0 000001CE
+│       │   ├── export_length 000001CE
+│       │   ├── export_name 000001CF
+│       │   ├── export_kind 000001D5
+│       │   └── export_index 000001D6
+│       ├── export_header-1 000001D7
+│       │   ├── export_length 000001D7
+│       │   ├── export_name 000001D8
+│       │   ├── export_kind 000001DE
+│       │   └── export_index 000001DF
+│       ├── export_header-2 000001E0
+│       │   ├── export_length 000001E0
+│       │   ├── export_name 000001E1
+│       │   ├── export_kind 000001F0
+│       │   └── export_index 000001F1
+│       ├── export_header-3 000001F2
+│       │   ├── export_length 000001F2
+│       │   ├── export_name 000001F3
+│       │   ├── export_kind 000001F7
+│       │   └── export_index 000001F8
+│       ├── export_header-4 000001FA
+│       │   ├── export_length 000001FA
+│       │   ├── export_name 000001FB
+│       │   ├── export_kind 00000205
+│       │   └── export_index 00000206
+│       └── export_header-5 00000207
+│           ├── export_length 00000207
+│           ├── export_name 00000208
+│           ├── export_kind 00000213
+│           └── export_index 00000214
 ├── element-section 00000215
 │   ├── id 00000215
 │   ├── length 00000216
@@ -1447,3 +1483,34 @@ wasm-module-format 00000000
     ├── id 0000A919
     ├── length 0000A91A
     └── data 0000A91C
+        ├── num_data_segments 0000A91C
+        ├── data_segments-0 0000A91D
+        │   ├── memidx 0000A91D
+        │   ├── offset 0000A91E
+        │   ├── data_segment_size 0000A924
+        │   └── data_segment_data 0000A926
+        ├── data_segments-1 0000A9E1
+        │   ├── memidx 0000A9E1
+        │   ├── offset 0000A9E2
+        │   ├── data_segment_size 0000A9E8
+        │   └── data_segment_data 0000A9E9
+        ├── data_segments-2 0000AA1C
+        │   ├── memidx 0000AA1C
+        │   ├── offset 0000AA1D
+        │   ├── data_segment_size 0000AA23
+        │   └── data_segment_data 0000AA25
+        ├── data_segments-3 0000BFFE
+        │   ├── memidx 0000BFFE
+        │   ├── offset 0000BFFF
+        │   ├── data_segment_size 0000C005
+        │   └── data_segment_data 0000C007
+        ├── data_segments-4 0000C50D
+        │   ├── memidx 0000C50D
+        │   ├── offset 0000C50E
+        │   ├── data_segment_size 0000C514
+        │   └── data_segment_data 0000C516
+        └── data_segments-5 0000CB89
+            ├── memidx 0000CB89
+            ├── offset 0000CB8A
+            ├── data_segment_size 0000CB90
+            └── data_segment_data 0000CB91
