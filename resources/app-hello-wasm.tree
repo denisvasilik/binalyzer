@@ -366,6 +366,19 @@ wasm-module-format 00000000
 │   ├── id 000001B0
 │   ├── length 000001B1
 │   └── data 000001B2
+│       ├── num_globals 000001B2
+│       ├── globals-0 000001B3
+│       │   ├── valtype 000001B3
+│       │   ├── mut 000001B4
+│       │   └── expr 000001B5
+│       ├── globals-1 000001BB
+│       │   ├── valtype 000001BB
+│       │   ├── mut 000001BC
+│       │   └── expr 000001BD
+│       └── globals-2 000001C3
+│           ├── valtype 000001C3
+│           ├── mut 000001C4
+│           └── expr 000001C5
 ├── export-section 000001CB
 │   ├── id 000001CB
 │   ├── length 000001CC
