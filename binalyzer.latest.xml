@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="origin" fetch="ssh://git@github.com/denisvasilik" />
+  <default revision="master" remote="origin" />
+  <project path="binalyzer" name="binalyzer.git" remote="origin" />
+  <project path="binalyzer-core" name="binalyzer-core.git" remote="origin" />
+  <project path="binalyzer-cli" name="binalyzer-cli.git" remote="origin" />
+  <project path="binalyzer-template-provider" name="binalyzer-template-provider.git" remote="origin" />
+  <project path="binalyzer-data-provider" name="binalyzer-data-provider.git" remote="origin" />
+  <project path="binalyzer-rest" name="binalyzer-rest.git" remote="origin" />
+  <project path="binalyzer-lsp" name="binalyzer-lsp.git" remote="origin" />
+  <project path="binalyzer-docker" name="binalyzer-docker.git" remote="origin" />
+  <project path="binalyzer-wasm" name="binalyzer-wasm.git" remote="origin" />
+</manifest>
