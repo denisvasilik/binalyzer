@@ -24,34 +24,11 @@ Binalyzer is published on [PyPI] and can be installed from there:
 ```
 
 If you wish to install [Binalyzer] for development purposes, refer to [the
-contributors guide].
+developer's guide].
 
 [PyPI]: https://pypi.org/project/Binalyzer/
 [Binalyzer]: https://pypi.org/project/Binalyzer/
-
-## Repositories
-
-Binalyzer spans accross several GitHub repositories:
-
-* [binalyzer]
-* [binalyzer-core]
-* [binalyzer-cli]
-* [binalyzer-template-provider]
-* [binalyzer-data-provider]
-* [binalyzer-rest]
-* [binalyzer-lsp]
-* [binalyzer-docker]
-* [binalyzer-examples]
-
-[binalyzer]: https://github.com/denisvasilik/binalyzer
-[binalyzer-core]: https://github.com/denisvasilik/binalyzer-core
-[binalyzer-cli]: https://github.com/denisvasilik/binalyzer-cli
-[binalyzer-template-provider]: https://github.com/denisvasilik/binalyzer-template-provider
-[binalyzer-data-provider]: https://github.com/denisvasilik/binalyzer-data-provider
-[binalyzer-rest]: https://github.com/denisvasilik/binalyzer-rest
-[binalyzer-lsp]: https://github.com/denisvasilik/binalyzer-lsp
-[binalyzer-docker]: https://github.com/denisvasilik/binalyzer-docker
-[binalyzer-examples]: https://github.com/denisvasilik/binalyzer-examples
+[the developer's guide]: DEVELOPMENT.md
 
 ## Documentation
 
@@ -62,22 +39,13 @@ Documentation is available from [binalyzer.readthedocs.io].
 ## Get in touch
 
 - Report bugs, suggest features or view the source code [on GitHub].
-- For contributions refer to [the contributors guide].
+- For contributions refer to [the contributor's guide].
 
 [on GitHub]: https://github.com/denisvasilik/binalyzer
-
-## Testing
-
-Continuous testing is provided by [Travis] (for unit tests and style checks
-on Linux).
-
-For information on running tests locally, refer to [the contributors guide].
-
-[Travis]: https://travis-ci.org/denisvasilik/binalyzer
+[the contributor's guide]: CONTRIBUTING.md
 
 # License
 
 Licensed under the MIT license ([LICENSE-MIT] or http://opensource.org/licenses/MIT).
 
-[the contributors guide]: CONTRIBUTING.md
 [LICENSE-MIT]: LICENSE.rst
