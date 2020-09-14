@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<template name="wasm-module-format" version="1.0">
+    <field name="magic"></field>
+    <field name="version"></field>
+    <section name="type-section">
+        <field name="id"></field>
+        <field name="length"></field>
+        <blob name="data">
+            <field name="num_types"></field>
+            <vector name="type-3">
+                <field name="func_type" size="1"></field>
+                <field name="num_params"></field>
+                <field name="params">
+                    <field name="param-0" size="1"></field>
+                    <field name="param-1" size="1"></field>
+                </field>
+                <field name="num_results"></field>
+            </vector>
+        </blob>
+    </section>
+    <section name="function-section">
+        <field name="id"></field>
+        <field name="length"></field>
+        <blob name="data">
+            <field name="num_functions"></field>
+            <vector name="function-typeidx-1"></vector>
+        </blob>
+    </section>
+    <section name="export-section">
+        <field name="id"></field>
+        <field name="length"></field>
+        <blob name="data">
+            <field name="num_exports"></field>
+            <vector name="export_header-1">
+                <field name="export_length"></field>
+                <field name="export_name"></field>
+                <field name="export_kind"></field>
+                <field name="export_index"></field>
+            </vector>
+        </blob>
+    </section>
+    <section name="code-section">
+        <field name="id"></field>
+        <field name="length"></field>
+        <blob name="code">
+            <field name="num_functions"></field>
+            <field name="function-1">
+                <field name="func_body_size"></field>
+                <field name="func_body">
+                    <field name="num_locals"></field>
+                    <vector name="locals">
+                        <field name="local_type_count"></field>
+                        <field name="local_type"></field>
+                    </vector>
+                    <field name="instructions"></field>
+                </field>
+            </field>
+        </blob>
+    </section>
+</template>
