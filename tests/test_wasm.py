@@ -11,7 +11,6 @@ import pytest
 
 from anytree import RenderTree, find
 from binalyzer import Binalyzer, ValueProperty, AutoSizeValueProperty
-from binalyzer_core.transform import transform, aggregate
 
 
 @pytest.fixture
@@ -60,43 +59,39 @@ def test_transformation_of_wasm_file(binalyzer, resources_filepath):
     binalyzer.xml.from_file(os.path.join(resources_filepath, "wasm_transform.xml"))
     destination_template = binalyzer.template
 
-    # transfer splits template bindings
-    transform(source_template, destination_template)
+    # splits template bindings
+    binalyzer.project(source_template, destination_template)
 
     # Custom data assignment for type section
-    type_section = find(destination_template, lambda t: t.name == "type-section")
+    type_section = destination_template.type_section
     type_section.data.num_types.value = leb128.u.encode(1)
     type_section.length.value = leb128.u.encode(type_section.data.size)
 
     # Custom data assignment for function section
-    function_section = find(
-        destination_template, lambda t: t.name == "function-section"
-    )
+    function_section = destination_template.function_section
     function_section.data.num_functions.value = leb128.u.encode(1)
     function_section.data.function_typeidx_1.value = bytes([0x00])
     function_section.length.value = leb128.u.encode(function_section.data.size)
 
     # Custom data assignment for export section
-    export_section = find(destination_template, lambda t: t.name == "export-section")
-
+    export_section = destination_template.export_section
     export_section.data.num_exports.value = leb128.u.encode(1)
     export_section.data.export_header_1.export_index.value = leb128.u.encode(0)
     export_section.length.value = leb128.u.encode(export_section.data.size)
 
     # Custom data assignment for code section
-    code_section = find(destination_template, lambda t: t.name == "code-section")
+    code_section = destination_template.code_section
     code_section.code.num_functions.value = leb128.u.encode(1)
-    code_section.code.function_1.func_body.num_locals.value = leb128.u.encode(1)
-    code_section.code.function_1.func_body.locals.local_type_count.value = leb128.u.encode(
-        1
-    )
-    code_section.code.function_1.func_body.instructions.value = bytes([0x01, 0x0B])
-    code_section.code.function_1.func_body_size.value = leb128.u.encode(
-        code_section.code.function_1.func_body.size
-    )
+
+    function_1 = code_section.code.function_1
+    function_1.func_body.num_locals.value = leb128.u.encode(1)
+    function_1.func_body.locals.local_type_count.value = leb128.u.encode(1)
+    function_1.func_body.instructions.value = bytes([0x01, 0x0B])
+    function_1.func_body_size.value = leb128.u.encode(function_1.func_body.size)
+
     code_section.length.value = leb128.u.encode(code_section.code.size)
 
-    # aggregate brings template data bindings together
-    aggregate(destination_template)
+    # brings template bindings together
+    binalyzer.aggregate(destination_template)
 
     assert destination_template.value == expected_byte_sequence
