@@ -4,184 +4,184 @@
     <field name="version" size="4" signature="0x01000000"></field>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="type-section" signature="0x01" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
-            <field name="num_types" size="{converter=wasm.leb128size}"></field>
-            <vector name="type" count="{num_types, converter=wasm.leb128u}">
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
+            <field name="num_types" size="{provider=wasm.leb128size}"></field>
+            <vector name="type" count="{num_types, provider=wasm.leb128u}">
                 <field name="func_type" size="1" signature="0x60"></field>
-                <field name="num_params" size="{converter=wasm.leb128size}"></field>
+                <field name="num_params" size="{provider=wasm.leb128size}"></field>
                 <field name="params">
-                    <field name="param" count="{num_params, converter=wasm.leb128u}" size="1"></field>
+                    <field name="param" count="{num_params, provider=wasm.leb128u}" size="1"></field>
                 </field>
-                <field name="num_results" size="{converter=wasm.leb128size}"></field>
+                <field name="num_results" size="{provider=wasm.leb128size}"></field>
                 <field name="results">
-                    <field name="result" count="{num_results, converter=wasm.leb128u}" size="1"></field>
+                    <field name="result" count="{num_results, provider=wasm.leb128u}" size="1"></field>
                 </field>
             </vector>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="import-section" signature="0x02" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
-            <field name="num" size="{converter=wasm.leb128size}"></field>
-            <vector name="import_header" count="{num, converter=wasm.leb128u}">
-                <field name="module_string_length" size="{converter=wasm.leb128size}"></field>
-                <field name="module_string_data" size="{module_string_length, converter=wasm.leb128u}"></field>
-                <field name="method_string_length" size="{converter=wasm.leb128size}"></field>
-                <field name="method_string_data" size="{method_string_length, converter=wasm.leb128u}"></field>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
+            <field name="num" size="{provider=wasm.leb128size}"></field>
+            <vector name="import_header" count="{num, provider=wasm.leb128u}">
+                <field name="module_string_length" size="{provider=wasm.leb128size}"></field>
+                <field name="module_string_data" size="{module_string_length, provider=wasm.leb128u}"></field>
+                <field name="method_string_length" size="{provider=wasm.leb128size}"></field>
+                <field name="method_string_data" size="{method_string_length, provider=wasm.leb128u}"></field>
                 <field name="import_kind" size="1"></field>
-                <field name="import_signature_index" size="{converter=wasm.leb128size}"></field>
+                <field name="import_signature_index" size="{provider=wasm.leb128size}"></field>
             </vector>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="function-section" signature="0x03" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
-            <field name="num_functions" size="{converter=wasm.leb128size}"></field>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
+            <field name="num_functions" size="{provider=wasm.leb128size}"></field>
             <vector name="function-typeidx"
-                    size="{converter=wasm.leb128size}"
-                    count="{num_functions, converter=wasm.leb128u}">
+                    size="{provider=wasm.leb128size}"
+                    count="{num_functions, provider=wasm.leb128u}">
             </vector>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="table-section" signature="0x04" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
-            <field name="num_tables" size="{converter=wasm.leb128size}"></field>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
+            <field name="num_tables" size="{provider=wasm.leb128size}"></field>
             <field name="func_ref" size="1" signature="0x70"></field>
-            <field name="limits" size="{converter=wasm.limits}">
+            <field name="limits" size="{provider=wasm.limits}">
                 <field name="flag" size="1"></field>
-                <field name="min" size="{converter=wasm.leb128size}"></field>
+                <field name="min" size="{provider=wasm.leb128size}"></field>
                 <field name="max" sizing="stretch"></field>
             </field>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="memory-section" signature="0x05" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
         <!-- In the current version of WebAssembly, at most one memory may be
             defined or imported in a single module, and all constructs implicitly
             reference this memory 0. This restriction may be lifted in future
             versions. -->
-            <field name="num_memories" size="{converter=wasm.leb128size}" signature="0x01"></field>
-            <field name="limits" size="{converter=wasm.limits}">
+            <field name="num_memories" size="{provider=wasm.leb128size}" signature="0x01"></field>
+            <field name="limits" size="{provider=wasm.limits}">
                 <field name="flag" size="1"></field>
-                <field name="min" size="{converter=wasm.leb128size}"></field>
+                <field name="min" size="{provider=wasm.leb128size}"></field>
                 <field name="max" sizing="stretch"></field>
             </field>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="global-section" signature="0x06" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
-            <field name="num_globals" size="{converter=wasm.leb128size}"></field>
-            <vector name="globals" count="{num_globals, converter=wasm.leb128u}">
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
+            <field name="num_globals" size="{provider=wasm.leb128size}"></field>
+            <vector name="globals" count="{num_globals, provider=wasm.leb128u}">
                 <field name="valtype" size="1"></field>
                 <field name="mut" size="1"></field>
-                <field name="expr" size="{converter=wasm.expr_size}"></field>
+                <field name="expr" size="{provider=wasm.expr_size}"></field>
             </vector>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="export-section" signature="0x07" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
-            <field name="num_exports" size="{converter=wasm.leb128size}"></field>
-            <vector name="export_header" count="{num_exports, converter=wasm.leb128u}">
-                <field name="export_length" size="{converter=wasm.leb128size}"></field>
-                <field name="export_name" size="{export_length, converter=wasm.leb128u}"></field>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
+            <field name="num_exports" size="{provider=wasm.leb128size}"></field>
+            <vector name="export_header" count="{num_exports, provider=wasm.leb128u}">
+                <field name="export_length" size="{provider=wasm.leb128size}"></field>
+                <field name="export_name" size="{export_length, provider=wasm.leb128u}"></field>
                 <field name="export_kind" size="1"></field>
-                <field name="export_index" size="{converter=wasm.leb128size}"></field>
+                <field name="export_index" size="{provider=wasm.leb128size}"></field>
             </vector>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="start-section" signature="0x08" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <field name="start-funcidx" size="{converter=wasm.leb128size}"></field>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <field name="start-funcidx" size="{provider=wasm.leb128size}"></field>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="element-section" signature="0x09" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
-            <field name="num_elements" size="{converter=wasm.leb128size}"></field>
-            <vector name="elements" count="{num_elements, converter=wasm.leb128u}">
-                <field name="tableidx" size="{converter=wasm.leb128size}"></field>
-                <field name="expr" size="{converter=wasm.expr_size}"></field>
-                <field name="num_funcidx" size="{converter=wasm.leb128size}"></field>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
+            <field name="num_elements" size="{provider=wasm.leb128size}"></field>
+            <vector name="elements" count="{num_elements, provider=wasm.leb128u}">
+                <field name="tableidx" size="{provider=wasm.leb128size}"></field>
+                <field name="expr" size="{provider=wasm.expr_size}"></field>
+                <field name="num_funcidx" size="{provider=wasm.leb128size}"></field>
                 <field name="funcidx"
-                       count="{num_funcidx, converter=wasm.leb128u}"
-                       size="{converter=wasm.leb128size}">
+                       count="{num_funcidx, provider=wasm.leb128u}"
+                       size="{provider=wasm.leb128size}">
                 </field>
             </vector>
         </blob>
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="code-section" signature="0x0A" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="code" size="{length, converter=wasm.leb128u}">
-            <field name="num_functions" size="{converter=wasm.leb128size}"></field>
-            <field name="function" count="{num_functions, converter=wasm.leb128u}">
-                <field name="func_body_size" size="{converter=wasm.leb128size}"></field>
-                <field name="func_body" size="{func_body_size, converter=wasm.leb128u}">
-                    <field name="num_locals" size="{converter=wasm.leb128size}"></field>
-                    <vector name="locals" count="{num_locals, converter=wasm.leb128u}">
-                        <field name="local_type_count" size="{converter=wasm.leb128size}"></field>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="code" size="{length, provider=wasm.leb128u}">
+            <field name="num_functions" size="{provider=wasm.leb128size}"></field>
+            <field name="function" count="{num_functions, provider=wasm.leb128u}">
+                <field name="func_body_size" size="{provider=wasm.leb128size}"></field>
+                <field name="func_body" size="{func_body_size, provider=wasm.leb128u}">
+                    <field name="num_locals" size="{provider=wasm.leb128size}"></field>
+                    <vector name="locals" count="{num_locals, provider=wasm.leb128u}">
+                        <field name="local_type_count" size="{provider=wasm.leb128size}"></field>
                         <field name="local_type" size="1"></field>
                     </vector>
                     <field name="instructions" sizing="stretch"></field>
@@ -191,21 +191,21 @@
     </section>
     <section name="custom-section" signature="0x00" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}"></blob>
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}"></blob>
     </section>
     <section name="data-section" signature="0x0B" hint="optional">
         <field name="id" size="1"></field>
-        <field name="length" size="{converter=wasm.leb128size}"></field>
-        <blob name="data" size="{length, converter=wasm.leb128u}">
-            <field name="num_data_segments" size="{converter=wasm.leb128size}"></field>
-            <vector name="data_segments" count="{num_data_segments, converter=wasm.leb128u}">
+        <field name="length" size="{provider=wasm.leb128size}"></field>
+        <blob name="data" size="{length, provider=wasm.leb128u}">
+            <field name="num_data_segments" size="{provider=wasm.leb128size}"></field>
+            <vector name="data_segments" count="{num_data_segments, provider=wasm.leb128u}">
             <!-- In the current version of WebAssembly, at most one memory is
                  allowed in a module. Consequently, the only valid memidx is 0. -->
-                <field name="memidx" size="{converter=wasm.leb128size}" signature="0x00"></field>
-                <field name="offset" size="{converter=wasm.expr_size}"></field>
-                <field name="data_segment_size" size="{converter=wasm.leb128size}"></field>
-                <blob name="data_segment_data" size="{data_segment_size, converter=wasm.leb128u}"></blob>
+                <field name="memidx" size="{provider=wasm.leb128size}" signature="0x00"></field>
+                <field name="offset" size="{provider=wasm.expr_size}"></field>
+                <field name="data_segment_size" size="{provider=wasm.leb128size}"></field>
+                <blob name="data_segment_data" size="{data_segment_size, provider=wasm.leb128u}"></blob>
             </vector>
         </blob>
     </section>

@@ -18,7 +18,7 @@ Version 0.0.7
 
 Released 2020-07-05
 
-- Added custom converter functions to XML template descriptions
+- Added custom provider functions to XML template descriptions
 - Added types to API:
     - LEB128UnsignedBindingProperty
     - LEB128UnsignedBindingValueProvider
