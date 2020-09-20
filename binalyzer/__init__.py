@@ -23,7 +23,6 @@ from binalyzer_core import (
     Template,
     PropertyBase,
     ValueProperty,
-    FunctionProperty,
     ReferenceProperty,
     AutoSizeValueProperty,
     AutoSizeReferenceProperty,
@@ -50,8 +49,6 @@ from binalyzer_core import (
     RelativeOffsetReferenceValueProvider,
     AutoSizeValueProvider,
     StretchSizeValueProvider,
-    IdentityValueConverter,
-    IntegerValueConverter,
 )
 from binalyzer_template_provider import XMLTemplateProviderExtension, XMLTemplateParser
 from binalyzer_cli import TemplateAutoCompletion
