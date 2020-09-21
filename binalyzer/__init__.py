@@ -52,12 +52,14 @@ from binalyzer_template_provider import XMLTemplateProviderExtension, XMLTemplat
 from binalyzer_cli import TemplateAutoCompletion
 from binalyzer_wasm import WebAssemblyExtension
 
+from .extension import UtilityExtension
 from .cli import cli
 
 
 def _register_extensions(binalyzer):
     XMLTemplateProviderExtension(binalyzer)
     WebAssemblyExtension(binalyzer)
+    UtilityExtension(binalyzer)
 
 
 Binalyzer._register_extensions = _register_extensions
