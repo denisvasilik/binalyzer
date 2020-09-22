@@ -3,19 +3,17 @@ import os
 
 from binalyzer import Binalyzer
 
+cwd_path = os.path.dirname(os.path.abspath(__file__))
+
 pcap = Binalyzer().xml.from_file(
-    "/home/ubuntu-dev/git/binalyzer/binalyzer/resources/pcapng.xml",
-    "/home/ubuntu-dev/git/binalyzer/binalyzer/resources/network_trace.pcap",
+    os.path.join(cwd_path, "../resources/pcapng.xml"),
+    os.path.join(cwd_path, "../resources/network_trace.pcap"),
 )
 ethernet_frame = Binalyzer().xml.from_file(
-    "/home/ubuntu-dev/git/binalyzer/binalyzer/resources/ethernet_frame.xml"
+    os.path.join(cwd_path, "../resources/ethernet_frame.xml")
 )
-ipv4 = Binalyzer().xml.from_file(
-    "/home/ubuntu-dev/git/binalyzer/binalyzer/resources/ipv4.xml"
-)
-tcp = Binalyzer().xml.from_file(
-    "/home/ubuntu-dev/git/binalyzer/binalyzer/resources/tcp.xml"
-)
+ipv4 = Binalyzer().xml.from_file(os.path.join(cwd_path, "../resources/ipv4.xml"))
+tcp = Binalyzer().xml.from_file(os.path.join(cwd_path, "../resources/tcp.xml"))
 
 ethernet_frame.value = pcap.packet_record_0.packet_data.value
 ipv4.value = ethernet_frame.payload.value
