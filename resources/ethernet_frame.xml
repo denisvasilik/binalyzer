@@ -1,0 +1,9 @@
+<frame name="ethernet-frame">
+    <header name="mac-header">
+        <field name="destination-mac" size="6"></field>
+        <field name="source-mac" size="6"></field>
+        <field name="ether-type" size="2"></field>
+    </header>
+    <data name="payload" sizing="stretch"></data>
+    <footer name="checksum" size="4"></footer>
+</frame>

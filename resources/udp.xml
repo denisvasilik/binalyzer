@@ -1,0 +1,7 @@
+<packet name="udp-packet">
+    <field name="source-port" size="2"></field>
+    <field name="destination-port" size="2"></field>
+    <field name="length" size="2"></field>
+    <field name="checksum" size="2"></field>
+    <data name="payload" sizing="stretch"></data>
+</packet>

@@ -1,0 +1,17 @@
+<!-- <header name="ipv4-header" size="{total-length, params=search-downward}"> -->
+<header name="ipv4-header">
+    <field name="version-ihl" size="1"></field>
+    <field name="type-of-service" size="1"></field>
+    <field name="total-length" size="2"></field>
+    <field name="identification" size="2"></field>
+    <field name="flags-fragment-offset" size="2"></field>
+    <field name="time-to-live" size="1"></field>
+    <field name="protocol" size="1"></field>
+    <field name="header-checksum" size="2"></field>
+    <field name="source-address" size="4"></field>
+    <field name="destination-address" size="4"></field>
+    <!-- Not supported
+        <field name="options" size="3"></field>
+        <field name="padding" size="1"></field> -->
+    <blob name="payload" sizing="stretch"></blob>
+</header>

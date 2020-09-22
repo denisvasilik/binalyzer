@@ -1,0 +1,13 @@
+<packet name="tcp-packet">
+    <field name="source-port" size="2"></field>
+    <field name="destination-port" size="2"></field>
+    <field name="sequence-number" size="4"></field>
+    <field name="acknowledgement-number" size="4"></field>
+    <field name="data-offset" size="1"></field>
+    <field name="control-bits" size="1"></field>
+    <field name="window" size="2"></field>
+    <field name="checksum" size="2"></field>
+    <field name="urgent-pointer" size="2"></field>
+    <field name="options" size="3" padding-after="1"></field>
+    <data name="payload" sizing="stretch"></data>
+</packet>
