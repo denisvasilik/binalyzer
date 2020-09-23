@@ -9,7 +9,7 @@
         <field name="snap-len" size="4"></field>
         <field name="link-type" size="4"></field>
     </header>
-    <payload name="packet-record" count="{provider=utils.count}">
+    <payload name="packet-records" count="{provider=utils.count}">
         <field name="timestamp-0" size="4"></field>
         <field name="timestamp-1" size="4"></field>
         <field name="captured-packet-length" size="4"></field>
