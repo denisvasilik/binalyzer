@@ -31,7 +31,8 @@ After having installed the Repo tool, all project related repositories can be
 synced.
 
     ~git$ mkdir binalyzer && cd binalyzer
-    ~git/binalyzer$ repo init -u https://github.com/denisvasilik/binalyzer
+    ~git/binalyzer$ repo init -u https://github.com/denisvasilik/binalyzer \
+                              -m binalyzer.latest.xml
     ~git/binalyzer$ repo sync
 
 Now, the workspace is ready for development.
