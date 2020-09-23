@@ -5,6 +5,12 @@ export PYTHONPATH=.
 
 all:
 
+venv:
+	(rm -rf ../.venv && cd scripts && ./virtualenv.sh)
+
+test-all:
+	(cd scripts && ./test.sh)
+
 sloc:
 	sloccount --duplicates --wide --details $(SRC_DIR) | fgrep -v .git > sloccount.sc || :
 
