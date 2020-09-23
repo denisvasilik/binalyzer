@@ -16,9 +16,8 @@ hexdump==3.3
 pre-commit==2.1.1
 wheel==0.34.2
 twine==3.1.1
-binalyzer_core
-binalyzer_template_provider
-binalyzer_data_provider
-binalyzer_cli
-binalyzer_rest
-binalyzer_wasm
+leb128>=1.0.2
+anytree>=2.8.0
+jsonschema>=2.6.0
+flask>=1.0
+flasgger>=0.9.3
