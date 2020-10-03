@@ -1,4 +1,5 @@
-<packet name="tcp-packet">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<packet name="tcp-packet" version="1.0">
     <field name="source-port" size="2"></field>
     <field name="destination-port" size="2"></field>
     <field name="sequence-number" size="4"></field>

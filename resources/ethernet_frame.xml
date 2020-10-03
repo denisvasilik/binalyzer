@@ -1,4 +1,5 @@
-<frame name="ethernet-frame">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<frame name="ethernet-frame" version="1.0">
     <header name="mac-header">
         <field name="destination-mac" size="6"></field>
         <field name="source-mac" size="6"></field>

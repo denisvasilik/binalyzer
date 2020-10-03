@@ -1,5 +1,5 @@
-<!-- <header name="ipv4-header" size="{total-length, params=search-downward}"> -->
-<header name="ipv4-header">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<header name="ipv4-header" version="1.0">
     <field name="version-ihl" size="1"></field>
     <field name="type-of-service" size="1"></field>
     <field name="total-length" size="2"></field>
