@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<template name="aes-128" version="1.0">
+    <field name="iv" size="16"></field>
+    <wrapper name="wrapper" addressing-mode="absolute" offset="0">
+        <vector name="blocks" size="16" count="{{provider=utils.count}}">
+        </vector>
+    </wrapper>
+</template>
