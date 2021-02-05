@@ -1,0 +1,14 @@
+{
+	"folders": [
+        {
+            "path": ".."
+        },
+        {
+            "path": "../../binalyzer-cli"
+        },
+        {
+            "path": "../../binalyzer-core"
+        }
+    ],
+    "settings": {}
+}
