@@ -5,32 +5,32 @@
             "name": "Binalyzer App Example",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/../binalyzer/examples/analysis_app.py",
+            "program": "${workspaceFolder}/../binalyzer/examples/pcap_app.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer Unit Test",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/pytest",
+            "program": "${workspaceFolder}/../.venv/bin/pytest",
             "args": [
                 "-v",
-                "../binalyzer/tests/test_wasm.py::test_wasm_hello_app_tree"
+                "../binalyzer-cli/tests/test_cli.py::test_stdout"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer Server",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/binalyzer",
+            "program": "${workspaceFolder}/../.venv/bin/binalyzer",
             "args": [
                 "rest",
             ],
@@ -39,7 +39,7 @@
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer Flow Extension",
@@ -48,7 +48,7 @@
             "program": "${workspaceFolder}/../binalyzer-rest/binalyzer_rest/flow.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer Blob Extension",
@@ -57,13 +57,13 @@
             "program": "${workspaceFolder}/../binalyzer-rest/binalyzer_rest/blob.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer CLI file extract",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/binalyzer",
+            "program": "${workspaceFolder}/../.venv/bin/binalyzer",
             "args": [
                 "template",
                 "${workspaceFolder}/examples/wasm/debug.wasm",
@@ -77,15 +77,15 @@
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer Core Test",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/pytest",
+            "program": "${workspaceFolder}/../.venv/bin/pytest",
             "args": [
-                "../binalyzer-core/tests/test_context.py::test_dom_expansion",
+                "../binalyzer-core/tests/test_binalyzer.py::test_count_array_access",
                 "-v",
             ],
             "env": {
@@ -93,13 +93,13 @@
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer Template Test",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/pytest",
+            "program": "${workspaceFolder}/../.venv/bin/pytest",
             "args": [
                 "-vv",
                 "../binalyzer-cli/tests/test_cli.py::test_invalid_template"
@@ -109,13 +109,13 @@
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer CLI Position",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/binalyzer",
+            "program": "${workspaceFolder}/../.venv/bin/binalyzer",
             "args": [
                 "${workspaceFolder}/examples/wasm/debug.wasm"
             ],
@@ -124,13 +124,13 @@
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer CLI JSON",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/binalyzer",
+            "program": "${workspaceFolder}/../.venv/bin/binalyzer",
             "args": [
                 "json",
                 "${workspaceFolder}/examples/wasm/debug.wasm",
@@ -141,13 +141,13 @@
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer REST Unit Test",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/pytest",
+            "program": "${workspaceFolder}/../.venv/bin/pytest",
             "args": [
                 "-v",
                 "../binalyzer-rest/tests/test_server.py::test_123"
@@ -157,23 +157,23 @@
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
         {
             "name": "Binalyzer Template Provider Unit Test",
             "type": "python",
             "request": "launch",
-            "program": ".venv/bin/pytest",
+            "program": "${workspaceFolder}/../.venv/bin/pytest",
             "args": [
                 "-v",
-                "../binalyzer-template-provider/tests/test_boundary.py::test_boundary_and_sizing_stretch_with_offset"
+                "../binalyzer-template-provider/tests/test_xml.py::test_namespaces"
             ],
             "env": {
                 "PYTHONPATH": "binalyzer"
             },
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+            "python": "${workspaceFolder}/../.venv/bin/python3"
         },
     ]
 }
