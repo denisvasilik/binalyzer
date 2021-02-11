@@ -49,7 +49,7 @@ from binalyzer_core import (
     value_cache,
 )
 from binalyzer_template_provider import XMLTemplateProviderExtension, XMLTemplateParser
-from binalyzer_cli import TemplateAutoCompletion
+from binalyzer_cli import TemplateAutoCompletion, ExpandedFile, BasedIntParamType
 from binalyzer_wasm import WebAssemblyExtension
 
 from .extension import UtilityExtension
