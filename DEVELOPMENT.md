@@ -42,6 +42,14 @@ Now, the workspace is ready for development.
 This repository contains a `.travis.yml` and a `ci` folder which both are used
 for CI.
 
+### PyPi Token Encryption
+
+Use the following command to encrypt the PyPi token.
+
+```console
+~$ travis encrypt <secret> --add deploy.password --com
+```
+
 ### Pre-Commit Hooks
 
 This repository provides `pre-commit` and `pre-push` hooks. They are installed
