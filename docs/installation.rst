@@ -25,7 +25,7 @@ Binalyzer.
 
 .. code-block:: sh
 
-    ~$ sudo apt install python3 python-pip
+    ~$ sudo apt install python3 python3-pip
 
 Dependencies
 ------------
@@ -44,7 +44,7 @@ Use the following command to install Binalyzer:
 
 .. code-block:: sh
 
-    ~$ pip install binalyzer
+    ~$ pip3 install binalyzer
 
 Binalyzer is now installed. Now, it is time to follow the :ref:`quickstart` guide.
 
@@ -55,7 +55,7 @@ Use the following command to update Binalyzer:
 
 .. code-block:: sh
 
-    ~$ pip install --upgrade binalyzer
+    ~$ pip3 install --upgrade binalyzer
 
 Re-install using PIP
 --------------------
@@ -66,7 +66,7 @@ everything from scratch, guaranteeing the latest version gets installed.
 
 .. code-block:: sh
 
-    ~$ pip install --force-reinstall binalyzer
+    ~$ pip3 install --force-reinstall binalyzer
 
 Living on the edge
 ------------------
@@ -76,4 +76,4 @@ update the code from the master branch.
 
 .. code-block:: sh
 
-    ~$ pip install --upgrade git+https://github.com/denisvasilik/binalyzer.git
+    ~$ pip3 install --upgrade git+https://github.com/denisvasilik/binalyzer.git

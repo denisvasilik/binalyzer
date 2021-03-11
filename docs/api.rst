@@ -69,6 +69,6 @@ Template Parser
 	:members:
 	:inherited-members:
 
-.. autoclass:: XMLTemplateFileParser
+.. autoclass:: XMLTemplateProviderExtension
 	:members:
 	:inherited-members:
