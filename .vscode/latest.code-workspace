@@ -8,6 +8,12 @@
         },
         {
             "path": "../../binalyzer-core"
+        },
+        {
+            "path": "../../binalyzer-wasm"
+        },
+        {
+            "path": "../../binalyzer-blsp"
         }
     ],
     "settings": {}
