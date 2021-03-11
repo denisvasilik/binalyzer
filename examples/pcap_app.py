@@ -9,16 +9,19 @@ resources_path = os.path.join(cwd_path, "../resources")
 pcap = Binalyzer().xml.from_file(
     os.path.join(resources_path, "pcapng.xml"),
     os.path.join(resources_path, "network_trace.pcap"),
-)
+).template
+
 ethernet_frame = Binalyzer().xml.from_file(
     os.path.join(resources_path, "ethernet_frame.xml")
-)
+).template
+
 ipv4 = Binalyzer().xml.from_file(
     os.path.join(resources_path, "ipv4.xml")
-)
+).template
+
 tcp = Binalyzer().xml.from_file(
     os.path.join(resources_path, "tcp.xml")
-)
+).template
 
 for i, packet_record in enumerate(pcap.packet_records):
     ethernet_frame.value = packet_record.packet_data.value
