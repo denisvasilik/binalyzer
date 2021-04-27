@@ -13,6 +13,7 @@ sections describe how to setup a development workspace.
 * [binalyzer-lsp]
 * [binalyzer-docker]
 * [binalyzer-wasm]
+* [binalyzer-vmf]
 
 ## Install Repo Tool
 
@@ -37,6 +38,28 @@ synced.
 
 Now, the workspace is ready for development.
 
+## Virtual Environment
+
+Use the following commands to setup a virtual environment used for development.
+
+    ~git/binalyzer$ python3 -m venv .venv
+    ~git/binalyzer$ source .venv/bin/activate
+    ~git/binalyzer$ pip3 install -r requirements.txt
+    ~git/binalyzer$ for d in binalyzer-*/ ; do cd $d && pip3 install -e . && cd .. ; done
+    ~git/binalyzer$ cd binalyzer-template-provider && make generate-xml-parser && cd ..
+
+Afterwards, the output of the `binalyzer --version` command should look like this.
+
+    binalyzer (0000000)
+    binalyzer_core (0000000)
+    binalyzer_cli (0000000)
+    binalyzer_data_provider (0000000)
+    binalyzer_template_provider (0000000)
+    binalyzer_rest (0000000)
+    binalyzer_wasm (0000000)
+
+This ensures that `binalyzer` uses the development packages.
+
 ## Continuous Integration (CI)
 
 This repository contains a `.travis.yml` and a `ci` folder which both are used
@@ -46,25 +69,20 @@ for CI.
 
 Use the following command to encrypt the PyPi token.
 
-```console
-~$ travis encrypt <secret> --add deploy.password --com
-```
+    ~$ travis encrypt <secret> --add deploy.password --com
 
 ### Pre-Commit Hooks
 
 This repository provides `pre-commit` and `pre-push` hooks. They are installed
 using the following commands:
 
-```console
-~$ pre-commit install -t pre-commit
-~$ pre-commit install -t pre-push
-```
+    ~$ pre-commit install -t pre-commit
+    ~$ pre-commit install -t pre-push
+
 
 The following command runs the hooks and checks all files.
 
-```console
-~$ pre-commit run --all-files --hook-stage push
-```
+    ~$ pre-commit run --all-files --hook-stage push
 
 ## Continuous Test (CT)
 
@@ -82,3 +100,4 @@ on Linux).
 [binalyzer-lsp]: https://github.com/denisvasilik/binalyzer-lsp
 [binalyzer-docker]: https://github.com/denisvasilik/binalyzer-docker
 [binalyzer-wasm]: https://github.com/denisvasilik/binalyzer-wasm
+[binalyzer-vmf]: https://github.com/denisvasilik/binalyzer-vmf
