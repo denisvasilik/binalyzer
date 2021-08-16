@@ -291,6 +291,14 @@ element into account.
 Text Attribute
 --------------
 
+The `text` attribute is used to store static information in the template 
+description. It can be read by an application and applied to a templates value.
+
+This is usually used to replace parts of Binary data. It helps in keeping 
+structural information and data together.
+
+.. code-block:: xml
+
 
 
 Signature Attribute
