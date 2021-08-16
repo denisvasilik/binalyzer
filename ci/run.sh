@@ -5,6 +5,8 @@ set -e
 
 if [ ! -z "$TRAVIS_TAG" ]
 then
+    sed -i 's/version = u""/version = u"'${TRAVIS_TAG}'"/g' docs/conf.py
+    sed -i 's/release = u""/release = u"'${TRAVIS_TAG}'"/g' docs/conf.py
     sed -i 's/__tag__ = ""/__tag__ = "'${TRAVIS_TAG}'"/g' binalyzer/__init__.py
     sed -i 's/__tag__ = ""/__tag__ = "'${TRAVIS_TAG}'"/g' setup.py
 else
