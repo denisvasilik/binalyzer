@@ -288,8 +288,34 @@ element into account.
 
 .. _revolvable_value:
 
-Resolvable Values
------------------
+Text Attribute
+--------------
+
+
+
+Signature Attribute
+-------------------
+
+
+
+Hint Attribute
+--------------
+
+
+
+Count Attribute
+---------------
+
+The count attribute is used to duplicate the template `n` times.
+
+.. code-block:: xml
+
+A template can be duplicated dynamically at runtime when data binding is used.
+
+.. code-block:: xml
+
+Data Binding
+------------
 
 The values of template attributes do not need to be hardcoded. They may be
 resolved from data other templates are bound to. Here's an example.
@@ -315,3 +341,15 @@ specified, the byte order defaults to ``little``.
     <section name="section-0" boundary="{boundary}"></section>
     <section name="section-1" boundary="{boundary, byteorder=little}"></section>
     <section name="section-2" boundary="{boundary, byteorder=big}"></section>
+
+**Data Providers**
+
+Custom data providers allow to convert data to a format that is required by the 
+attribute. There are two types of data binding providers. Reference data providers and value
+data providers.
+
+
+
+Dynamic Templates
+=================
+
