@@ -32,10 +32,10 @@ setuptools.setup(
     data_files=[("", ["CHANGELOG.md"])],
     setup_requires=[],
     install_requires=[
-        "binalyzer-core==1.0.1",
+        "binalyzer-core==1.0.2",
         "binalyzer-cli==1.0.0",
         "binalyzer-data_provider==1.0.0",
-        "binalyzer-template-provider==1.0.1",
+        "binalyzer-template-provider",
         "binalyzer-rest==1.0.0",
         "binalyzer-wasm==1.0.0"
     ],
