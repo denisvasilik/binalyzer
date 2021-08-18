@@ -35,7 +35,7 @@ setuptools.setup(
         "binalyzer-core==1.0.2",
         "binalyzer-cli==1.0.0",
         "binalyzer-data_provider==1.0.0",
-        "binalyzer-template-provider",
+        "binalyzer-template-provider==1.0.2",
         "binalyzer-rest==1.0.0",
         "binalyzer-wasm==1.0.0"
     ],
