@@ -292,13 +292,50 @@ Text Attribute
 --------------
 
 The `text` attribute is used to store static information in the template 
-description. It can be read by an application and applied to a templates value.
+description. It can be read by an application and applied to a template value.
 
 This is usually used to replace parts of Binary data. It helps in keeping 
 structural information and data together.
 
 .. code-block:: xml
 
+    <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+    <template name="text-example">
+        <!-- Small values can be written into the text attribute -->
+        <field name="field0" text="0x11223344"></field>
+        <!-- Larger values can be written as element content -->
+        <field name="field3">
+            55 66 77 88
+        </field>
+    </template>
+
+If a `text` attribute is used and there is no `size` is specified, the template
+derives the size from the content of the `text` attribute. 
+
+.. code-block:: xml
+
+    <field name="field0" text="0x11223344"></field>
+
+If a template element contains content and no size attribute is explicitly set, 
+the template's size is determined by the length of the templates content. The 
+following template has a size of 4 bytes derived from its content.
+
+.. code-block:: xml
+
+    <field name="field3">
+        55 66 77 88
+    </field>
+
+The `text` attribute can be accessed from code by the `text` property.
+
+.. code-block:: xml
+
+    binalyzer = Binalyzer().xml.from_file(template_filepath)
+    binalyzer.template.field0.text
+
+    print(f"0x{template.size:02X}")
+    print(f"0x{template.field0.size:02X}")
+    print(f"0x{len(template.value):02X}")
 
 
 Signature Attribute
@@ -309,7 +346,9 @@ Signature Attribute
 Hint Attribute
 --------------
 
-
+The `hint` attribute is used to give additional hints to the XML parser. At the 
+moment the only hint that is supporde it `optional`. It specifies whether a 
+`signature` is optional. Its mandatory by default.
 
 Count Attribute
 ---------------
