@@ -300,12 +300,13 @@ structural information and data together.
 .. code-block:: xml
 
     <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-    <template name="text-example">
-        <!-- Small values can be written into the text attribute -->
+    <template>
+        <!-- Small byte values can be written into the text attribute -->
         <field name="field0" text="0x11223344"></field>
-        <!-- Larger values can be written as element content -->
-        <field name="field3">
-            55 66 77 88
+        <!-- Larger byte values can be written as element content -->
+        <field name="field2">
+            DE AD BE EF AA 55 AA 55
+            AA 55 AA 55 AA 55 AA 55
         </field>
     </template>
 
@@ -322,8 +323,9 @@ following template has a size of 4 bytes derived from its content.
 
 .. code-block:: xml
 
-    <field name="field3">
-        55 66 77 88
+    <field name="field1">
+        DE AD BE EF AA 55 AA 55
+        AA 55 AA 55 AA 55 AA 55
     </field>
 
 The `text` attribute can be accessed from code by the `text` property.
