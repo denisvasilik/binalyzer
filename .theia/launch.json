@@ -2,5 +2,15 @@
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
   "version": "0.2.0",
-  "configurations": []
+  "configurations": [
+        {
+            "name": "Text Attribute Example",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/binalyzer/examples/pcap_app.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "pythonPath": "${workspaceFolder}/binalyzer/.venv/bin/python3"
+        }  
+    ]
 }

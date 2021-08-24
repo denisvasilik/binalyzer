@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<template name="text-example">
+    <field name="field0" text="0x11223344"></field>
+    <field name="field1" size="4"></field>
+    <field name="field2" size="4"></field>
+    <field name="field3">
+        55 66 77 88
+    </field>
+</template>
