@@ -332,18 +332,22 @@ The `text` attribute can be accessed from code by the `text` property.
 
 .. code-block:: xml
 
-    binalyzer = Binalyzer().xml.from_file(template_filepath)
-    binalyzer.template.field0.text
+    from binalyzer import examples
 
-    print(f"0x{template.size:02X}")
-    print(f"0x{template.field0.size:02X}")
-    print(f"0x{len(template.value):02X}")
+    binalyzer = Binalyzer().xml.from_file(examples.text_template_filepath)
+    
+    dump(binalyzer.template.field0.text)
+
+    print(f"Total size: 0x{template.size:02X}")
+    print(f"Size of field 0: 0x{template.field0.size:02X}")
+    print(f"Size of field 1: 0x{template.field1.size:02X}")
 
 
 Signature Attribute
 -------------------
 
-
+The `signature` attribute determines a sequence of byte values that is expected
+at a specific address.
 
 Hint Attribute
 --------------
@@ -393,10 +397,22 @@ specified, the byte order defaults to ``little``.
 
 **Data Providers**
 
-Custom data providers allow to convert data to a format that is required by the 
-attribute. There are two types of data binding providers. Reference data providers and value
-data providers.
+Data providers allow to convert data to a format that is required by the 
+attribute. There are two types of data binding providers. Reference data providers 
+and value data providers.
 
+**Reference Data Providers**
+
+.. code-block:: xml
+
+    <field name="length" size="{provider=wasm.leb128size}"></field>
+    <blob name="data" size="{length, provider=wasm.leb128u}">
+
+**Value Data Providers**
+
+.. code-block:: xml
+
+    <field name="num_results" size="{provider=wasm.leb128size}"></field>
 
 
 Dynamic Templates
