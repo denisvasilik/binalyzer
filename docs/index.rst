@@ -25,12 +25,12 @@ Introduction
 ------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    installation
    quickstart
    template
-   android
+   examples
 
 API Reference
 -------------

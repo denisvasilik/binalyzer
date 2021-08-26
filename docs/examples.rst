@@ -1,7 +1,10 @@
 .. _analysis:
 
+Examples
+========
+
 Android Boot Image V1
-=============================
+---------------------
 
 The `Android`_ format is used as an analysis example.
 
@@ -52,8 +55,8 @@ must be done.
     >>> data_file = open('android_boot_image_v1.bin')
     >>> binalyzer.stream = data_file
 
-Read Header Information
------------------------
+
+**Read Header Information**
 
 .. code-block:: python
 
@@ -64,8 +67,8 @@ Read Header Information
     >>> int.from_bytes(template.boot_img_hdr.kernel_size.value, 'little')
     27929224
 
-Extract the Device Tree
------------------------
+
+**Extract the Device Tree**
 
 Using the template above one can easily extract the device tree, which is typically stored
 in the *second* section.
@@ -77,3 +80,28 @@ in the *second* section.
     ...
     34141
     >>>
+
+
+Webassembly Module Format
+-------------------------
+
+
+PCAP Analysis
+-------------
+
+
+Creating a Binary File
+----------------------
+
+
+Patching a Binary File
+----------------------
+
+
+Aggregating Multiple Files
+--------------------------
+
+
+Using Binalyzer's REST API
+--------------------------
+
