@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<template>
+    <header name="num_fields" size="1"></header>
+    <section name="fields">
+        <field name="field" count="{num_fields}" size="2"></field>
+    </section>
+</template>

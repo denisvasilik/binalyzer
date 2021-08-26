@@ -335,7 +335,7 @@ following template has a size of 4 bytes derived from its content.
 
 The `text` attribute can be accessed from code by the `text` property.
 
-.. code-block:: xml
+.. code-block:: python
 
     from binalyzer import examples
 
@@ -380,6 +380,10 @@ resolved from data other templates are bound to. Here's an example.
         <section name="section-2" boundary="{boundary}"></section>
     </template>
 
+**Data Resolution**
+
+
+
 **Byte Order**
 
 The byte order can be specified using the ``byteorder`` parameter. If nothing is
@@ -420,6 +424,13 @@ is an example.
 
 .. code-block:: xml
 
+    <template>
+        <header name="num_fields" size="1"></header>
+        <section name="fields">
+            <field name="field" count="{num_fields}" size="2"></field>
+        </section>
+    </template>
+
 
 Count Attribute
 ---------------
@@ -428,6 +439,20 @@ The count attribute is used to duplicate the template `n` times.
 
 .. code-block:: xml
 
+    <template>
+        <header name="num_fields" size="1"></header>
+        <section name="fields">
+            <field name="field" count="3" size="2"></field>
+        </section>
+    </template>
+
 A template can be duplicated dynamically at runtime when data binding is used.
 
 .. code-block:: xml
+
+    <template>
+        <header name="num_fields" size="1"></header>
+        <section name="fields">
+            <field name="field" count="{num_fields}" size="2"></field>
+        </section>
+    </template>
