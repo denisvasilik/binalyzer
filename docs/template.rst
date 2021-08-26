@@ -288,6 +288,11 @@ element into account.
 
 .. _revolvable_value:
 
+
+Templates and Data
+==================
+
+
 Text Attribute
 --------------
 
@@ -349,6 +354,7 @@ Signature Attribute
 The `signature` attribute determines a sequence of byte values that is expected
 at a specific address.
 
+
 Hint Attribute
 --------------
 
@@ -356,16 +362,6 @@ The `hint` attribute is used to give additional hints to the XML parser. At the
 moment the only hint that is supporde it `optional`. It specifies whether a 
 `signature` is optional. Its mandatory by default.
 
-Count Attribute
----------------
-
-The count attribute is used to duplicate the template `n` times.
-
-.. code-block:: xml
-
-A template can be duplicated dynamically at runtime when data binding is used.
-
-.. code-block:: xml
 
 Data Binding
 ------------
@@ -395,26 +391,43 @@ specified, the byte order defaults to ``little``.
     <section name="section-1" boundary="{boundary, byteorder=little}"></section>
     <section name="section-2" boundary="{boundary, byteorder=big}"></section>
 
-**Data Providers**
+**Value Provider**
 
-Data providers allow to convert data to a format that is required by the 
-attribute. There are two types of data binding providers. Reference data providers 
-and value data providers.
-
-**Reference Data Providers**
+A value provider allows to convert data to a format that is required by an
+attribute. The following example uses a value provider that converts a byte 
+sequence encoded as `LEB128` to an integer that is usable by the `size` attribute. 
 
 .. code-block:: xml
 
     <field name="length" size="{provider=wasm.leb128size}"></field>
-    <blob name="data" size="{length, provider=wasm.leb128u}">
-
-**Value Data Providers**
+    
+It is also possible to convert a referenced value using a custom value provider.
 
 .. code-block:: xml
 
-    <field name="num_results" size="{provider=wasm.leb128size}"></field>
+    <blob name="data" size="{length, provider=wasm.leb128u}">
+
+The `WASM format example` shows how to apply custom value providers. The WASM 
+value providers can be found in the `binalyzer-wasm` package.
 
 
 Dynamic Templates
 =================
 
+Templates may be created dynamically if the `count` attribute uses data binding.
+Depending on the data provided the template will be created multiple times. Here
+is an example.
+
+.. code-block:: xml
+
+
+Count Attribute
+---------------
+
+The count attribute is used to duplicate the template `n` times.
+
+.. code-block:: xml
+
+A template can be duplicated dynamically at runtime when data binding is used.
+
+.. code-block:: xml
