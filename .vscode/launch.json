@@ -5,7 +5,7 @@
             "name": "Binalyzer App Example",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/../binalyzer/examples/pcap_app.py",
+            "program": "${workspaceFolder}/../binalyzer/examples/dynamic_template_app.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "python": "${workspaceFolder}/../.venv/bin/python3"
