@@ -3,6 +3,27 @@
 Examples
 ========
 
+
+Creating a Binary File
+----------------------
+
+
+Patching a Binary File
+----------------------
+
+
+Aggregating Multiple Files
+--------------------------
+
+
+Extracting Binary Files
+-----------------------
+
+
+Using Binalyzer's REST API
+--------------------------
+
+
 Android Boot Image V1
 ---------------------
 
@@ -90,18 +111,5 @@ PCAP Analysis
 -------------
 
 
-Creating a Binary File
-----------------------
-
-
-Patching a Binary File
-----------------------
-
-
-Aggregating Multiple Files
---------------------------
-
-
-Using Binalyzer's REST API
---------------------------
-
+Zynq UltraScale+ MPSoC Device Boot Image
+----------------------------------------
