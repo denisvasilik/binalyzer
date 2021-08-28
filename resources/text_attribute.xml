@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <!--
     Text attribute example
 -->
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <template>
     <!-- Small byte values can be written into the text attribute -->
     <field name="field0" text="0x11223344"></field>

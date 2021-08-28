@@ -15,3 +15,16 @@ class DynamicTemplateExpansion():
         RESOURCES_PATH,
         "dynamic_template_example.bin"
     )
+
+
+class TextAttribute():
+    
+    TEMPLATE_FILEPATH = os.path.join(
+        RESOURCES_PATH,
+        "text_attribute.xml"
+    )
+
+    DATA_FILEPATH = os.path.join(
+        RESOURCES_PATH,
+        "text_attribute.bin"
+    )
