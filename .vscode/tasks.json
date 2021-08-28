@@ -2,9 +2,15 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "Show Workspace Folder",
             "type": "shell",
             "command": "echo \"WorkspaceFolder -> ${workspaceFolder}\""
+        },
+        {
+            "label": "Create Docs",
+            "type": "shell",
+            "command": "make clean && make docs",
+            "problemMatcher": []
         }
     ]
 }
