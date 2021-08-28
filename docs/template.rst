@@ -415,38 +415,47 @@ The `WASM format example` shows how to apply custom value providers. The WASM
 value providers can be found in the `binalyzer-wasm` package.
 
 
-Dynamic Templates
-=================
+Dynamic Template Expansion
+==========================
 
-Templates may be created dynamically if the `count` attribute uses data binding.
-Depending on the data provided the template will be created multiple times. Here
-is an example.
-
-.. code-block:: xml
-
-    <template>
-        <header name="num_fields" size="1"></header>
-        <section name="fields">
-            <field name="field" count="{num_fields}" size="2"></field>
-        </section>
-    </template>
+A template can be duplicated several times using the `count` attribute. This 
+makes the overall template description concise, saving several lines of the same
+template description.
 
 
 Count Attribute
 ---------------
 
-The count attribute is used to duplicate the template `n` times.
+The `count` attribute is used to duplicate a template multiple times. Having the
+following template description, `field_0` to `field_3` are just copies of the 
+same description.
 
 .. code-block:: xml
 
     <template>
         <header name="num_fields" size="1"></header>
         <section name="fields">
-            <field name="field" count="3" size="2"></field>
+            <field name="field_0" size="2"></field>
+            <field name="field_1" size="2"></field>
+            <field name="field_2" size="2"></field>
+            <field name="field_3" size="2"></field>
         </section>
     </template>
 
-A template can be duplicated dynamically at runtime when data binding is used.
+In order to save space and be more concise, the `count` attribute can be used as
+follows.
+
+.. code-block:: xml
+
+    <template>
+        <header name="num_fields" size="1"></header>
+        <section name="fields">
+            <field name="field" count="4" size="2"></field>
+        </section>
+    </template>
+    
+It is also possible to use data binding for the `count` attribute. This lets the
+template expand depending on the underlying data value of `num_fields`.
 
 .. code-block:: xml
 
