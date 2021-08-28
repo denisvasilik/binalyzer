@@ -8,12 +8,12 @@ class DynamicTemplateExpansion():
 
     TEMPLATE_FILEPATH = os.path.join(
         RESOURCES_PATH,
-        "dynamic_template_example.xml"
+        "dynamic_template_expansion.xml"
     )
 
     DATA_FILEPATH = os.path.join(
         RESOURCES_PATH,
-        "dynamic_template_example.bin"
+        "dynamic_template_expansion.bin"
     )
 
 
