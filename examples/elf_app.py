@@ -15,4 +15,4 @@ if __name__ == "__main__":
 
     elf = binalyzer.template
 
-    print("Magic: " + str(elf.header.e_ident.EI_MAG0.value))
+    print("Magic: " + str(elf.elf_header.e_ident.EI_MAG0.value))
