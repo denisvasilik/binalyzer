@@ -40,6 +40,9 @@ upload-to-test-pypi: package
 docs:
 	(cd docs && make html)
 
+compile-elf-example:
+	gcc -Wall resources/elf_example.c -o elf_example
+
 clean:
 	(rm -rf \
 		pyflakes.log \

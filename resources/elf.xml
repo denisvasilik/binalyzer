@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- https://refspecs.linuxfoundation.org/elf/elf.pdf -->
+<format name="elf" version="1.2">
+    <header name="header">
+        <field name="e_ident">
+            <data name="EI_MAG0" size="1" signature="0x7F" />
+            <data name="EI_MAG1" size="1" signature="0x45" />
+            <data name="EI_MAG2" size="1" signature="0x4C" />
+            <data name="EI_MAG3" size="1" signature="0x46" />
+            <data name="EI_CLASS" size="1" />
+            <data name="EI_DATA" size="1" />
+            <data name="EI_VERSION" size="1" />
+            <data name="EI_PAD" size="1" />
+            <data name="EI_NIDENT" size="1" />
+        </field>
+        <field name="e_type" size="2" />
+        <field name="e_machine" size="2" />
+        <field name="e_version" size="4" />
+        <field name="e_entry" size="4" />
+        <field name="e_phoff" size="4" />
+        <field name="e_shoff" size="4" />
+        <field name="e_flags" size="4" />
+        <field name="e_ehsize" size="2" />
+        <field name="e_phentsize" size="2" />
+        <field name="e_phnum" size="2" />
+        <field name="e_shentsize" size="2" />
+        <field name="e_shnum" size="2" />
+        <field name="e_shnum" size="2" />
+        <field name="e_shstrndx" size="2" />
+    </header>
+</format>

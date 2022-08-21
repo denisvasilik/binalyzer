@@ -1,5 +1,6 @@
 resources/*.interp
 resources/*.tokens
+resources/elf_example
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
