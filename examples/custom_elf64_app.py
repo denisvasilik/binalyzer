@@ -61,6 +61,7 @@ if __name__ == "__main__":
     #   401005:	0f 05                	syscall
 
     elf.code.value = b'\x6a\x3c\x58\x31\xff\x0f\x05\x00'
+    elf.flag.value = "HTB{00000}".encode('ascii') + b'\x00'
 
     elf64_filepath = os.path.join(cwd_path, "../resources/custom_elf64_app")
     with open(elf64_filepath, 'wb') as elf_file:

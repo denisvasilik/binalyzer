@@ -38,4 +38,5 @@
         <field name="p_align" size="8" />
     </header>
     <data name="code"></data>
+    <data name="flag"></data>
 </format>
