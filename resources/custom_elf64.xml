@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <!-- https://refspecs.linuxfoundation.org/elf/elf.pdf -->
-<format name="elf" version="1.2" size="120">
+<format name="elf" version="1.2">
     <header name="elf-header">
         <field name="e_ident" size="16">
             <data name="EI_MAG0" size="1" />
@@ -27,9 +27,7 @@
         <field name="e_shnum" size="2" />
         <field name="e_shstrndx" size="2" />
     </header>
-    <field name="program-headers-start" offset="{e_phoff}"></field>
-    <!-- FIX ME: count="{e_phnum}" cannot be resolved -->
-    <header name="program-header" count="{e_phnum}">
+    <header name="program-header" offset="{e_phoff}">
         <field name="p_type" size="4" />
         <field name="p_flags" size="4" />
         <field name="p_offset" size="8" />
@@ -39,25 +37,5 @@
         <field name="p_memsz" size="8" />
         <field name="p_align" size="8" />
     </header>
-    <group name="sections">
-        <section name="section"
-                 offset="{sh_offset, provider=elf64.sh_offset}"
-                 size="{sh_size, provider=elf64.sh_size}"
-                 count="{e_shnum}">
-        </section>
-    </group>
-    <group name="section-headers" offset="{e_shoff}" hint="optional">
-        <header name="section-header" count="{e_shnum}">
-            <field name="sh_name" size="4" />
-            <field name="sh_type" size="4" />
-            <field name="sh_flags" size="8" />
-            <field name="sh_addr" size="8" />
-            <field name="sh_offset" size="8" />
-            <field name="sh_size" size="8" />
-            <field name="sh_link" size="4" />
-            <field name="sh_info" size="4" />
-            <field name="sh_addralign" size="8" />
-            <field name="sh_entsize" size="8" />
-        </header>
-    </group>
+    <data name="code"></data>
 </format>
